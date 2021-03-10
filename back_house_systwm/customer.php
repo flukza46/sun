@@ -67,7 +67,7 @@
                       </div>
 
                         <div class="d-flex d-inline">
-                          <div>
+                          <div class="mr-3">
                               <label for="">555555555</label>
                               <input class="form-control" type="date" name="" value="">
                           </div>
