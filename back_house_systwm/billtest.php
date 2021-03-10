@@ -12,9 +12,12 @@
             $equip_foreach = $_POST['equip'];
             $cabamlung_foreach = $_POST['cabamlung'];
 
+            $chk_equip ="";
             foreach($equip_foreach as $chk1){
                 $chk_equip = $chk1;
             }
+
+            $chk_cabamlung="";
              foreach($cabamlung_foreach as $chk2){
                 $chk_cabamlung = $chk2;
             }

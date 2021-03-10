@@ -112,7 +112,7 @@
               <div><b>อัตราค่าบำรุงฌาปนสถานวัดนครสวรรค์ <i class="fas fa-check-circle text-primary"></i></b></div>
                 <div class="form-check col mt-4">
                   <div class="container">
-                    <input class="form-check-input" type="checkbox" name="cabamlung[]" id="exampleRadios1" value="ค่าบำรุงเมรุ (วันศพออก)">
+                    <input class="form-check-input" type="checkbox" name="cabamlung[]" id="" value="ค่าบำรุงเมรุ (วันศพออก)">
                     <label class="form-check-label" for="exampleRadios1">
                       ค่าบำรุงเมรุ (วันศพออก)
                     </label>
@@ -121,7 +121,7 @@
 
               <div class="form-check col">
                 <div class="container">
-                  <input class="form-check-input" type="checkbox" name="cabamlung[]" id="exampleRadios2" value="ค่าไฟฟ้าคิดตามจำนวนที่ใช้">
+                  <input class="form-check-input" type="checkbox" name="cabamlung[]" id="" value="ค่าไฟฟ้าคิดตามจำนวนที่ใช้">
                   <label class="form-check-label" for="exampleRadios2">
                   ค่าไฟฟ้าคิดตามจำนวนที่ใช้
                   </label>
@@ -130,7 +130,7 @@
 
               <div class="form-check col">
                 <div class="container">
-                  <input class="form-check-input" type="checkbox" name="cabamlung[]" id="exampleRadios1" value="ค่าทำความสอาดโลงเย็น">
+                  <input class="form-check-input" type="checkbox" name="cabamlung[]" id="" value="ค่าทำความสอาดโลงเย็น">
                   <label class="form-check-label" for="exampleRadios1">
                   ค่าทำความสอาดโลงเย็น
                   </label>
@@ -139,7 +139,7 @@
 
               <div class="form-check col">
                   <div class="container">
-                    <input class="form-check-input" type="checkbox" name="cabamlung[]" id="exampleRadios1" value="ค่าทำความสอาดวันศพออก">
+                    <input class="form-check-input" type="checkbox" name="cabamlung[]" id="" value="ค่าทำความสอาดวันศพออก">
                     <label class="form-check-label" for="exampleRadios1">
                     ค่าทำความสอาดวันศพออก
                   </label>
@@ -148,7 +148,7 @@
 
               <div class="form-check col">
                   <div class="container">
-                    <input class="form-check-input" type="checkbox" name="cabamlung[]" id="exampleRadios1" value="ค่าบำบุงเครื่องเสียง">
+                    <input class="form-check-input" type="checkbox" name="cabamlung[]" id="" value="ค่าบำบุงเครื่องเสียง">
                     <label class="form-check-label" for="exampleRadios1">
                     ค่าบำบุงเครื่องเสียง
                   </label>
