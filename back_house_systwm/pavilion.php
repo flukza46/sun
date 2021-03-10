@@ -11,7 +11,7 @@
 
        
     }
-    //ปีกการับ isset GET det 
+    //ปีกการับ isset GET det... 
 
 ?>
 
