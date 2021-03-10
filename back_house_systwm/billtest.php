@@ -13,10 +13,10 @@
             $cabamlung_foreach = $_POST['cabamlung'];
 
             $equip = foreach($equip_foreach as $key => $value){
-                echo $value, ;
+                echo $value; echo", ";
             }
             $cabamlung = foreach($cabamlung_foreach as $key => $value){
-                echo $value, ;
+                echo $value; echo", ";
             }
 
             echo " $equip";
