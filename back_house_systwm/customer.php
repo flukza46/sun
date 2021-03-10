@@ -83,20 +83,23 @@
                     <div class="row">
                       <div class="form-group col-4">
                       <label for="exampleFormControlInput1"><i class="fas fa-menorah text-warning"></i> อุปกรณ์ประกอบพิธีกรรม</label>
-                      <select class = "form-control">
-                        <option class = "text-secondary">โปรดเลือกอุปกรณ์ประกอบพิธี</option>
-                        <?php
+                      <?php
                             $chk = $SLOptionP->SOP2();
                             while ($re = mysqli_fetch_array($chk)) {
                               # code...
                               ?>
-                              <option><?php echo $re['equipment_tiype']; ?></option>
-                            <?php
+                        <div class="form-check col mt-4">
+                        <div class="container">
+                          <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="<?php echo $re['equipment_tiype']; ?>">
+                          <label class="form-check-label" for="exampleRadios1">
+                          <?php echo $re['equipment_tiype']; ?>
+                          </label>
+                        </div>
+                        </div>
+                        <?php
                             } 
-
-
-
                         ?>
+                
                       </select>
                     </div>
                     </div>
