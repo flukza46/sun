@@ -9,8 +9,8 @@
             $date_start = $_POST['date_start'];
 
 
-            $equip_foreach = $_POST['equip'];
-            $cabamlung_foreach = $_POST['cabamlung'];
+            $equip_foreach = $_POST['equip [ ]'];
+            $cabamlung_foreach = $_POST['cabamlung [ ]'];
 
             foreach($equip_foreach as $key => $value){
                 echo $value;
