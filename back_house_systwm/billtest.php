@@ -9,18 +9,18 @@
             $date_start = $_POST['date_start'];
 
 
-            $equip_foreach = $_POST['equip [ ]'];
-            $cabamlung_foreach = $_POST['cabamlung [ ]'];
+            $equip_foreach = $_POST['equip'];
+            $cabamlung_foreach = $_POST['cabamlung'];
 
-            foreach($equip_foreach as $key => $value){
-                echo $value;
+            foreach($equip_foreach as $chk1){
+                $chk_equip = $chk1;
             }
-             foreach($cabamlung_foreach as $key => $value){
-                echo $value;
+             foreach($cabamlung_foreach as $chk2){
+                $chk_cabamlung = $chk2;
             }
 
-            // echo " $equip";
-            // echo " $cabamlung";
+            echo " $chk_equip";
+            echo " $chk_cabamlung";
 
 
 
