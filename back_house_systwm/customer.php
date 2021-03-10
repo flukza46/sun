@@ -39,11 +39,13 @@
     <!--อัตราค่าบำรุงฌาปนสถานวัดนครสวรรค์-->
     <div class="container-fluid">
             <div class="card">
+              
                 <div class="card-header text-center">
                 <h3><b>อัตราค่าบำรุงฌาปนสถานวัดนครสวรรค์ <i class="fas fa-check-circle text-primary"></i></b></h3>
               </div>
 
                 <div class="card-body">
+                <div class="row">
                 <div class="form-group col-4">
                       <label for="exampleFormControlInput1"><i class="fas fa-laptop-house text-success"></i> ศาลาฌาปนกิจศพ</label>
                       <select class="form-control">
@@ -62,7 +64,10 @@
                         ?>
                       </select>
                       </div>
-                      <div class="row form-group col-4">
+                      </div>
+
+
+                      <div class="row">
                           <div class="form-group col-md-3 pl-0">
                                 <label for="inputState">เลือกวันที่ทำการ</label>
                                 <input class="form-control" type="date">
@@ -75,6 +80,8 @@
                             
                       </div>
 
+
+                    <div class="row">
                       <div class="form-group col-4">
                       <label for="exampleFormControlInput1"><i class="fas fa-menorah text-warning"></i> อุปกรณ์ประกอบพิธีกรรม</label>
                       <select class = "form-control">
@@ -92,6 +99,7 @@
 
                         ?>
                       </select>
+                    </div>
                     </div>
 
                 <div class="form-check col-4 mt-4">
