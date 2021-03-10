@@ -19,10 +19,10 @@
 
             $chk_cabamlung="";
              foreach($cabamlung_foreach as $chk2){
-                $chk_cabamlung.= $chk2.", ";
+                $chk_cabamlung.= $chk2[3].", ";
             }
 
-            echo "$chk_equip[3] <br>";
+            echo "$chk_equip <br>";
             echo " $chk_cabamlung";
 
 
