@@ -90,18 +90,20 @@
                       <label for="exampleFormControlInput1"><i class="fas fa-menorah text-warning"></i> อุปกรณ์ประกอบพิธีกรรม</label>
                       <?php
                             $chk = $SLOptionP->SOP2();
+                            $i=1;
                             while ($re = mysqli_fetch_array($chk)) {
                               # code....
                               ?>
                         <div class="form-check col">
                         <div class="container">
-                          <input class="form-check-input" type="checkbox" name="equip[]" id="exampleRadios1" value="<?php echo $re['id']." "; ?>">
+                          <input class="form-check-input" type="checkbox" name="equip<?php echo$i; ?>" id="exampleRadios1" value="<?php echo $re['id']." "; ?>">
                           <label class="form-check-label" for="exampleRadios1">
                           <?php echo $re['equipment_tiype']; ?>
                           </label>
                         </div>
                         </div>
                         <?php
+                          $i++;
                             } 
                         ?>
                 

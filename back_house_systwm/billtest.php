@@ -22,7 +22,7 @@
                 $chk_cabamlung.= $chk2.", ";
             }
 
-            echo "$chk_equip <br>";
+            echo "$chk_equip[3] <br>";
             echo " $chk_cabamlung";
 
 
