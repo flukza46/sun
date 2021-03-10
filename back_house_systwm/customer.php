@@ -62,7 +62,7 @@
                         ?>
                       </select>
                       </div>
-                      <div class="row ml-2">
+                      <div class="row form-group col-4">
                           <div class="form-group col-md-3 pl-0">
                                 <label for="inputState">เลือกวันที่ทำการ</label>
                                 <input class="form-control" type="date">
