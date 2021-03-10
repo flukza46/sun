@@ -66,29 +66,20 @@
                       </div>
                       </div>
 
-                        <div class="d-flex d-inline">
-                          <div class="mr-3">
-                              <label for="">555555555</label>
-                              <input class="form-control" type="date" name="" value="">
-                          </div>
-                          <div>
-                              <label for="">666666666</label>
-                              <input class="form-control" type="date" name="" value="">
-                          </div>
-                        </div>
+                       
 
-                      <!-- <div class="row">
-                          <div class="form-group col-md-3 pl-0">
+                      <div class="d-flex d-inline">
+                          <div class="mr-3">
                                 <label for="inputState">เลือกวันที่ทำการ</label>
                                 <input class="form-control" type="date">
                           </div>
 
-                          <div class="form-group col-md-3 pl-0 ">
+                          <div class=" ">
                                 <label for="inputState">เลือกวันที่วันครบกำหนด</label>
                                 <input class="form-control" type="date">
                           </div>
                             
-                      </div> -->
+                      </div>
 
 
                     <div class="row">
