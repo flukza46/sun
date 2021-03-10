@@ -15,7 +15,7 @@
 
 
 
-              <form action="billtest.php" method="post">
+              <form action="billtest.php" method="POST">
 
 
                       <div class="form-group col-4 mt-4">
