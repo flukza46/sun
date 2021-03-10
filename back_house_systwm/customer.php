@@ -73,7 +73,7 @@
                                 <input class="form-control" type="date">
                           </div>
 
-                          <div>
+                          <div class="form-group col-md-3 pl-0">
                                 <label for="inputState">เลือกวันที่วันครบกำหนด</label>
                                 <input class="form-control" type="date">
                           </div>
