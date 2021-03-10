@@ -66,8 +66,10 @@
                       </div>
                       </div>
 
-
-                      <div class="row">
+                        <div>
+                            <label for="">555555555</label>
+                        </div>
+                      <!-- <div class="row">
                           <div class="form-group col-md-3 pl-0">
                                 <label for="inputState">เลือกวันที่ทำการ</label>
                                 <input class="form-control" type="date">
@@ -78,7 +80,7 @@
                                 <input class="form-control" type="date">
                           </div>
                             
-                      </div>
+                      </div> -->
 
 
                     <div class="row">
