@@ -114,7 +114,7 @@
                   <div class="container">
                     <input class="form-check-input" type="checkbox" name="cabamlung[]" id="" value="ค่าบำรุงเมรุ (วันศพออก)">
                     <label class="form-check-label" for="exampleRadios1">
-                      ค่าบำรุงเมรุ (วันศพออก)  </label>
+                      ค่าบำรุงเมรุ (วันศพออก)<?php echo"  "?></label>
                   </div>
                 </div>
 
@@ -122,7 +122,7 @@
                 <div class="container">
                   <input class="form-check-input" type="checkbox" name="cabamlung[]" id="" value="ค่าไฟฟ้าคิดตามจำนวนที่ใช้">
                   <label class="form-check-label" for="exampleRadios2">
-                  ค่าไฟฟ้าคิดตามจำนวนที่ใช้  </label>
+                  ค่าไฟฟ้าคิดตามจำนวนที่ใช้<?php echo"  "?></label>
                 </div>
               </div>
 
@@ -130,7 +130,7 @@
                 <div class="container">
                   <input class="form-check-input" type="checkbox" name="cabamlung[]" id="" value="ค่าทำความสอาดโลงเย็น">
                   <label class="form-check-label" for="exampleRadios1">
-                  ค่าทำความสอาดโลงเย็น  </label>
+                  ค่าทำความสอาดโลงเย็น<?php echo"  "?></label>
                 </div>
               </div>
 
@@ -138,7 +138,7 @@
                   <div class="container">
                     <input class="form-check-input" type="checkbox" name="cabamlung[]" id="" value="ค่าทำความสอาดวันศพออก">
                     <label class="form-check-label" for="exampleRadios1">
-                    ค่าทำความสอาดวันศพออก  </label>
+                    ค่าทำความสอาดวันศพออก<?php echo"  "?></label>
                 </div>
               </div>
 
@@ -146,7 +146,7 @@
                   <div class="container">
                     <input class="form-check-input" type="checkbox" name="cabamlung[]" id="" value="ค่าบำบุงเครื่องเสียง">
                     <label class="form-check-label" for="exampleRadios1">
-                    ค่าบำบุงเครื่องเสียง  </label>
+                    ค่าบำบุงเครื่องเสียง<?php echo"  "?></label>
                 </div>
               </div>
 
@@ -154,7 +154,7 @@
                   <div class="container">
                     <input class="form-check-input" type="checkbox" name="cabamlung[]" id="exampleRadios1" value="ค่าพนักงานเฝ้าศพกลางคืน">
                     <label class="form-check-label" for="exampleRadios1">
-                    ค่าพนักงานเฝ้าศพกลางคืน  </label>
+                    ค่าพนักงานเฝ้าศพกลางคืน<?php echo"  "?></label>
                 </div>
               </div>
 
@@ -162,7 +162,7 @@
                   <div class="container">
                     <input class="form-check-input" type="checkbox" name="cabamlung[]" id="exampleRadios1" value="ค่าบำรุงพัดลมหน้าเมรุ">
                     <label class="form-check-label" for="exampleRadios1">
-                    ค่าบำรุงพัดลมหน้าเมรุ  </label>
+                    ค่าบำรุงพัดลมหน้าเมรุ<?php echo"  "?></label>
                 </div>
               </div>
 
@@ -170,7 +170,7 @@
                   <div class="container">
                     <input class="form-check-input" type="checkbox" name="cabamlung[]" id="exampleRadios1" value="ค่าบำรุงสุสาน">
                     <label class="form-check-label" for="exampleRadios1">
-                    ค่าบำรุงสุสาน  </label>
+                    ค่าบำรุงสุสาน<?php echo"  "?></label>
                 </div>
               </div>
 
