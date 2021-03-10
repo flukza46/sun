@@ -198,6 +198,7 @@
                 <div class="row">
                     <!-- ส่วนล่าง footer Logo -->
                     <div class="col-sm-12 bg-success text-center">
+                        <img src="image/logo_nsru.png" style="width:70px; " >
                         <img src="image/logo_it4cd.png" style="width:150px; " >
                         
                         <br>
