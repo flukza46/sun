@@ -65,10 +65,11 @@
 
                       <div class="form-group col-md-3">
                         <label for="inputState">เลือกวันที่ทำการ</label>
-                        <select id="inputState" class="form-control">
+                        <input type="date">
+                        <!-- <select id="inputState" class="form-control">
                           <option selected>Choose...</option>
                           <option>...</option>
-                        </select>
+                        </select> -->
                         <label for="inputState">เลือกวันที่วันครบกำหนด</label>
                         <select id="inputState" class="form-control">
                           <option selected>Choose...</option>
