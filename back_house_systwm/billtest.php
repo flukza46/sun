@@ -19,8 +19,8 @@
                 $chk_cabamlung = $chk2;
             }
 
-            echo " $chk_equip";
-            echo " $chk_cabamlung";
+            echo "$chk_equip";
+            echo "$chk_cabamlung";
 
 
 
