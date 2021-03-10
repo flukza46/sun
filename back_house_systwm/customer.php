@@ -68,7 +68,7 @@
 
                        
 
-                      <div class="d-flex d-inline">
+                      <div class="d-flex d-inline mb-3">
                           <div class="mr-3">
                                 <label for="inputState">เลือกวันที่ทำการ</label>
                                 <input class="form-control" type="date">
@@ -78,7 +78,6 @@
                                 <label for="inputState">เลือกวันที่วันครบกำหนด</label>
                                 <input class="form-control" type="date">
                           </div>
-                            
                       </div>
 
 
@@ -103,7 +102,7 @@
                     </div>
                     </div>
 
-                <div class="form-check col-4 mt-4">
+                <div class="form-check col mt-4">
                   <div class="container">
                     <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1">
                     <label class="form-check-label" for="exampleRadios1">
@@ -112,7 +111,7 @@
                   </div>
                 </div>
 
-              <div class="form-check col-4">
+              <div class="form-check col">
                 <div class="container">
                   <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="option2">
                   <label class="form-check-label" for="exampleRadios2">
@@ -121,7 +120,7 @@
                 </div>
               </div>
 
-              <div class="form-check col-4">
+              <div class="form-check col">
                 <div class="container">
                   <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1">
                   <label class="form-check-label" for="exampleRadios1">
@@ -130,7 +129,7 @@
                 </div>
               </div>
 
-              <div class="form-check col-4">
+              <div class="form-check col">
                   <div class="container">
                     <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1">
                     <label class="form-check-label" for="exampleRadios1">
@@ -139,7 +138,7 @@
                 </div>
               </div>
 
-              <div class="form-check col-4">
+              <div class="form-check col">
                   <div class="container">
                     <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1">
                     <label class="form-check-label" for="exampleRadios1">
@@ -148,7 +147,7 @@
                 </div>
               </div>
 
-              <div class="form-check col-4">
+              <div class="form-check col">
                   <div class="container">
                     <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1">
                     <label class="form-check-label" for="exampleRadios1">
@@ -157,7 +156,7 @@
                 </div>
               </div>
 
-              <div class="form-check col-4">
+              <div class="form-check col">
                   <div class="container">
                     <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1">
                     <label class="form-check-label" for="exampleRadios1">
@@ -166,7 +165,7 @@
                 </div>
               </div>
 
-              <div class="form-check col-4">
+              <div class="form-check col">
                   <div class="container">
                     <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1">
                     <label class="form-check-label" for="exampleRadios1">
