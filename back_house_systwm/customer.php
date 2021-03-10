@@ -58,9 +58,6 @@
                               <option><?php echo $re['pavilion_name']; ?></option>
                             <?php
                             } 
-
-
-
                         ?>
                       </select>
                       </div>
@@ -90,7 +87,7 @@
                               ?>
                         <div class="form-check col">
                         <div class="container">
-                          <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="<?php echo $re['equipment_tiype']; ?>">
+                          <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="<?php echo $re['id']; ?>">
                           <label class="form-check-label" for="exampleRadios1">
                           <?php echo $re['equipment_tiype']; ?>
                           </label>
@@ -187,9 +184,7 @@
         </div>
       </div>
 
-      <!-- ทดสอบ --> 
-      <!-- ok -->
-
+   
 
 
 
