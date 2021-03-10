@@ -68,7 +68,7 @@
 
                         <div>
                             <label for="">555555555</label>
-                            <input type="date" name="" value="">
+                            <input class="form-control" type="date" name="" value="">
                         </div>
                       <!-- <div class="row">
                           <div class="form-group col-md-3 pl-0">
