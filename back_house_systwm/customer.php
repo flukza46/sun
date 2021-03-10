@@ -88,7 +88,7 @@
                             while ($re = mysqli_fetch_array($chk)) {
                               # code....
                               ?>
-                        <div class="form-check col mt-4">
+                        <div class="form-check col">
                         <div class="container">
                           <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="<?php echo $re['equipment_tiype']; ?>">
                           <label class="form-check-label" for="exampleRadios1">
