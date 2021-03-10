@@ -23,7 +23,7 @@
             }
 
             echo "$chk_equip <br>";
-            echo "$chk_cabamlung";
+            echo "$chk_cabamlung, ";
 
 
 
