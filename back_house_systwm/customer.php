@@ -183,7 +183,7 @@
               </div>
 
               <div class= "mt-4 ">
-                  <button type="submit" name="submit" class="btn btn-success"><i class="far fa-check-circle" value="บันทึก"></i></button> 
+                  <button type="submit" name="submit" class="btn btn-success"><i class="far fa-check-circle" value="submit"></i>บันทึก</button> 
 
                   <button type="reset" class="btn btn-warning"><i class="fas fa-sync-alt"></i> Reset</button>
               </div>
