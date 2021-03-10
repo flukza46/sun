@@ -65,7 +65,7 @@
 
                       <div class="form-group col-md-3">
                         <label for="inputState">เลือกวันที่ทำการ</label>
-                        <input type="date">
+                        <input class="form-control" type="date">
                         <!-- <select id="inputState" class="form-control">
                           <option selected>Choose...</option>
                           <option>...</option>
