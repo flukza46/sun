@@ -41,7 +41,7 @@
             <div class="card">
               
                 <div class="card-header text-center">
-                <h3><b>อัตราค่าบำรุงฌาปนสถานวัดนครสวรรค์ <i class="fas fa-check-circle text-primary"></i></b></h3>
+                <h3><b>ปนสถานวัดนครสวรรค์และอุปกรณ์ประกอบพิธีกรรม</b></h3>
               </div>
 
                 <div class="card-body">
@@ -67,15 +67,14 @@
                       </div>
 
                        
-
                       <div class="d-flex d-inline mb-3">
                           <div class="mr-3">
-                                <label for="inputState">เลือกวันที่ทำการ</label>
+                                <label for="inputState"><i class="far fa-calendar text-danger"></i> เลือกวันที่ทำการ</label>
                                 <input class="form-control" type="date">
                           </div>
 
                           <div class=" ">
-                                <label for="inputState">เลือกวันที่วันครบกำหนด</label>
+                                <label for="inputState"><i class="far fa-calendar text-danger"></i> เลือกวันที่วันครบกำหนด</label>
                                 <input class="form-control" type="date">
                           </div>
                       </div>
@@ -101,7 +100,8 @@
                       </select>
                     </div>
                     </div>
-
+                
+              <div><b>อัตราค่าบำรุงฌาปนสถานวัดนครสวรรค์ <i class="fas fa-check-circle text-primary"></i></b></div>
                 <div class="form-check col mt-4">
                   <div class="container">
                     <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1">
