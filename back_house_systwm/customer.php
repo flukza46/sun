@@ -87,7 +87,7 @@
                       <?php
                             $chk = $SLOptionP->SOP2();
                             while ($re = mysqli_fetch_array($chk)) {
-                              # code...
+                              # code....
                               ?>
                         <div class="form-check col mt-4">
                         <div class="container">
