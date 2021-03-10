@@ -50,6 +50,31 @@
                 session_destroy();
                 header("Location: index.php");
             }  
+            //? ฟังก์ชั่น ทำรายการ
+            public function inst_list_booking(){
+                $result = mysqli_query($this->dbcon, "INSERT INTO make_list_booking (
+                    first_name,
+                    last_name,
+                    phone_number,
+                    address,
+                    select_sala,
+                    datestart,
+                    datestop,
+                    select_equipment,
+                    select_cabamlung
+                    )
+                    VALUE(
+                    '$newsT',
+                    '$newsS',
+                    '$newsD',
+                    '$newsAT',
+                    '$newsNF')
+                    ");
+
+                return $result;
+                        }
+
+
             //? ฟังก์ชั่น ข่าวประชาสัมพันธ์
             public function inst_news($newsT, $newsS, $newsD, $newsAT, $newsNF){
                 $result = mysqli_query($this->dbcon, "INSERT INTO news(
