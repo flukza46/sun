@@ -62,19 +62,17 @@
                         ?>
                       </select>
                       </div>
+                      <div class="row">
+                          <div class="form-group col-md-3">
+                                <label for="inputState">เลือกวันที่ทำการ</label>
+                                <input class="form-control" type="date">
+                          </div>
 
-                      <div class="form-group col-md-3">
-                        <label for="inputState">เลือกวันที่ทำการ</label>
-                        <input class="form-control" type="date">
-                        <!-- <select id="inputState" class="form-control">
-                          <option selected>Choose...</option>
-                          <option>...</option>
-                        </select> -->
-                        <label for="inputState">เลือกวันที่วันครบกำหนด</label>
-                        <select id="inputState" class="form-control">
-                          <option selected>Choose...</option>
-                          <option>...</option>
-                        </select>
+                          <div>
+                                <label for="inputState">เลือกวันที่วันครบกำหนด</label>
+                                <input class="form-control" type="date">
+                          </div>
+                            
                       </div>
 
                       <div class="form-group col-4">
