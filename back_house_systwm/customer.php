@@ -66,10 +66,17 @@
                       </div>
                       </div>
 
-                        <div>
-                            <label for="">555555555</label>
-                            <input class="form-control" type="date" name="" value="">
+                        <div class="d-flex d-inline">
+                          <div>
+                              <label for="">555555555</label>
+                              <input class="form-control" type="date" name="" value="">
+                          </div>
+                          <div>
+                              <label for="">666666666</label>
+                              <input class="form-control" type="date" name="" value="">
+                          </div>
                         </div>
+
                       <!-- <div class="row">
                           <div class="form-group col-md-3 pl-0">
                                 <label for="inputState">เลือกวันที่ทำการ</label>
