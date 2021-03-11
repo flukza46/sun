@@ -8,22 +8,10 @@
             $sl_sala = $_POST['sl_sala'];
             $date_start = $_POST['date_start'];
 
+        
+            
 
-            $equip_foreach = $_POST['equip'];
-            $cabamlung_foreach = $_POST['cabamlung'];
-
-            $chk_equip="";
-            foreach($equip_foreach as $chk1){
-                $chk_equip.= $chk1;
-            }
-
-            $chk_cabamlung="";
-             foreach($cabamlung_foreach as $chk2){
-                $chk_cabamlung.= $chk2[3].", ";
-            }
-
-            echo "$chk_equip <br>";
-            echo " $chk_cabamlung";
+            
 
 
 

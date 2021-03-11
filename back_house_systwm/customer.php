@@ -96,10 +96,14 @@
                               ?>
                         <div class="form-check col">
                         <div class="container">
-                          <input class="form-check-input" type="checkbox" name="equip<?php echo$i; ?>" id="exampleRadios1" value="<?php echo $re['id']." "; ?>">
+
+                          <input class="form-check-input" type="checkbox" name="equip<?php echo$i; ?>" id="chkb<?php echo$i; ?>" value="<?php echo $re['equipment_tiype']." "; ?>">
+                          <input id="price<?php echo$i; ?>" type="text" name="price" hidden value="<?php echo $re['price']; ?>"> <!-- ราคา -->
+
                           <label class="form-check-label" for="exampleRadios1">
-                          <?php echo $re['equipment_tiype']; ?>
+                          <?php echo $re['equipment_tiype']; ?> ราคา : <?php echo $re['price']; ?> บาท
                           </label>
+
                         </div>
                         </div>
                         <?php
@@ -114,7 +118,7 @@
               <div><b>อัตราค่าบำรุงฌาปนสถานวัดนครสวรรค์ <i class="fas fa-check-circle text-primary"></i></b></div>
                 <div class="form-check col mt-4">
                   <div class="container">
-                    <input class="form-check-input" type="checkbox" name="cabamlung[]" id="" value="ค่าบำรุงเมรุ (วันศพออก)">
+                    <input class="form-check-input" type="checkbox" name="cabamlung1" id="" value="ค่าบำรุงเมรุ (วันศพออก)">
                     <label class="form-check-label" for="exampleRadios1">
                       ค่าบำรุงเมรุ (วันศพออก)<?php echo"  "?></label>
                   </div>
@@ -122,7 +126,7 @@
 
               <div class="form-check col">
                 <div class="container">
-                  <input class="form-check-input" type="checkbox" name="cabamlung[]" id="" value="ค่าไฟฟ้าคิดตามจำนวนที่ใช้">
+                  <input class="form-check-input" type="checkbox" name="cabamlung2" id="" value="ค่าไฟฟ้าคิดตามจำนวนที่ใช้">
                   <label class="form-check-label" for="exampleRadios2">
                   ค่าไฟฟ้าคิดตามจำนวนที่ใช้<?php echo"  "?></label>
                 </div>
@@ -130,7 +134,7 @@
 
               <div class="form-check col">
                 <div class="container">
-                  <input class="form-check-input" type="checkbox" name="cabamlung[]" id="" value="ค่าทำความสอาดโลงเย็น">
+                  <input class="form-check-input" type="checkbox" name="cabamlung3" id="" value="ค่าทำความสอาดโลงเย็น">
                   <label class="form-check-label" for="exampleRadios1">
                   ค่าทำความสอาดโลงเย็น<?php echo"  "?></label>
                 </div>
@@ -138,7 +142,7 @@
 
               <div class="form-check col">
                   <div class="container">
-                    <input class="form-check-input" type="checkbox" name="cabamlung[]" id="" value="ค่าทำความสอาดวันศพออก">
+                    <input class="form-check-input" type="checkbox" name="cabamlung4" id="" value="ค่าทำความสอาดวันศพออก">
                     <label class="form-check-label" for="exampleRadios1">
                     ค่าทำความสอาดวันศพออก<?php echo"  "?></label>
                 </div>
@@ -146,7 +150,7 @@
 
               <div class="form-check col">
                   <div class="container">
-                    <input class="form-check-input" type="checkbox" name="cabamlung[]" id="" value="ค่าบำบุงเครื่องเสียง">
+                    <input class="form-check-input" type="checkbox" name="cabamlung5" id="" value="ค่าบำบุงเครื่องเสียง">
                     <label class="form-check-label" for="exampleRadios1">
                     ค่าบำบุงเครื่องเสียง<?php echo"  "?></label>
                 </div>
@@ -154,7 +158,7 @@
 
               <div class="form-check col">
                   <div class="container">
-                    <input class="form-check-input" type="checkbox" name="cabamlung[]" id="exampleRadios1" value="ค่าพนักงานเฝ้าศพกลางคืน">
+                    <input class="form-check-input" type="checkbox" name="cabamlung6" id="exampleRadios1" value="ค่าพนักงานเฝ้าศพกลางคืน">
                     <label class="form-check-label" for="exampleRadios1">
                     ค่าพนักงานเฝ้าศพกลางคืน<?php echo"  "?></label>
                 </div>
@@ -162,7 +166,7 @@
 
               <div class="form-check col">
                   <div class="container">
-                    <input class="form-check-input" type="checkbox" name="cabamlung[]" id="exampleRadios1" value="ค่าบำรุงพัดลมหน้าเมรุ">
+                    <input class="form-check-input" type="checkbox" name="cabamlung7" id="exampleRadios1" value="ค่าบำรุงพัดลมหน้าเมรุ">
                     <label class="form-check-label" for="exampleRadios1">
                     ค่าบำรุงพัดลมหน้าเมรุ<?php echo"  "?></label>
                 </div>
@@ -170,16 +174,16 @@
 
               <div class="form-check col">
                   <div class="container">
-                    <input class="form-check-input" type="checkbox" name="cabamlung[]" id="exampleRadios1" value="ค่าบำรุงสุสาน">
+                    <input class="form-check-input" type="checkbox" name="cabamlung8" id="exampleRadios1" value="ค่าบำรุงสุสาน">
                     <label class="form-check-label" for="exampleRadios1">
                     ค่าบำรุงสุสาน<?php echo"  "?></label>
                 </div>
               </div>
 
               <div class= "mt-4 ">
-                  <button type="submit" name="submit" class="btn btn-success"><i class="far fa-check-circle" value="submit"></i>บันทึก</button> 
+                  <!-- <button type="submit" name="submit" class="btn btn-success"><i class="far fa-check-circle" value="submit"></i>บันทึก</button>  -->
 
-                  <button type="reset" class="btn btn-warning"><i class="fas fa-sync-alt"></i> Reset</button>
+                  <button id="billtest" type="reset" class="btn btn-primary"><i class="fas fa-sync-alt"></i> คำนวณค่าใช้จ่ายทั้งหมด</button>
               </div>
               <hr>
               
@@ -193,7 +197,34 @@
    
 
 
+      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
+      <script>
+      
+                              $(document).ready(function(){
+                                
+                                                  $("#billtest").click(function(){
+                                                    <?php
+                                                                    $chk = $SLOptionP->SOP2();
+                                                                    $i2=1;
+                                                                    while ($re = mysqli_fetch_array($chk)) {
+                                                                      # code....
+                                                                      ?>
+                                                                      if($("#chkb<?php echo"$i2";?>").is(':checked')){
+                                                                      var price<?php echo$i2;?> = $("#price<?php echo$i2;?>").val(); 
+                                                                      console.log(price<?php echo"$i2";?>);
+                                                                        
+                                                                      }
+                                                            <?php
+                                                                    $i2++;
+                                                                    }                 
+                                                        ?>
+                                                                  
+                                                                  
+                                                                    
+                                                      })
+                              });
+      </script>
 
 
     
