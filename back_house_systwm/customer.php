@@ -111,7 +111,7 @@
                             } 
                         ?>
                         
-                            <b class="text-danger">sdgsg</b>
+                            <b class="text-success">ราคาทั้งหมด : </b>5555555555555555555555555555555
                     </div>
                     </div>
                             
