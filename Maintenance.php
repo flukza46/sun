@@ -16,7 +16,7 @@
                         <p><i class="fas fa-school text-success"></i> : ค่าบำรุงเมรุ (วันศพออก)</p>
                     </div>
                     <div class="col-5 ">
-                        <p>วันละ 1200 บาท</p>
+                        <p>วันละ 2000 บาท</p>
                     </div>
                     <div class="col"></div>
                 </div>
@@ -44,7 +44,7 @@
                         <p><i class="fas fa-school text-success"></i> : ค่าบำรุงพัดลมหน้าเมรุ</p>
                     </div>
                     <div class="col-5 ">
-                        <p>คืนละ 200 บาท</p>
+                        <p>คืนละ 100 บาท</p>
                     </div>
                     <div class="col"></div>
                 </div>
@@ -58,7 +58,7 @@
                         <p><i class="fas fa-school text-success"></i> : ค่าไฟฟ้าคิดตามจำนวนที่ใช้</p>
                     </div>
                     <div class="col-5 ">
-                        <p>ปีละ 1500 บาท</p>
+                        <p>หน่วยละ 7 บาท</p>
                     </div>
                     <div class="col"></div>
                 </div>
@@ -72,7 +72,7 @@
                         <p><i class="fas fa-school text-success"></i> : ค่าทำความสะอาดวันศพออก</p>
                     </div>
                     <div class="col-5 ">
-                        <p>ครั้งละ 50 บาท</p>
+                        <p>ครั้งละ 200 บาท</p>
                     </div>
                     <div class="col"></div>
                 </div>
@@ -114,7 +114,7 @@
                         <p><i class="fas fa-school text-success"></i> : ค่าบำรุงเรื่องเสียง</p>
                     </div>
                     <div class="col-5 ">
-                        <p>ตัวละ 100 บาท</p>
+                        <p>ตัวละ 500 บาท</p>
                     </div>
                     <div class="col"></div>
                 </div>
@@ -128,7 +128,7 @@
                         <p><i class="fas fa-school text-success"></i> : ค่าทำความสอาดโลงเย็น</p>
                     </div>
                     <div class="col-5 ">
-                        <p>หน่วยละ 7 บาท</p>
+                        <p>ครั้งละ 50 บาท</p>
                     </div>
                     <div class="col"></div>
                 </div>
@@ -142,7 +142,7 @@
                         <p><i class="fas fa-school text-success"></i> : ค่าบำรุงสุสาน (เฉพาะศพเก็บ)</p>
                     </div>
                     <div class="col-5 ">
-                        <p>ศพละ 2000 บาท</p>
+                        <p>ศพละ 1500 บาท</p>
                     </div>
                     <div class="col"></div>
                 </div>
