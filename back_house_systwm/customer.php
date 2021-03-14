@@ -123,7 +123,7 @@
                     <input class="form-check-input" type="checkbox" name="cabamlung1" id="chkbb1" value="ค่าบำรุงเมรุ (วันศพออก)">
                     <input id="pricebamrung1" type="number" hidden value="1200"> <!-- ราคา -->
                     <label class="form-check-label" for="exampleRadios1">
-                      ค่าบำรุงเมรุ (วันศพออก)<?php echo"  "?></label>
+                      ค่าบำรุงเมรุ (วันศพออก) ราคา 2000 บาท<?php echo"  "?></label>
                   </div>
                 </div>
 
@@ -132,7 +132,7 @@
                   <input class="form-check-input" type="checkbox" name="cabamlung2" id="chkbb2" value="ค่าบุรุงโลงเย็น">
                   <input id="pricebamrung2" type="number" hidden value="300"> <!-- ราคา -->
                   <label class="form-check-label" for="exampleRadios2">
-                  ค่าบุรุงโลงเย็น<?php echo"  "?></label>
+                  ค่าบุรุงโลงเย็น ราคา 300 บาท<?php echo"  "?></label>
                 </div>
               </div>
 
@@ -141,7 +141,7 @@
                   <input class="form-check-input" type="checkbox" name="cabamlung3" id="chkbb3" value="ค่าบำรุงพัดลมหน้าเมรุ">
                   <input id="pricebamrung3" type="number" hidden value="200"> <!-- ราคา -->
                   <label class="form-check-label" for="exampleRadios1">
-                  ค่าบำรุงพัดลมหน้าเมรุ<?php echo"  "?></label>
+                  ค่าบำรุงพัดลมหน้าเมรุ ราคา 100 บาท<?php echo"  "?></label>
                 </div>
               </div>
 
@@ -150,7 +150,7 @@
                     <input class="form-check-input" type="checkbox" name="cabamlung4" id="chkbb4" value="ค่าไฟฟ้าคิดตามจำนวนที่ใช้">
                     <input id="pricebamrung4" type="number" hidden value="1500"> <!-- ราคา -->
                     <label class="form-check-label" for="exampleRadios1">
-                    ค่าไฟฟ้าคิดตามจำนวนที่ใช้<?php echo"  "?></label>
+                    ค่าไฟฟ้าคิดตามจำนวนที่ใช้ ราคา 7 บาท<?php echo"  "?></label>
                 </div>
               </div>
 
@@ -159,7 +159,7 @@
                     <input class="form-check-input" type="checkbox" name="cabamlung5" id="chkbb5" value="ค่าทำความสะอาดวันศพออก">
                     <input id="pricebamrung5" type="number" hidden value="50"> <!-- ราคา -->
                     <label class="form-check-label" for="exampleRadios1">
-                    ค่าทำความสะอาดวันศพออก<?php echo"  "?></label>
+                    ค่าทำความสะอาดวันศพออก ราคา 200 บาท<?php echo"  "?></label>
                 </div>
               </div>
 
@@ -168,7 +168,7 @@
                     <input class="form-check-input" type="checkbox" name="cabamlung6" id="chkbb6" value="ค่าพนักงานเฝ้าศพกลางคืน">
                     <input id="pricebamrung6" type="number" hidden value="200"> <!-- ราคา -->
                     <label class="form-check-label" for="exampleRadios1">
-                    ค่าพนักงานเฝ้าศพกลางคืน<?php echo"  "?></label>
+                    ค่าพนักงานเฝ้าศพกลางคืน ราคา 200 บาท<?php echo"  "?></label>
                 </div>
               </div>
 
@@ -177,7 +177,7 @@
                     <input class="form-check-input" type="checkbox" name="cabamlung7" id="chkbb7" value="ค่าบริการของเจ้าหน้าที่วันประชุมเพลิง 9 คน">
                     <input id="pricebamrung7" type="number" hidden value="500"> <!-- ราคา -->
                     <label class="form-check-label" for="exampleRadios1">
-                    ค่าบริการของเจ้าหน้าที่วันประชุมเพลิง 9 คน<?php echo"  "?></label>
+                    ค่าบริการของเจ้าหน้าที่วันประชุมเพลิง 9 คน ราคา 500 บาท<?php echo"  "?></label>
                 </div>
               </div>
 
@@ -186,7 +186,7 @@
                     <input class="form-check-input" type="checkbox" name="cabamlung8" id="chkbb8" value="ค่าบำรุงเรื่องเสียง">
                     <input id="pricebamrung8" type="number" hidden value="100"> <!-- ราคา -->
                     <label class="form-check-label" for="exampleRadios1">
-                    ค่าบำรุงเรื่องเสียง<?php echo"  "?></label>
+                    ค่าบำรุงเรื่องเสียง ราคา 500 บาท<?php echo"  "?></label>
                 </div>
               </div>
 
@@ -195,7 +195,7 @@
                     <input class="form-check-input" type="checkbox" name="cabamlung9" id="chkbb9" value="ค่าทำความสอาดโลงเย็น">
                     <input id="pricebamrung9" type="number" hidden value="7"> <!-- ราคา -->
                     <label class="form-check-label" for="exampleRadios1">
-                    ค่าทำความสอาดโลงเย็น<?php echo"  "?></label>
+                    ค่าทำความสอาดโลงเย็น ราคา 50 บาท<?php echo"  "?></label>
                 </div>
               </div>
 
@@ -204,7 +204,7 @@
                     <input class="form-check-input" type="checkbox" name="cabamlung10" id="chkbb10" value="ค่าบำรุงสุสาน (เฉพาะศพเก็บ)">
                     <input id="pricebamrung10" type="number" hidden value="200"> <!-- ราคา -->
                     <label class="form-check-label" for="exampleRadios1">
-                    ค่าบำรุงสุสาน (เฉพาะศพเก็บ)<?php echo"  "?></label>
+                    ค่าบำรุงสุสาน (เฉพาะศพเก็บ) ราคา 1500 บาท<?php echo"  "?></label>
 
 
                 </div>
