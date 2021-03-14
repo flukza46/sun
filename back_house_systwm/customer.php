@@ -110,9 +110,10 @@
                           $i++;
                             } 
                         ?>
-                        
-                            <b class="text-success">ราคาทั้งหมด : </b>5555555555555555555555555555555ไปไหม ลองอีกครั้ง
-                    </div>
+                            <div class="d-flex justify-content-end">
+                            <b class="text-success">ราคาทั้งหมด : </b><input id="equip-total" type="number" disabled="true" class="text-right ml-2" value="0"> <b class="text-success ml-2">บาท</b>
+                            </div>
+                    </div> 
                     </div>
                             
                 
@@ -184,7 +185,8 @@
               <div class= "mt-4 ">
                   <!-- <button type="submit" name="submit" class="btn btn-success"><i class="far fa-check-circle" value="submit"></i>บันทึก</button>  -->
 
-                  <button id="billtest" type="reset" class="btn btn-primary"><i class="fas fa-sync-alt"></i> คำนวณค่าใช้จ่ายทั้งหมด</button>
+                  <button id="billtest" type="button" class="btn btn-primary"><i class="fas fa-sync-alt"></i> คำนวณค่าใช้จ่ายทั้งหมด</button>
+                  <button type="reset" class="btn btn-warning"> Reset</button>
               </div>
               <hr>
               
@@ -222,6 +224,7 @@
                                                                     }                      
                                                         ?>
                                                                     console.log(sum);
+                                                                    $("#equip-total").val(sum) ;
                                                                   
                                                                   
                                                                     
@@ -230,7 +233,8 @@
       </script>
 
 
-    
+    <!-- //hihiihihihi ok 9าฟลุ๊ค  55-->
+    <!--  บิล->
 
 
 
