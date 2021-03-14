@@ -111,7 +111,7 @@
                             } 
                         ?>
                             <div class="d-flex justify-content-end">
-                            <b class="text-success">ราคาทั้งหมด : </b><input id="equip-total" type="number" disabled="true" class="text-right ml-2 font-weight-bold text-danger bg-dark" value="0"> <b class="text-success ml-2">บาท</b>
+                            <b class="text-success d-flex align-items-center">ราคาทั้งหมด : </b><input id="equip-total" type="number" disabled="true" class="text-right ml-2 font-weight-bold text-danger" value="0"> <b class="text-success ml-2 d-flex align-items-center">บาท</b>
                             </div>
                     </div> 
                     </div>
@@ -224,6 +224,10 @@
                                                                     }                      
                                                         ?>
                                                                     console.log(sum);
+                                                                    
+                                                                   
+                                                                      $("#equip-total").val("");
+                                                                    
                                                                     $("#equip-total").val(sum) ;
                                                                   
                                                                   
