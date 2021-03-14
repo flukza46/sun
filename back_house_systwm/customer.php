@@ -111,7 +111,7 @@
                             } 
                         ?>
                         
-                            <b class="text-success">ราคาทั้งหมด : </b>............dfhdfh
+                            <b class="text-success">ราคาทั้งหมด : </b>............dfhdfhsdgsdgsdgsdg
                     </div>
                     </div>
                             
