@@ -98,7 +98,7 @@
                         <div class="container">
 
                           <input class="form-check-input" type="checkbox" name="equip<?php echo$i; ?>" id="chkb<?php echo$i; ?>" value="<?php echo $re['equipment_tiype']." "; ?>">
-                          <input id="price<?php echo$i; ?>" type="text" name="price" hidden value="<?php echo $re['price']; ?>"> <!-- ราคา -->
+                          <input id="price<?php echo$i; ?>" type="number" name="price" hidden value="<?php echo $re['price']; ?>"> <!-- ราคา -->
 
                           <label class="form-check-label" for="exampleRadios1">
                           <?php echo $re['equipment_tiype']; ?> ราคา : <?php echo $re['price']; ?> บาท
@@ -110,10 +110,11 @@
                           $i++;
                             } 
                         ?>
-                
-                      </select>
+                        
+                            <b class="text-danger">sdgsg</b>
                     </div>
                     </div>
+                            
                 
               <div><b>อัตราค่าบำรุงฌาปนสถานวัดนครสวรรค์ <i class="fas fa-check-circle text-primary"></i></b></div>
                 <div class="form-check col mt-4">
@@ -200,7 +201,7 @@
       <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
       <script>
-      
+                              //รวมราคา
                               $(document).ready(function(){
                                 
                                                   $("#billtest").click(function(){
@@ -212,13 +213,15 @@
                                                                       ?>
                                                                       if($("#chkb<?php echo"$i2";?>").is(':checked')){
                                                                       var price<?php echo$i2;?> = $("#price<?php echo$i2;?>").val(); 
-                                                                      console.log(price<?php echo"$i2";?>);
-                                                                        
+                                                                      var sumprice = ~~price<?php echo$i2;?>;
+                                                                      var sum = ~~sum + sumprice;                // ราคารวม                                              
                                                                       }
+                                                                      
                                                             <?php
                                                                     $i2++;
-                                                                    }                 
+                                                                    }                      
                                                         ?>
+                                                                    console.log(sum);
                                                                   
                                                                   
                                                                     
