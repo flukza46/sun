@@ -184,7 +184,8 @@
               <div class= "mt-4 ">
                   <!-- <button type="submit" name="submit" class="btn btn-success"><i class="far fa-check-circle" value="submit"></i>บันทึก</button>  -->
 
-                  <button id="billtest" type="reset" class="btn btn-primary"><i class="fas fa-sync-alt"></i> คำนวณค่าใช้จ่ายทั้งหมด</button>
+                  <button id="billtest" type="button" class="btn btn-primary"><i class="fas fa-sync-alt"></i> คำนวณค่าใช้จ่ายทั้งหมด</button>
+                  <button type="reset" class="btn btn-warning"> Reset</button>
               </div>
               <hr>
               
@@ -222,6 +223,7 @@
                                                                     }                      
                                                         ?>
                                                                     console.log(sum);
+                                                                    $("#equip-total").val(sum) ;
                                                                   
                                                                   
                                                                     
