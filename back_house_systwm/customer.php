@@ -111,7 +111,7 @@
                             } 
                         ?>
                             <div class="d-flex justify-content-end">
-                            <b class="text-success">ราคาทั้งหมด : </b><input id="equip-total" type="number" disabled="true" class="text-right ml-2" value="0"> <b class="text-success ml-2">บาท</b>
+                            <b class="text-success">ราคาทั้งหมด : </b><input id="equip-total" type="number" disabled="true" class="text-right ml-2 font-weight-bold" value="0"> <b class="text-success ml-2">บาท</b>
                             </div>
                     </div> 
                     </div>
