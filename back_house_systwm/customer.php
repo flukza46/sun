@@ -9,7 +9,7 @@
 <div class="container-fluid">
         <div class="card mb-3">
             <div class="card-header text-center">
-            <h3><b><i class="fas fa-edit text-success"></i> กรอกข้อมูลลูกค้า</b></h3>           
+            <h3><b style="font-size:2rem;"><i class="fas fa-edit text-success"></i> กรอกข้อมูลลูกค้า</b></h3>           
             </div>
             <div class="card-body">
 
@@ -49,27 +49,32 @@
             <div class="card">
               
                 <div class="card-header text-center">
-                <h3><b>ปนสถานวัดนครสวรรค์และอุปกรณ์ประกอบพิธีกรรม</b></h3>
+                <h3><b style="font-size:2rem;">ปนสถานวัดนครสวรรค์และอุปกรณ์ประกอบพิธีกรรม</b></h3>
               </div>
 
                 <div class="card-body">
                 <div class="row">
                 <div class="form-group col-4">
-                      <label for="exampleFormControlInput1"><i class="fas fa-laptop-house text-success"></i> ศาลาฌาปนกิจศพ</label>
-                      <select class="form-control" name="sl_sala">
-                        <option class = "text-secondary">โปรดเลือกศาลาฌาปนกิจศพ</option>
-                        <?php
+                      <b style="font-size:1.5rem;" for="exampleFormControlInput1"><i class="fas fa-laptop-house text-success"></i> โปรดเลือกศาลาฌาปนกิจศพ</b>
+                      <?php
                             $chk = $SLOptionP->SOP();
+                            $salaqty=1;
                             while ($re = mysqli_fetch_array($chk)) {
                               # code...
                               ?>
-                              <option value="<?php echo $re['id']; ?>"><?php echo $re['pavilion_name']; ?></option>
-                            <?php
-                            } 
-                        ?>
-                      </select>
+                                          <div class="pl-3 form-check">
+                                          <input class="mb-2" type="radio" name="sala" id="sala<?php echo$salaqty;?>"> <?php echo$re['pavilion_name'];?>
+                                          <input id="price_sala<?php echo$salaqty;?>" type="number" hidden  value="<?php echo$re['price'];?>">
+                                          </div>
+                              <?php
+                              $salaqty++;
+                            }
+                            ?>
                       </div>
                       </div>
+                      <div class="d-flex align-items-starts mb-5">
+                            <b class="text-success d-flex align-items-center">ราคาศาลา : </b><input id="sala_total" type="number" disabled="true" class="text-right ml-2 font-weight-bold text-danger" value="0"> <b class="text-success ml-2 d-flex align-items-center">บาท</b>
+                    </div>
 
                        
                       <div class="d-flex d-inline mb-3">
@@ -87,7 +92,7 @@
 
                     <div class="row">
                       <div class="form-group col-12">
-                      <label for="exampleFormControlInput1"><i class="fas fa-menorah text-warning"></i> อุปกรณ์ประกอบพิธีกรรม</label>
+                      <b style="font-size:1.5rem;" for="exampleFormControlInput1"><i class="fas fa-menorah text-warning"></i> อุปกรณ์ประกอบพิธีกรรม</b>
                       <?php
                             $chk = $SLOptionP->SOP2();
                             $i=1;
@@ -117,7 +122,8 @@
                     </div>
                             
                 
-              <div><b>อัตราค่าบำรุงฌาปนสถานวัดนครสวรรค์ <i class="fas fa-check-circle text-primary"></i></b></div>
+              <div><b style="font-size:1.5rem;"><i class="fas fa-check-circle text-primary"></i> อัตราค่าบำรุงฌาปนสถานวัดนครสวรรค์ </b></div>
+
                 <div class="form-check col mt-4">
                   <div class="container">
                     <input class="form-check-input" type="checkbox" name="cabamlung1" id="chkbb1" value="ค่าบำรุงเมรุ (วันศพออก)">
@@ -147,19 +153,8 @@
 
               <div class="form-check col">
                   <div class="container">
-                    <input class="form-check-input" type="checkbox" name="cabamlung4" id="chkbb4" value="ค่าไฟฟ้าคิดตามจำนวนที่ใช้">
-                    <input id="pricebamrung4" type="number" hidden value="7"> <!-- ราคาจริง -->
-
-                    <label class="form-check-label mr-2" for="exampleRadios1">
-                    ค่าไฟฟ้าคิดตามจำนวนที่ใช้ หน่วยละ 7 บาท <b>จำนวน : </b> </label><input id="nuy" style="width:60px;" type="number" value="0" class="text-right font-weight-bold"> <b>หน่วย</b>
-                    
-                </div>
-              </div>
-
-              <div class="form-check col">
-                  <div class="container">
-                    <input class="form-check-input" type="checkbox" name="cabamlung5" id="chkbb5" value="ค่าทำความสะอาดวันศพออก">
-                    <input id="pricebamrung5" type="number" hidden value="200"> <!-- ราคา -->
+                    <input class="form-check-input" type="checkbox" name="cabamlung5" id="chkbb4" value="ค่าทำความสะอาดวันศพออก">
+                    <input id="pricebamrung4" type="number" hidden value="200"> <!-- ราคา -->
                     <label class="form-check-label" for="exampleRadios1">
                     ค่าทำความสะอาดวันศพออก ราคา 200 บาท<?php echo"  "?></label>
                 </div>
@@ -167,26 +162,18 @@
 
               <div class="form-check col">
                   <div class="container">
-                    <input class="form-check-input" type="checkbox" name="cabamlung6" id="chkbb6" value="ค่าพนักงานเฝ้าศพกลางคืน">
-                    <input id="pricebamrung6" type="number" hidden value="200"> <!-- ราคา -->
+                    <input class="form-check-input" type="checkbox" name="cabamlung6" id="chkbb5" value="ค่าพนักงานเฝ้าศพกลางคืน">
+                    <input id="pricebamrung5" type="number" hidden value="200"> <!-- ราคา -->
                     <label class="form-check-label" for="exampleRadios1">
                     ค่าพนักงานเฝ้าศพกลางคืน ราคา 200 บาท<?php echo"  "?></label>
                 </div>
               </div>
 
-              <div class="form-check col">
-                  <div class="container">
-                    <input class="form-check-input" type="checkbox" name="cabamlung7" id="chkbb7" value="ค่าบริการของเจ้าหน้าที่วันประชุมเพลิง 9 คน">
-                    <input id="pricebamrung7" type="number" hidden value="0"> <!-- ราคา -->
-                    <label class="form-check-label" for="exampleRadios1">
-                    ค่าบริการของเจ้าหน้าที่วันประชุมเพลิง 9 คน <b>จำนวน : </b> </label><input id="raca-9-con" style="width:60px;" type="number" class="mr-2 ml-1 font-weight-bold text-right" value="0"><b>บาท</b>
-                </div>
-              </div>
 
               <div class="form-check col">
                   <div class="container">
-                    <input class="form-check-input" type="checkbox" name="cabamlung8" id="chkbb8" value="ค่าบำรุงเรื่องเสียง">
-                    <input id="pricebamrung8" type="number" hidden value="500"> <!-- ราคา -->
+                    <input class="form-check-input" type="checkbox" name="cabamlung8" id="chkbb6" value="ค่าบำรุงเรื่องเสียง">
+                    <input id="pricebamrung6" type="number" hidden value="500"> <!-- ราคา -->
                     <label class="form-check-label" for="exampleRadios1">
                     ค่าบำรุงเรื่องเสียง ราคา 500 บาท<?php echo"  "?></label>
                 </div>
@@ -194,8 +181,8 @@
 
               <div class="form-check col">
                   <div class="container">
-                    <input class="form-check-input" type="checkbox" name="cabamlung9" id="chkbb9" value="ค่าทำความสอาดโลงเย็น">
-                    <input id="pricebamrung9" type="number" hidden value="50"> <!-- ราคา -->
+                    <input class="form-check-input" type="checkbox" name="cabamlung9" id="chkbb7" value="ค่าทำความสอาดโลงเย็น">
+                    <input id="pricebamrung7" type="number" hidden value="50"> <!-- ราคา -->
                     <label class="form-check-label" for="exampleRadios1">
                     ค่าทำความสะอาดโลงเย็น ราคา 50 บาท<?php echo"  "?></label>
                 </div>
@@ -203,8 +190,8 @@
 
               <div class="form-check col">
                   <div class="container">
-                    <input class="form-check-input" type="checkbox" name="cabamlung10" id="chkbb10" value="ค่าบำรุงสุสาน (เฉพาะศพเก็บ)">
-                    <input id="pricebamrung10" type="number" hidden value="1500"> <!-- ราคา -->
+                    <input class="form-check-input" type="checkbox" name="cabamlung10" id="chkbb8" value="ค่าบำรุงสุสาน (เฉพาะศพเก็บ)">
+                    <input id="pricebamrung8" type="number" hidden value="1500"> <!-- ราคา -->
                     <label class="form-check-label" for="exampleRadios1">
                     ค่าบำรุงสุสาน (เฉพาะศพเก็บ) ราคา 1500 บาท<?php echo"  "?></label>
 
@@ -218,6 +205,7 @@
                     <div class="d-flex justify-content-end mt-2 bg-dark p-3">
                             <b style="font-size:2rem;" class="text-success d-flex align-items-center">ราคาค่าใช้จ่ายรวม : </b><input style="font-size:2rem; width:150px;" id="total-all" type="number" disabled="true" class="text-right ml-2 font-weight-bold text-danger" value="0"> <b style="font-size:2rem;" class="text-success ml-2 d-flex align-items-center">บาท</b>
                     </div>
+                            
 
               
 
@@ -225,6 +213,7 @@
                   <!-- <button type="submit" name="submit" class="btn btn-success"><i class="far fa-check-circle" value="submit"></i>บันทึก</button>  -->
 
                   <button id="billtest" type="button" class="btn btn-primary"><i class="fas fa-sync-alt"></i> คำนวณค่าใช้จ่ายทั้งหมด</button>
+                  <button id="billtest" type="submit" class="btn btn-success"><i class="fas fa-sync-alt"></i> บันทึก</button>
                   <button type="reset" class="btn btn-warning"> Reset</button>
               </div>
               <hr>
@@ -244,8 +233,31 @@
       <script>
                               //รวมราคา
                               $(document).ready(function(){
+
+
+
                                 
                                                   $("#billtest").click(function(){
+
+                                                  <?php
+                                                  $chk = $SLOptionP->SOP();
+                                                  $salaqty=1;
+                                                  while ($re = mysqli_fetch_array($chk)) {
+                                                    # code...
+                                                    ?>
+                                                          if($("#sala<?php echo$salaqty;?>").is(':checked')){
+                                                            var price_sala = ~~$("#price_sala<?php echo$salaqty;?>").val();
+                                                          }
+                                                  <?php
+                                                    $salaqty++;
+                                                    }
+                                                    ?>
+                                                    
+
+
+
+
+
                                                     <?php
                                                                     $chk = $SLOptionP->SOP2();
                                                                     $i2=1;
@@ -275,46 +287,18 @@
                                                                       $i3++;
                                                                     }                    
                                                         ?>
-                                                                        
-                                                                        // ----------------------------------
-                                                                        // คำนวนค่าไฟ 7 บาท ต่อหน่วย
-                                                                        $("#nuy").on('keyup', function(){
-                                                                        var nuy = $(this).val();
-
-                                                                        var sum_nuy = nuy * 7;
-                                                                        
-                                                                        $("#pricebamrung4").val(sum_nuy);
-                                                                        
-                                                                        });
-                                                                        // ----------------------------------
-
-
-                                                                        // ----------------------------------
-                                                                        // คำนวนค่าบริการของเจ้าหน้าที่วันประชุมเพลิง 9 คน
-                                                                        $("#raca-9-con").on('keyup', function(){
-                                                                        var raca9con = $(this).val();
-                                                                        
-                                                                        $("#pricebamrung7").val(raca9con);
-                                                                        
-                                                                        });
-                                                                        // ----------------------------------
-
-
-
+                                                                    $("#sala_total").val(price_sala); // แสดงผลรวมค่าศาลา
+                                                                    $("#equip-total").val(sum); // แสดงผลรวมค่าอุปกรณ์
+                                                                    $("#bamrung-total").val(sum2) ; // แสดงผลรวม ค่าบำรุง
+          
                                                                         // ----------------------------------
                                                                         //  total - all
-                                                                        var total_all =  sum + sum2;
+                                                                        var total_all =  price_sala + sum + sum2;
                                                                         $("#total-all").val(total_all);
 
 
                                                                         // ----------------------------------
                                                                     
-
-
-                                                                    
-                                                                    $("#equip-total").val(sum) ; // แสดงผลรวม
-                                                                    $("#bamrung-total").val(sum2) ; // แสดงผลรวม
-          
                                                       })
                               });
       </script>
