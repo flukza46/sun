@@ -148,9 +148,11 @@
               <div class="form-check col">
                   <div class="container">
                     <input class="form-check-input" type="checkbox" name="cabamlung4" id="chkbb4" value="ค่าไฟฟ้าคิดตามจำนวนที่ใช้">
-                    <input id="pricebamrung4" type="number" hidden value="1500"> <!-- ราคา -->
+                    <input id="pricebamrung4" type="number" hidden value="7"> <!-- ราคาจริง -->
+
                     <label class="form-check-label mr-2" for="exampleRadios1">
-                    ค่าไฟฟ้าคิดตามจำนวนที่ใช้ หน่วยละ 7 บาท จำนวน : </label><input style="width:60px;" type="number" value="0" class="text-right"> หน่วย
+                    ค่าไฟฟ้าคิดตามจำนวนที่ใช้ หน่วยละ 7 บาท <b>จำนวน : </b> </label><input id="nuy" style="width:60px;" type="number_pricebamrung4" value="0" class="text-right font-weight-bold"> <b>หน่วย</b>
+                    
                 </div>
               </div>
 
@@ -269,8 +271,21 @@
                                                                       $i3++;
                                                                     }                    
                                                         ?>
-                                                                    // console.log(sum2);                                                                                                                              
+                                                                        
+                                                                        // ----------------------------------
+                                                                        $("#nuy").on('keyup', function(){
+                                                                        var nuy = $(this).val();
+
+                                                                        var sum_nuy = nuy * 7;
+                                                                        
+                                                                        $("#pricebamrung4").val(sum_nuy);
+                                                                        console.log(sum_nuy);
+                                                                        });
+                                                                       
+                                                                        // ----------------------------------
                                                                     
+
+
                                                                     
                                                                     $("#equip-total").val(sum) ; // แสดงผลรวม
                                                                     $("#bamrung-total").val(sum2) ; // แสดงผลรวม
