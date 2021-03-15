@@ -121,7 +121,7 @@
                 <div class="form-check col mt-4">
                   <div class="container">
                     <input class="form-check-input" type="checkbox" name="cabamlung1" id="chkbb1" value="ค่าบำรุงเมรุ (วันศพออก)">
-                    <input id="pricebamrung1" type="number" hidden value="1200"> <!-- ราคา -->
+                    <input id="pricebamrung1" type="number" hidden value="2000"> <!-- ราคา -->
                     <label class="form-check-label" for="exampleRadios1">
                       ค่าบำรุงเมรุ (วันศพออก) ราคา 2000 บาท<?php echo"  "?></label>
                   </div>
@@ -139,7 +139,7 @@
               <div class="form-check col">
                 <div class="container">
                   <input class="form-check-input" type="checkbox" name="cabamlung3" id="chkbb3" value="ค่าบำรุงพัดลมหน้าเมรุ">
-                  <input id="pricebamrung3" type="number" hidden value="200"> <!-- ราคา -->
+                  <input id="pricebamrung3" type="number" hidden value="100"> <!-- ราคา -->
                   <label class="form-check-label" for="exampleRadios1">
                   ค่าบำรุงพัดลมหน้าเมรุ ราคา 100 บาท<?php echo"  "?></label>
                 </div>
@@ -149,8 +149,8 @@
                   <div class="container">
                     <input class="form-check-input" type="checkbox" name="cabamlung4" id="chkbb4" value="ค่าไฟฟ้าคิดตามจำนวนที่ใช้">
                     <input id="pricebamrung4" type="number" hidden value="1500"> <!-- ราคา -->
-                    <label class="form-check-label" for="exampleRadios1">
-                    ค่าไฟฟ้าคิดตามจำนวนที่ใช้ ราคา 7 บาท<?php echo"  "?></label>
+                    <label class="form-check-label mr-2" for="exampleRadios1">
+                    ค่าไฟฟ้าคิดตามจำนวนที่ใช้ หน่วยละ 7 บาท จำนวน : </label><input style="width:60px;" type="number" value="0" class="text-right"> หน่วย
                 </div>
               </div>
 
