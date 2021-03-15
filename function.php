@@ -7,7 +7,7 @@
         define('DB_server', 'localhost');
         define('DB_user', 'root');
         define('DB_password', '');
-        define('DB_name', 'development');
+        define('DB_name', 'thanakon');
 
         define('title_web', 'การพัฒนาระบบสนับสนุนการเช่าพื้นที่ศาลาฌาปนกิจศพและอุปกรณ์ประกอบพิธีกรรมวัดนครสวรรค์พระอารามหลวง');
         define('title_web_m', 'เจ้าหน้าที่');
