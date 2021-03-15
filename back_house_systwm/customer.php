@@ -151,7 +151,7 @@
                     <input id="pricebamrung4" type="number" hidden value="7"> <!-- ราคาจริง -->
 
                     <label class="form-check-label mr-2" for="exampleRadios1">
-                    ค่าไฟฟ้าคิดตามจำนวนที่ใช้ หน่วยละ 7 บาท <b>จำนวน : </b> </label><input id="nuy" style="width:60px;" type="number_pricebamrung4" value="0" class="text-right font-weight-bold"> <b>หน่วย</b>
+                    ค่าไฟฟ้าคิดตามจำนวนที่ใช้ หน่วยละ 7 บาท <b>จำนวน : </b> </label><input id="nuy" style="width:60px;" type="number" value="0" class="text-right font-weight-bold"> <b>หน่วย</b>
                     
                 </div>
               </div>
@@ -159,7 +159,7 @@
               <div class="form-check col">
                   <div class="container">
                     <input class="form-check-input" type="checkbox" name="cabamlung5" id="chkbb5" value="ค่าทำความสะอาดวันศพออก">
-                    <input id="pricebamrung5" type="number" hidden value="50"> <!-- ราคา -->
+                    <input id="pricebamrung5" type="number" hidden value="200"> <!-- ราคา -->
                     <label class="form-check-label" for="exampleRadios1">
                     ค่าทำความสะอาดวันศพออก ราคา 200 บาท<?php echo"  "?></label>
                 </div>
@@ -177,16 +177,16 @@
               <div class="form-check col">
                   <div class="container">
                     <input class="form-check-input" type="checkbox" name="cabamlung7" id="chkbb7" value="ค่าบริการของเจ้าหน้าที่วันประชุมเพลิง 9 คน">
-                    <input id="pricebamrung7" type="number" hidden value="500"> <!-- ราคา -->
+                    <input id="pricebamrung7" type="number" hidden value="0"> <!-- ราคา -->
                     <label class="form-check-label" for="exampleRadios1">
-                    ค่าบริการของเจ้าหน้าที่วันประชุมเพลิง 9 คน ราคา 500 บาท<?php echo"  "?></label>
+                    ค่าบริการของเจ้าหน้าที่วันประชุมเพลิง 9 คน <b>จำนวน : </b> </label><input id="raca-9-con" style="width:60px;" type="number" class="mr-2 ml-1 font-weight-bold text-right" value="0"><b>บาท</b>
                 </div>
               </div>
 
               <div class="form-check col">
                   <div class="container">
                     <input class="form-check-input" type="checkbox" name="cabamlung8" id="chkbb8" value="ค่าบำรุงเรื่องเสียง">
-                    <input id="pricebamrung8" type="number" hidden value="100"> <!-- ราคา -->
+                    <input id="pricebamrung8" type="number" hidden value="500"> <!-- ราคา -->
                     <label class="form-check-label" for="exampleRadios1">
                     ค่าบำรุงเรื่องเสียง ราคา 500 บาท<?php echo"  "?></label>
                 </div>
@@ -195,16 +195,16 @@
               <div class="form-check col">
                   <div class="container">
                     <input class="form-check-input" type="checkbox" name="cabamlung9" id="chkbb9" value="ค่าทำความสอาดโลงเย็น">
-                    <input id="pricebamrung9" type="number" hidden value="7"> <!-- ราคา -->
+                    <input id="pricebamrung9" type="number" hidden value="50"> <!-- ราคา -->
                     <label class="form-check-label" for="exampleRadios1">
-                    ค่าทำความสอาดโลงเย็น ราคา 50 บาท<?php echo"  "?></label>
+                    ค่าทำความสะอาดโลงเย็น ราคา 50 บาท<?php echo"  "?></label>
                 </div>
               </div>
 
               <div class="form-check col">
                   <div class="container">
                     <input class="form-check-input" type="checkbox" name="cabamlung10" id="chkbb10" value="ค่าบำรุงสุสาน (เฉพาะศพเก็บ)">
-                    <input id="pricebamrung10" type="number" hidden value="200"> <!-- ราคา -->
+                    <input id="pricebamrung10" type="number" hidden value="1500"> <!-- ราคา -->
                     <label class="form-check-label" for="exampleRadios1">
                     ค่าบำรุงสุสาน (เฉพาะศพเก็บ) ราคา 1500 บาท<?php echo"  "?></label>
 
@@ -273,15 +273,26 @@
                                                         ?>
                                                                         
                                                                         // ----------------------------------
+                                                                        // คำนวนค่าไฟ 7 บาท ต่อหน่วย
                                                                         $("#nuy").on('keyup', function(){
                                                                         var nuy = $(this).val();
 
                                                                         var sum_nuy = nuy * 7;
                                                                         
                                                                         $("#pricebamrung4").val(sum_nuy);
-                                                                        console.log(sum_nuy);
+                                                                        
                                                                         });
-                                                                       
+                                                                        // ----------------------------------
+
+
+                                                                        // ----------------------------------
+                                                                        // คำนวนค่าบริการของเจ้าหน้าที่วันประชุมเพลิง 9 คน
+                                                                        $("#raca-9-con").on('keyup', function(){
+                                                                        var raca9con = $(this).val();
+                                                                        
+                                                                        $("#pricebamrung7").val(raca9con);
+                                                                        
+                                                                        });
                                                                         // ----------------------------------
                                                                     
 
