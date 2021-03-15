@@ -214,10 +214,10 @@
                             <div class="d-flex justify-content-between">
                                       <div>
                                       <button id="billtest" type="button" class="btn btn-primary"><i class="fas fa-sync-alt"></i> คำนวณค่าใช้จ่ายทั้งหมด</button>
-                                      <button type="reset" class="btn btn-warning"> รีเซ็ตข้อมูลใหม่</button>
+                                      <button id="reset" type="reset" class="btn btn-warning"> รีเซ็ตข้อมูลใหม่</button>
                                       </div>
                                       <div>
-                                      <button id="billtest" type="submit" class="btn btn-success"> บันทึกข้อมูล</button>
+                                      <button id="billtest2" type="submit" class="btn btn-success" hidden> บันทึกข้อมูล</button>
                                       </div>
                             </div>
               </div>
@@ -240,9 +240,14 @@
                               $(document).ready(function(){
 
 
-
-                                
+                                                $("#reset").click(function(){
+                                                  $("#billtest2").attr('hidden', true)
+                                                });
+                                                
+                                                // ---------------------------------------------------------
+                                                  
                                                   $("#billtest").click(function(){
+                                                    $("#billtest2").attr('hidden', false)
 
                                                   <?php
                                                   $chk = $SLOptionP->SOP();
