@@ -63,7 +63,7 @@
                               # code...
                               ?>
                                           <div class="pl-3 form-check">
-                                          <input class="mb-2" type="radio" name="sala" id="sala<?php echo$salaqty;?>"> <?php echo$re['pavilion_name'];?>
+                                          <input class="mb-2" type="radio" name="sala" id="sala<?php echo$salaqty;?>" value="<?php echo$re['pavilion_name'];?>"> <?php echo$re['pavilion_name'];?>
                                           <input id="price_sala<?php echo$salaqty;?>" type="number" hidden  value="<?php echo$re['price'];?>">
                                           </div>
                               <?php
@@ -73,7 +73,7 @@
                       </div>
                       </div>
                       <div class="d-flex align-items-starts mb-5">
-                            <b class="text-success d-flex align-items-center">ราคาศาลา : </b><input id="sala_total" type="number" disabled="true" class="text-right ml-2 font-weight-bold text-danger" value="0"> <b class="text-success ml-2 d-flex align-items-center">บาท</b>
+                            <b class="text-success d-flex align-items-center">ราคาศาลา : </b><input id="sala_total" type="number" readonly="true"  class="text-right ml-2 font-weight-bold text-danger border border-0" style="width:70px;" value="0" name="raca_sala"> <b class="text-success ml-2 d-flex align-items-center">บาท</b>
                     </div>
 
                        
@@ -102,8 +102,8 @@
                         <div class="form-check col">
                         <div class="container">
 
-                          <input class="form-check-input" type="checkbox" name="equip<?php echo$i; ?>" id="chkb<?php echo$i; ?>" value="<?php echo $re['equipment_tiype']." "; ?>">
-                          <input id="price<?php echo$i; ?>" type="number" name="price" hidden value="<?php echo $re['price']; ?>"> <!-- ราคา -->
+                          <input class="form-check-input" type="checkbox" name="equip[]" id="chkb<?php echo$i; ?>" value="<?php echo $re['equipment_tiype']." "; ?>">
+                          <input id="price<?php echo$i; ?>" type="number" hidden value="<?php echo $re['price']; ?>"> <!-- ราคา -->
 
                           <label class="form-check-label" for="exampleRadios1">
                           <?php echo $re['equipment_tiype']; ?> ราคา : <?php echo $re['price']; ?> บาท
@@ -116,7 +116,7 @@
                             } 
                         ?>
                             <div class="d-flex justify-content-start mt-2">
-                            <b class="text-success d-flex align-items-center">ราคาอุปกรณ์ประกอบพิธีกรรม : </b><input id="equip-total" type="number" disabled="true" class="text-right ml-2 font-weight-bold text-danger" value="0"> <b class="text-success ml-2 d-flex align-items-center">บาท</b>
+                            <b class="text-success d-flex align-items-center">ราคาอุปกรณ์ประกอบพิธีกรรม : </b><input id="equip-total" type="number" name="raca_equip" readonly="true" class="border border-0 text-right ml-2 font-weight-bold text-danger" value="0" style="width:70px;"> <b class="text-success ml-2 d-flex align-items-center">บาท</b>
                             </div>
                     </div> 
                     </div>
@@ -126,7 +126,7 @@
 
                 <div class="form-check col mt-4">
                   <div class="container">
-                    <input class="form-check-input" type="checkbox" name="cabamlung1" id="chkbb1" value="ค่าบำรุงเมรุ (วันศพออก)">
+                    <input class="form-check-input" type="checkbox" name="cabamlung[]" id="chkbb1" value="ค่าบำรุงเมรุ (วันศพออก)">
                     <input id="pricebamrung1" type="number" hidden value="2000"> <!-- ราคา -->
                     <label class="form-check-label" for="exampleRadios1">
                       ค่าบำรุงเมรุ (วันศพออก) ราคา 2000 บาท<?php echo"  "?></label>
@@ -135,7 +135,7 @@
 
               <div class="form-check col">
                 <div class="container">
-                  <input class="form-check-input" type="checkbox" name="cabamlung2" id="chkbb2" value="ค่าบุรุงโลงเย็น">
+                  <input class="form-check-input" type="checkbox" name="cabamlung[]" id="chkbb2" value="ค่าบุรุงโลงเย็น">
                   <input id="pricebamrung2" type="number" hidden value="300"> <!-- ราคา -->
                   <label class="form-check-label" for="exampleRadios2">
                   ค่าบุรุงโลงเย็น ราคา 300 บาท<?php echo"  "?></label>
@@ -144,7 +144,7 @@
 
               <div class="form-check col">
                 <div class="container">
-                  <input class="form-check-input" type="checkbox" name="cabamlung3" id="chkbb3" value="ค่าบำรุงพัดลมหน้าเมรุ">
+                  <input class="form-check-input" type="checkbox" name="cabamlung[]" id="chkbb3" value="ค่าบำรุงพัดลมหน้าเมรุ">
                   <input id="pricebamrung3" type="number" hidden value="100"> <!-- ราคา -->
                   <label class="form-check-label" for="exampleRadios1">
                   ค่าบำรุงพัดลมหน้าเมรุ ราคา 100 บาท<?php echo"  "?></label>
@@ -153,7 +153,7 @@
 
               <div class="form-check col">
                   <div class="container">
-                    <input class="form-check-input" type="checkbox" name="cabamlung5" id="chkbb4" value="ค่าทำความสะอาดวันศพออก">
+                    <input class="form-check-input" type="checkbox" name="cabamlung[]" id="chkbb4" value="ค่าทำความสะอาดวันศพออก">
                     <input id="pricebamrung4" type="number" hidden value="200"> <!-- ราคา -->
                     <label class="form-check-label" for="exampleRadios1">
                     ค่าทำความสะอาดวันศพออก ราคา 200 บาท<?php echo"  "?></label>
@@ -162,7 +162,7 @@
 
               <div class="form-check col">
                   <div class="container">
-                    <input class="form-check-input" type="checkbox" name="cabamlung6" id="chkbb5" value="ค่าพนักงานเฝ้าศพกลางคืน">
+                    <input class="form-check-input" type="checkbox" name="cabamlung[]" id="chkbb5" value="ค่าพนักงานเฝ้าศพกลางคืน">
                     <input id="pricebamrung5" type="number" hidden value="200"> <!-- ราคา -->
                     <label class="form-check-label" for="exampleRadios1">
                     ค่าพนักงานเฝ้าศพกลางคืน ราคา 200 บาท<?php echo"  "?></label>
@@ -172,7 +172,7 @@
 
               <div class="form-check col">
                   <div class="container">
-                    <input class="form-check-input" type="checkbox" name="cabamlung8" id="chkbb6" value="ค่าบำรุงเรื่องเสียง">
+                    <input class="form-check-input" type="checkbox" name="cabamlung[]" id="chkbb6" value="ค่าบำรุงเรื่องเสียง">
                     <input id="pricebamrung6" type="number" hidden value="500"> <!-- ราคา -->
                     <label class="form-check-label" for="exampleRadios1">
                     ค่าบำรุงเรื่องเสียง ราคา 500 บาท<?php echo"  "?></label>
@@ -181,7 +181,7 @@
 
               <div class="form-check col">
                   <div class="container">
-                    <input class="form-check-input" type="checkbox" name="cabamlung9" id="chkbb7" value="ค่าทำความสอาดโลงเย็น">
+                    <input class="form-check-input" type="checkbox" name="cabamlung[]" id="chkbb7" value="ค่าทำความสอาดโลงเย็น">
                     <input id="pricebamrung7" type="number" hidden value="50"> <!-- ราคา -->
                     <label class="form-check-label" for="exampleRadios1">
                     ค่าทำความสะอาดโลงเย็น ราคา 50 บาท<?php echo"  "?></label>
@@ -190,7 +190,7 @@
 
               <div class="form-check col">
                   <div class="container">
-                    <input class="form-check-input" type="checkbox" name="cabamlung10" id="chkbb8" value="ค่าบำรุงสุสาน (เฉพาะศพเก็บ)">
+                    <input class="form-check-input" type="checkbox" name="cabamlung[]" id="chkbb8" value="ค่าบำรุงสุสาน (เฉพาะศพเก็บ)">
                     <input id="pricebamrung8" type="number" hidden value="1500"> <!-- ราคา -->
                     <label class="form-check-label" for="exampleRadios1">
                     ค่าบำรุงสุสาน (เฉพาะศพเก็บ) ราคา 1500 บาท<?php echo"  "?></label>
@@ -199,11 +199,11 @@
                 </div>
               </div>
                     <div class="d-flex align-items-starts mt-2">
-                            <b class="text-success d-flex align-items-center">ราคาค่าบำรุงฌาปนสถาน : </b><input id="bamrung-total" type="number" disabled="true" class="text-right ml-2 font-weight-bold text-danger" value="0"> <b class="text-success ml-2 d-flex align-items-center">บาท</b>
+                            <b class="text-success d-flex align-items-center">ราคาค่าบำรุงฌาปนสถาน : </b><input style="width:70px;" id="bamrung-total" type="number" name="raca_cabamlung" readonly="true" class="border border-0 text-right ml-2 font-weight-bold text-danger" value="0"> <b class="text-success ml-2 d-flex align-items-center">บาท</b>
                     </div>
                             <hr>
                     <div class="d-flex justify-content-end mt-2 bg-dark p-3">
-                            <b style="font-size:2rem;" class="text-success d-flex align-items-center">ราคาค่าใช้จ่ายรวม : </b><input style="font-size:2rem; width:150px;" id="total-all" type="number" disabled="true" class="text-right ml-2 font-weight-bold text-danger" value="0"> <b style="font-size:2rem;" class="text-success ml-2 d-flex align-items-center">บาท</b>
+                            <b style="font-size:2rem;" class="text-success d-flex align-items-center">ราคาค่าใช้จ่ายรวม : </b><input style="font-size:2rem; width:150px;" id="total-all" type="number" name="raca_total" readonly="true" class="text-right ml-2 font-weight-bold text-danger bg-dark border border-0" value="0"> <b style="font-size:2rem;" class="text-success ml-2 d-flex align-items-center">บาท</b>
                     </div>
                             
 
@@ -217,7 +217,7 @@
                                       <button id="reset" type="reset" class="btn btn-warning"> รีเซ็ตข้อมูลใหม่</button>
                                       </div>
                                       <div>
-                                      <button id="billtest2" type="submit" class="btn btn-success" hidden> บันทึกข้อมูล</button>
+                                      <button id="billtest2" name="submit" type="submit" class="btn btn-success" hidden> บันทึกข้อมูล</button>
                                       </div>
                             </div>
               </div>
