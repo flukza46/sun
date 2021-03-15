@@ -216,7 +216,7 @@
                     </div>
                             <hr>
                     <div class="d-flex justify-content-end mt-2 bg-dark p-3">
-                            <b class="text-success d-flex align-items-center">ราคาค่าใช้จ่ายรวม : </b><input id="total-all" type="number" disabled="true" class="text-right ml-2 font-weight-bold text-danger" value="0"> <b class="text-success ml-2 d-flex align-items-center">บาท</b>
+                            <b style="font-size:2rem;" class="text-success d-flex align-items-center">ราคาค่าใช้จ่ายรวม : </b><input style="font-size:2rem; width:150px;" id="total-all" type="number" disabled="true" class="text-right ml-2 font-weight-bold text-danger" value="0"> <b style="font-size:2rem;" class="text-success ml-2 d-flex align-items-center">บาท</b>
                     </div>
 
               
@@ -304,7 +304,6 @@
                                                                         // ----------------------------------
                                                                         //  total - all
                                                                         var total_all =  sum + sum2;
-                                                                        console.log(total_all);
                                                                         $("#total-all").val(total_all);
 
 
