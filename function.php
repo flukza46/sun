@@ -27,6 +27,33 @@
                 }
 
             }    
+            // Todo: ทำเวลาเป็นภาษาไทย
+            function thai_date_and_time($time1){
+                $dayTH = ['อาทิตย์','จันทร์','อังคาร','พุธ','พฤหัสบดี','ศุกร์','เสาร์'];
+                $monthThai = [null,'มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน','กรกฎาคม','สิงหาคม','กันยายน','ตุลาคม','พฤศจิกายน','ธันวาคม'];
+
+                    global $dayTH,$monthTH;   
+                    $thai_date_return = date("j",$time1);   
+                    $thai_date_return.=" ".$monthThai[date("n",$time1)];   
+                    $thai_date_return.= " ".(date("Y",$time1)+543);   
+                    
+
+                return $thai_date_return;   
+            }
+            // Todo: ทำเวลาเป็นภาษาไทย2
+            function thai_date_and_time2($time2){
+                $dayTH = ['อาทิตย์','จันทร์','อังคาร','พุธ','พฤหัสบดี','ศุกร์','เสาร์'];
+                $monthThai = [null,'มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน','กรกฎาคม','สิงหาคม','กันยายน','ตุลาคม','พฤศจิกายน','ธันวาคม'];
+
+                    global $dayTH,$monthTH;   
+                    $thai_date_return = date("j",$time2);   
+                    $thai_date_return.=" ".$monthThai[date("n",$time2)];   
+                    $thai_date_return.= " ".(date("Y",$time2)+543);   
+                    
+
+                return $thai_date_return;   
+            }
+
             //? ฟังก์ชั่น SOP
             public function SOP(){
                 $re = mysqli_query($this->dbcon, "SELECT * FROM pavilion ORDER BY id ASC");
@@ -35,6 +62,11 @@
             //? ฟังก์ชั่น SOP2
             public function SOP2(){
                 $re = mysqli_query($this->dbcon, "SELECT * FROM equipment ORDER BY id ASC");
+                return $re;
+            }
+            //? ฟังก์ชั่น โชว์ศาลาที่ยังไม่ถูกจอง
+            public function SOPEmpty(){
+                $re = mysqli_query($this->dbcon, "SELECT * FROM pavilion WHERE status_sala='empty' ORDER BY id ASC");
                 return $re;
             }
 
@@ -51,13 +83,14 @@
                 header("Location: index.php");
             }  
             //? ฟังก์ชั่น ทำรายการ
-            public function inst_list_booking($f_name,  $l_name, $p_number, $t_address, $sala, $raca_sala, $date_start, $date_stop, $all_equip, $raca_equip, $all_cabamlung, $raca_cabamlung, $raca_total){
+            public function inst_list_booking($f_name,  $l_name, $p_number, $t_address, $sala, $id_sala, $raca_sala, $date_start, $date_stop, $all_equip, $raca_equip, $all_cabamlung, $raca_cabamlung, $raca_total){
                 $result = mysqli_query($this->dbcon, "INSERT INTO make_list_booking (
                     first_name,
                     last_name,
                     phone_number,
                     address,
                     select_sala,
+                    id_sala,
                     raca_sala,
                     datestart,
                     datestop,
@@ -67,7 +100,8 @@
                     raca_cabamlung,
                     raca_total,
                     raca_cafri,
-                    raca_manternance9
+                    raca_manternance9,
+                    status_bill_success
                     )
                     VALUE(
                     '$f_name',
@@ -75,6 +109,7 @@
                     '$p_number',
                     '$t_address',
                     '$sala',
+                    '$id_sala',
                     '$raca_sala',
                     '$date_start',
                     '$date_stop',
@@ -84,7 +119,8 @@
                     '$raca_cabamlung',
                     '$raca_total',
                     'wait',
-                    'wait'
+                    'wait',
+                    'yet'
                     )");
 
                 return $result;
@@ -113,10 +149,13 @@
                 $result = mysqli_query($this->dbcon, "INSERT INTO pavilion(
                     img,
                     pavilion_name,
-                    price)
+                    price,
+                    status_sala
+                    )
                     VALUE('$newsNF',
                     '$newsT',
-                    '$newsS'
+                    '$newsS',
+                    'empty'
                     )
                     ");
 
@@ -160,6 +199,16 @@
             }
             public function selNForEdit3($idS){
                 $re = mysqli_query($this->dbcon, "SELECT * FROM equipment WHERE id='$idS'");
+                return $re;
+            }
+            //ฟังก์ชั่น อัพเดทศาลา
+            public function sql_update_sala($id_sala, $date_start, $date_stop){
+                $re = mysqli_query($this->dbcon, "UPDATE pavilion SET 
+                status_sala='full',
+                booking_d_strat='$date_start', 
+                booking_d_stop='$date_stop'
+                WHERE id='$id_sala'");
+                
                 return $re;
             }
             //ฟังก์ชั่น แก้ไขข่าวแบบไม่มีรูป

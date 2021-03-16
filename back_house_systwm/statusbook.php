@@ -29,7 +29,8 @@
                     <th scope="col">#</th>
                     <th scope="col">รูปศาลา</th>
                     <th scope="col">ชื่อศาลาฌาปนกิจศพ</th>
-                    <th scope="col">สถานะ</th>
+                    <th scope="col" class="text-center">สถานะ</th>
+                    <th scope="col" class="text-center">เวลาการจอง</th>
                     
                     </tr>
                 </thead>
@@ -50,8 +51,44 @@
                         </div>
                     </td>
                     <td><?php echo $num['pavilion_name']; ?></td>
-                    <td>
-                    <button class="btn btn-success text-light"> ว่าง</button>
+                    <td class="text-center">
+                        <?php  
+                                            if($num['status_sala'] == "empty"){
+                                                ?>
+
+                                                <button class="btn btn-success text-light w-50"> ว่าง</button>
+
+                                                <?php
+                                            }else{
+                                                ?>
+                                                <button class="btn btn-danger text-light w-50"> ไม่ว่าง</button>
+                                        <?php
+                                            } 
+                                            ?>
+
+                    </td>
+                    <td class="text-center">
+                                        <?php  
+                                                    if($num['status_sala'] == "empty"){
+                                                        ?>
+
+                                                        <p> - </p>
+
+                                                        <?php
+                                                    }else{
+                                                                    $time1 = $num['booking_d_strat'];
+                                                                    $time_th1 = $slN->thai_date_and_time(strtotime($time1));
+                                                                    $time2 = $num['booking_d_stop'];
+                                                                    $time_th2 = $slN->thai_date_and_time2(strtotime($time2));
+                                                        ?>
+                                                            
+                                                            <p class="font-weight-bold"><?php echo$time_th1; ?></p>
+                                                            <p class="font-weight-bold"> ถึง </p>
+                                                            <p class="font-weight-bold"><?php echo$time_th2; ?></p>
+                                                <?php
+                                                    } 
+                                                    ?>
+                    
                     </td>
                     </tr>
                 <?php

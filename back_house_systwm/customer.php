@@ -57,15 +57,17 @@
                 <div class="form-group col-4">
                       <b style="font-size:1.5rem;" for="exampleFormControlInput1"><i class="fas fa-laptop-house text-success"></i> โปรดเลือกศาลาฌาปนกิจศพ</b>
                       <?php
-                            $chk = $SLOptionP->SOP();
+                            $chk = $SLOptionP->SOPEmpty();
                             $salaqty=1;
                             while ($re = mysqli_fetch_array($chk)) {
                               # code...
                               ?>
-                                          <div class="pl-3 form-check">
+                                          <div class="pl-3 form-check" id="sala_select">
                                           <input class="mb-2" type="radio" name="sala" id="sala<?php echo$salaqty;?>" value="<?php echo$re['pavilion_name'];?>"> <?php echo$re['pavilion_name'];?>
+                                          <input class="mb-2" type="radio" name="id_sala" id="id_sala<?php echo$salaqty;?>" hidden value="<?php echo$re['id'];?>"> 
                                           <input id="price_sala<?php echo$salaqty;?>" type="number" hidden  value="<?php echo$re['price'];?>">
                                           </div>
+                                          
                               <?php
                               $salaqty++;
                             }
@@ -238,6 +240,25 @@
       <script>
                               //รวมราคา
                               $(document).ready(function(){
+                                      <?php
+                                                  $chk = $SLOptionP->SOPEmpty();
+                                                  $qty=1;
+                                                  while ($re = mysqli_fetch_array($chk)) {
+                                                    # code...
+                                                    ?>
+                                                    $("#sala<?php echo$qty;?>").change(function(){
+                                                      if($("#sala<?php echo$qty;?>").is(':checked')){
+                                                            
+                                                                
+                                                                $("#id_sala<?php echo$qty;?>").prop('checked', true);
+                                                                
+                                                            
+                                                          }
+                                                    });
+                                                    <?php
+                                                    $qty++;
+                                                  }
+                                                  ?>
 
 
                                                 $("#reset").click(function(){
@@ -250,13 +271,15 @@
                                                     $("#billtest2").attr('hidden', false)
 
                                                   <?php
-                                                  $chk = $SLOptionP->SOP();
+                                                  $chk = $SLOptionP->SOPEmpty();
                                                   $salaqty=1;
                                                   while ($re = mysqli_fetch_array($chk)) {
                                                     # code...
                                                     ?>
                                                           if($("#sala<?php echo$salaqty;?>").is(':checked')){
                                                             var price_sala = ~~$("#price_sala<?php echo$salaqty;?>").val();
+                                                           
+                                                            
                                                           }
                                                   <?php
                                                     $salaqty++;

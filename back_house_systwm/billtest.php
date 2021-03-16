@@ -12,6 +12,7 @@
             $p_number = $_POST['p_number'];
             $t_address = $_POST['t_address'];
             $sala = $_POST['sala'];
+            $id_sala = $_POST['id_sala'];
             $raca_sala = $_POST['raca_sala'];
             $date_start = $_POST['date_start'];
             $date_stop = $_POST['date_stop'];
@@ -24,9 +25,10 @@
             $raca_total = $_POST['raca_total'];
             //    echo $f_name." ".$l_name." ".$p_number." ".$t_address." ".$sala." ".$raca_sala." ".$date_start." ".$date_stop." ".$all_equip." ".$raca_equip." ".$all_cabamlung." ".$raca_cabamlung." ".$raca_total;
 
-            $sql = $insertListBook->inst_list_booking($f_name,  $l_name, $p_number, $t_address, $sala, $raca_sala, $date_start, $date_stop, $all_equip, $raca_equip, $all_cabamlung, $raca_cabamlung, $raca_total);
+            $sql = $insertListBook->inst_list_booking($f_name,  $l_name, $p_number, $t_address, $sala, $id_sala, $raca_sala, $date_start, $date_stop, $all_equip, $raca_equip, $all_cabamlung, $raca_cabamlung, $raca_total);
+            $sql_update_sala = $insertListBook->sql_update_sala($id_sala, $date_start, $date_stop);
 
-            if( $sql){
+            if( $sql && $sql_update_sala){
                 ?>
                                             <script>
                                                 $(document).ready(function(){
@@ -37,7 +39,7 @@
                                                             showConfirmButton: false,
                                                             timer: 1500
                                                             }).then(function(){
-                                                                window.location.href ='manager.php?p=4';
+                                                                window.location.href ='manager.php?p=5';
                                                             })
                                                 });
 
