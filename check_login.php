@@ -34,7 +34,7 @@
                     },
                     function(isConfirm){
                     if (isConfirm) {
-                        window.location.href = 'back_house_systwm/manager.php?p=1';
+                        window.location.href = 'back_house_systwm/manager.php?p=6';
                     }
                     }); }, 1000);";
 

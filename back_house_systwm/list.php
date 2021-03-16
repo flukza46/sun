@@ -1,6 +1,4 @@
 <!--รายการเช่าทั้งหมดเจ้าหน้าที่-->
-5
-
 <div class= "container mb-2">
  
 <div class= "container"> 
@@ -9,20 +7,64 @@
         <h3 class="text-center text-light"><b><i class="fas fa-table"></i> ตารางรายการเช่าทั้งหมด</b></h3>
     </div>
     <div class="card-body">
-                    <table class="table table-striped" id="myTable">
-                <thead>
+                <table class="table table-striped w-100" id="myTable">
+                <thead class="bg-success">
                     <tr>
                     <th scope="col">#</th>
                     <th scope="col">ผู้จอง</th>
-                    <th scope="col">ศาลาฌาปนกิจศพ</th>
-                    <th scope="col">อุปกรณ์ประกอบพิธีกรรม</th>
-                    <th scope="col">อัตราค่าบำรุง</th>
-                    <th scope="col">ราคา</th>
-                    <th scope="col">เพิ่มข้อมูล-ลบ</th>
-                    <th scope="col">ใบเสร็จ</th>
+                    <th scope="col">ศาลาที่จอง</th>
+                    <th scope="col">ราคาค่าใช้จ่ายทั้งหมด</th>
+                    <th scope="col">สถานะใบเสร็จ</th>
+                    <th scope="col">ดูข้อมูลทั้งหมด</th>
+                    <th scope="col">จัดการข้อมูล</th>
                     
                     </tr>
                 </thead>
+
+                <tbody>
+                <?php
+                            $SLBooking = new DB_conn();
+
+                            $sql = $SLBooking->Slect_booking();
+                            $i = 1;
+                            while($reS = mysqli_fetch_array($sql)){
+                            ?>
+                                    <tr>
+                                            <td>
+                                                <?php echo $i ; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $reS['first_name']." ".$reS['last_name']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $reS['select_sala']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo number_format($reS['raca_total']); ?>
+                                            </td>
+                                            <td class="text-center">
+                                                <?php
+                                                                if($reS['status_bill_success'] == "yet"){
+                                                                    ?>
+                                                                    <button class="btn btn-primary w-500">ออกใบเสร็จ</button>
+                                                                <?php
+                                                                }
+                                                
+                                                
+                                                ?>
+                                            </td>
+                                            <td class="text-center">
+                                                <button class="btn btn-warning w-50">ดู</button>
+                                            </td>
+                                            <td class="text-center">
+                                                <button class="btn btn-danger w-50">ยกเลิกจอง</button>
+                                            </td>
+                                    </tr>
+
+                                <?php
+                                    $i++;
+                                        }
+                                ?>
                 </tbody>
                 </table>
     </div>
@@ -45,7 +87,8 @@
                     "sNext":     "ถัดไป",
                     "sLast":     "หน้าสุดท้าย"
                     },
-                }
+                },
+                "scrollX": true
 
 
             });
