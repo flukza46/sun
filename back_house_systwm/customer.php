@@ -30,7 +30,7 @@
 
                       <div class="form-group col-4"> 
                         <label for="exampleFormControlInput1"><i class="fas fa-phone-volume text-info"></i> เบอร์โทรศัพท์</label>
-                        <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="หมายเลขโทรศัพท์" name="p_number">
+                        <input  style="width:200px;" maxlength="10" type="text" class="form-control" id="exampleFormControlInput1"  name="p_number">
                       </div>
 
                       <div class="form-group col-8">

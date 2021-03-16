@@ -51,25 +51,41 @@
                 header("Location: index.php");
             }  
             //? ฟังก์ชั่น ทำรายการ
-            public function inst_list_booking(){
+            public function inst_list_booking($f_name,  $l_name, $p_number, $t_address, $sala, $raca_sala, $date_start, $date_stop, $all_equip, $raca_equip, $all_cabamlung, $raca_cabamlung, $raca_total){
                 $result = mysqli_query($this->dbcon, "INSERT INTO make_list_booking (
                     first_name,
                     last_name,
                     phone_number,
                     address,
                     select_sala,
+                    raca_sala,
                     datestart,
                     datestop,
                     select_equipment,
-                    select_cabamlung
+                    raca_equip,
+                    select_cabamlung,
+                    raca_cabamlung,
+                    raca_total,
+                    raca_cafri,
+                    raca_manternance9
                     )
                     VALUE(
-                    '$newsT',
-                    '$newsS',
-                    '$newsD',
-                    '$newsAT',
-                    '$newsNF')
-                    ");
+                    '$f_name',
+                    '$l_name',
+                    '$p_number',
+                    '$t_address',
+                    '$sala',
+                    '$raca_sala',
+                    '$date_start',
+                    '$date_stop',
+                    '$all_equip',
+                    '$raca_equip',
+                    '$all_cabamlung',
+                    '$raca_cabamlung',
+                    '$raca_total',
+                    'wait',
+                    'wait'
+                    )");
 
                 return $result;
                         }
