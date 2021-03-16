@@ -76,6 +76,12 @@
                 return $re;
             }
 
+            //TODO ดึงข้อมูล การจอง
+            public function Slect_booking(){
+                $re = mysqli_query($this->dbcon, "SELECT * FROM make_list_booking ORDER BY id_list_booking DESC");
+                return $re;
+            }
+
             //? ฟังก์ชั่น Logout
             public function logout_form(){
                 session_start();

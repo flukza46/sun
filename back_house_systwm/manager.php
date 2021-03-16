@@ -49,6 +49,10 @@ font-family: 'Trirong', serif;">
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion" >
                     <div class="sb-sidenav-menu">
                         <div class="nav">
+                            <a class="nav-link collapsed" href="manager.php?p=6"  data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon "><i class="fas fa-bookmark text-info  "></i></div>
+                                สถานะศาลาฌาปนกิจศพ
+                            </a>
                             <a class="nav-link collapsed" href="manager.php?p=1"  data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon "><i class="fas fa-laptop-house text-success"></i></div>
                                 จัดการศาลาฌาปนกิจศพ
@@ -69,10 +73,7 @@ font-family: 'Trirong', serif;">
                                 <div class="sb-nav-link-icon "><i class="fas fa-list-alt text-danger"></i></div>
                                 รายการเช่าทั้งหมด
                             </a>
-                            <a class="nav-link collapsed" href="manager.php?p=6"  data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon "><i class="fas fa-bookmark text-info  "></i></div>
-                                สถานะศาลาฌาปนกิจศพ
-                            </a>
+                            
                             
                            
                             

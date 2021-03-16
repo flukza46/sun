@@ -56,7 +56,7 @@
                                             if($num['status_sala'] == "empty"){
                                                 ?>
 
-                                                <button class="btn btn-success text-light w-50"> ว่าง</button>
+                                                <a href="manager.php?p=4" class="btn btn-success text-light w-50"> ว่าง</a>
 
                                                 <?php
                                             }else{
