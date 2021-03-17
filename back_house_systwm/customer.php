@@ -117,14 +117,11 @@
                           $i++;
                             } 
                         ?>
-<<<<<<< HEAD
                         
                             <b class="text-success">ราคาทั้งหมด : </b>
-=======
                             <div class="d-flex justify-content-start mt-2">
                             <b class="text-success d-flex align-items-center">ราคาอุปกรณ์ประกอบพิธีกรรม : </b><input id="equip-total" type="number" name="raca_equip" readonly="true" class="border border-0 text-right ml-2 font-weight-bold text-danger" value="0" style="width:70px;"> <b class="text-success ml-2 d-flex align-items-center">บาท</b>
                             </div>
->>>>>>> fulk
                     </div> 
                     </div>
                             
@@ -218,11 +215,8 @@
 
               <div class= "mt-4 ">
                   <!-- <button type="submit" name="submit" class="btn btn-success"><i class="far fa-check-circle" value="submit"></i>บันทึก</button>  -->
-<<<<<<< HEAD
 
-                  <button id="billtest" type="button" class="btn btn-primary"><i class="fas fa-sync-alt"></i> คำนวณค่าใช้จ่ายทั้งหมด</button>
-                  <button type="reset" class="btn btn-warning"> Reset</button>
-=======
+                  
                             <div class="d-flex justify-content-between">
                                       <div>
                                       <button id="billtest" type="button" class="btn btn-primary"><i class="fas fa-sync-alt"></i> คำนวณค่าใช้จ่ายทั้งหมด</button>
@@ -232,7 +226,6 @@
                                       <button id="billtest2" name="submit" type="submit" class="btn btn-success" hidden> บันทึกข้อมูล</button>
                                       </div>
                             </div>
->>>>>>> fulk
               </div>
               <hr>
               
@@ -289,7 +282,6 @@
                                                     ?>
                                                           if($("#sala<?php echo$salaqty;?>").is(':checked')){
                                                             var price_sala = ~~$("#price_sala<?php echo$salaqty;?>").val();
-                                                           
                                                             
                                                           }
                                                   <?php
@@ -331,12 +323,10 @@
                                                                       $i3++;
                                                                     }                    
                                                         ?>
-<<<<<<< HEAD
                                                                     console.log(sum);
                                                                     $("#equip-total").val(sum) ;
                                                                   
                                                                   
-=======
                                                                     $("#sala_total").val(price_sala); // แสดงผลรวมค่าศาลา
                                                                     $("#equip-total").val(sum); // แสดงผลรวมค่าอุปกรณ์
                                                                     $("#bamrung-total").val(sum2) ; // แสดงผลรวม ค่าบำรุง
@@ -348,7 +338,6 @@
 
 
                                                                         // ----------------------------------
->>>>>>> fulk
                                                                     
                                                       })
                               });
