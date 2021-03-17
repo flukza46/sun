@@ -225,10 +225,10 @@
                             <div class="d-flex justify-content-between">
                                       <div>
                                       <button id="billtest" type="button" class="btn btn-primary"><i class="fas fa-sync-alt"></i> คำนวณค่าใช้จ่ายทั้งหมด</button>
-                                      <button id="reset" type="reset" class="btn btn-warning"> รีเซ็ตข้อมูลใหม่</button>
+                                      <button id="reset" type="reset" class="btn btn-warning"><i class="fas fa-reply-all"></i> รีเซ็ตข้อมูลใหม่</button>
                                       </div>
                                       <div>
-                                      <button id="billtest2" name="submit" type="submit" class="btn btn-success" hidden> บันทึกข้อมูล</button>
+                                      <button id="billtest2" name="submit" type="submit" class="btn btn-success" hidden><i class="fas fa-save"></i> บันทึกข้อมูล</button>
                                       </div>
                             </div>
               </div>
