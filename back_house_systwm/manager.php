@@ -119,6 +119,14 @@ font-family: 'Trirong', serif;">
                             include_once('statusbook.php');
                                 break;
                      }
+                        case 7:{
+                            include_once('issue_receipt.php');
+                                break;
+                     }
+                        case 8:{
+                            include_once('view_receipt.php');
+                                break;
+                     }
                         case "edit_news":{
                             include_once('get_news/edit.php');
                                 break;
