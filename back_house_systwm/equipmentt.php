@@ -15,11 +15,10 @@
 
 ?>
 
-<div class= "container mb-2">
+<div class= "container-fluid mb-2">
  <div class="d-flex justify-content-end"><a href="manager.php?p=m2_add" class = "btn btn-primary">เพิ่มอุปกรณ์ <i class="fas fa-plus-circle"></i></a></div></div>
 
 
-<div class= "container"> 
  <div class="card">
     <div class="card-header bg-dark mb-2">
         <h3 class="text-center text-light"><b><i class="fas fa-table"></i> ตารางจัดการอุปกรณ์ประกอบพิธีกรรม</b></h3>

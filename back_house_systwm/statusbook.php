@@ -15,9 +15,8 @@
 
 ?>
 
-<div class= "container mb-2">
+<div class= "container-fluid mb-2">
  
-<div class= "container"> 
  <div class="card">
     <div class="card-header bg-dark mb-2">
         <h3 class="text-center text-light"><b><i class="fas fa-table"></i> ตารางสถานะของศาลาฌาปนกิจศพ</b></h3>
@@ -29,8 +28,10 @@
                     <th scope="col">#</th>
                     <th scope="col">รูปศาลา</th>
                     <th scope="col">ชื่อศาลาฌาปนกิจศพ</th>
-                    <th scope="col" class="text-center">สถานะ</th>
+                    <th scope="col" class="text-center">ผู้จอง</th>
                     <th scope="col" class="text-center">เวลาการจอง</th>
+                    <th scope="col" class="text-center">สถานะ</th>
+
                     
                     </tr>
                 </thead>
@@ -47,24 +48,26 @@
                     <th scope="row"><?php $num['id']; echo $n;?></th>
                     <td>
                         <div style="width:100px;">
-                                    <img src="../image/pavilion/<?php echo $num['img']; ?>" class="card-img" title="รูปภาพข่าว">
+                                    <img src="../image/pavilion/<?php echo $num['img']; ?>" class="card-img" title="">
                         </div>
                     </td>
                     <td><?php echo $num['pavilion_name']; ?></td>
                     <td class="text-center">
-                        <?php  
-                                            if($num['status_sala'] == "empty"){
-                                                ?>
-
-                                                <a href="manager.php?p=4" class="btn btn-success text-light w-50"> ว่าง</a>
-
-                                                <?php
-                                            }else{
-                                                ?>
-                                                <button class="btn btn-danger text-light w-50"> ไม่ว่าง</button>
-                                        <?php
-                                            } 
+                                <?php
+                                        if($num['status_sala'] == "empty"){
                                             ?>
+                                                <p> - </p>
+                                        <?php
+                                        }else{
+                                            $id_MLB = $num['id'];
+                                            $slMLB = $slN->Slect_booking_statusBooking($id_MLB);
+                                            $fetch = mysqli_fetch_array($slMLB);
+                                            ?>
+                                            <p><b>คุณ : <?php echo $fetch['first_name']." ".$fetch['last_name'];?></b></p>
+
+                                         <?php   
+                                        }    
+                                ?>
 
                     </td>
                     <td class="text-center">
@@ -89,6 +92,21 @@
                                                     } 
                                                     ?>
                     
+                    </td>
+                    <td class="text-center">
+                    <?php  
+                                            if($num['status_sala'] == "empty"){
+                                                ?>
+
+                                                <a href="manager.php?p=4" class="btn btn-success text-light w-50"> ว่าง</a>
+
+                                                <?php
+                                            }else{
+                                                ?>
+                                                <button class="btn btn-danger text-light w-50"> ไม่ว่าง</button>
+                                        <?php
+                                            } 
+                                            ?>
                     </td>
                     </tr>
                 <?php

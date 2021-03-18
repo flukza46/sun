@@ -82,6 +82,12 @@
                 return $re;
             }
 
+            //TODO ดึงข้อมูล การจอง Statusbooking
+            public function Slect_booking_statusBooking($id_MLB){
+                $re = mysqli_query($this->dbcon, "SELECT * FROM make_list_booking WHERE id_list_booking='$id_MLB' ");
+                return $re;
+            }
+
             //? ฟังก์ชั่น Logout
             public function logout_form(){
                 session_start();
@@ -291,6 +297,16 @@
             //? ฟังก์ชั่น ดึงข้อมูลอุปกรณ์ m3
             public function slN_m3(){
                 $re = mysqli_query($this->dbcon, "SELECT * FROM equipment");
+                return $re;
+            }
+            //todo: ยกเลิกจองศาลา
+            public function cancelBookingFunc($id){
+                $re = mysqli_query($this->dbcon, "DELETE FROM make_list_booking WHERE id_list_booking='$id' ");
+                return $re;
+            }
+            //todo: เปลี่ยนสถานะจองศาลาเป็น Empty
+            public function updateStatusSalaEmpty($id_sala){
+                $re = mysqli_query($this->dbcon, "UPDATE pavilion SET status_sala='empty' WHERE id='$id_sala' ");
                 return $re;
             }
             //? ฟังก์ชั่น del ข่าว

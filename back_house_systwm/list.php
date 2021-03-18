@@ -1,7 +1,73 @@
 <!--รายการเช่าทั้งหมดเจ้าหน้าที่-->
-<div class= "container mb-2">
- 
-<div class= "container"> 
+
+
+<!-- Jquery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!--  -->
+<!-- CDN Sweetalert -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<!--  -->
+
+
+<?php   
+            if(isset($_GET['cancel_booking']) == "ok"){
+                $id_cancel = $_GET['id_cancel'];
+                $id_sala = $_GET['salaQty'];
+                ?>
+                <script>
+                Swal.fire({
+                    title: 'ต้องการยกเลิกการจอง?',
+                    text: "คุณกำลังจะยกเลิกการจองใช่หรือไม่!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'ใช่ ต้องการยกเลิก!',
+                    cancelButtonText: 'ไม่ต้องการ'
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href='manager.php?p=5&confirm_cancel_id=<?php echo $id_cancel;?>&salaQty=<?php echo $id_sala;?>';
+                    }else{
+                        window.location.href='manager.php?p=5';
+                    }
+                  });
+                </script>
+
+            <?php  
+            }
+            if(isset($_GET['confirm_cancel_id'])){
+                $id = $_GET['confirm_cancel_id'];
+                $id_sala = $_GET['salaQty'];
+                $cancel_booking_func = new DB_conn();
+                $sql = $cancel_booking_func->cancelBookingFunc($id);
+                $sql2 = $cancel_booking_func->updateStatusSalaEmpty($id_sala);
+                if($sql && $sql2){
+                    ?>
+                                <script>
+                                                    Swal.fire({
+                                                
+                                                        icon: 'success',
+                                                        title: 'ยกเลิกจองเรียบร้อยแล้ว',
+                                                        showConfirmButton: false,
+                                                        timer: 2500
+
+                                                        }).then(function(){
+                                                            window.location.href='manager.php?p=5';
+                                                        })
+                                
+                                
+                                
+                                </script>
+
+                <?php
+                }
+
+            }
+?>
+
+
+<div class= "container-fluid mb-2">
+
  <div class="card">
     <div class="card-header bg-dark mb-2">
         <h3 class="text-center text-light"><b><i class="fas fa-table"></i> ตารางรายการเช่าทั้งหมด</b></h3>
@@ -57,7 +123,7 @@
                                                 <button class="btn btn-warning w-50">ดู</button>
                                             </td>
                                             <td class="text-center">
-                                                <button class="btn btn-danger w-50">ยกเลิกจอง</button>
+                                                <a href="manager.php?p=5&cancel_booking=ok&id_cancel=<?php echo $reS['id_list_booking']?>&salaQty=<?php echo $reS['id_sala']?>" class="btn btn-danger w-50">ยกเลิกจอง</a>
                                             </td>
                                     </tr>
 
