@@ -1,7 +1,7 @@
 
 <div class="card">
     <div class="card-header">
-    <h1>รองรับการดู</h1>
+    <h3><b>รองรับการดู</b> </h3>
     
 
     </div>
