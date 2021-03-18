@@ -59,32 +59,35 @@
 
                 <div class="card-body">
                 <div class="row">
-                <div class="form-group col-4">
-                      <b style="font-size:1.5rem;" for="exampleFormControlInput1"><i class="fas fa-laptop-house text-success"></i> โปรดเลือกศาลาฌาปนกิจศพ</b>
+                <div class="form-group col-4 mb-2">
+                      <b class="" style="font-size:1.5rem;" for="exampleFormControlInput1"><i class="fas fa-laptop-house text-success"></i> โปรดเลือกศาลาฌาปนกิจศพ</b>
+                      <div class="mt-2">
                       <?php
                             $chk = $SLOptionP->SOPEmpty();
                             $salaqty=1;
                             while ($re = mysqli_fetch_array($chk)) {
                               # code...
                               ?>
+                              
                                           <div class="pl-3 form-check" id="sala_select">
                                           <input class="mb-2" type="radio" name="sala" id="sala<?php echo$salaqty;?>" value="<?php echo$re['pavilion_name'];?>"> <?php echo$re['pavilion_name'];?>
                                           <input class="mb-2" type="radio" name="id_sala" id="id_sala<?php echo$salaqty;?>" hidden value="<?php echo$re['id'];?>"> 
                                           <input id="price_sala<?php echo$salaqty;?>" type="number" hidden  value="<?php echo$re['price'];?>">
                                           </div>
-                                          
+                                    
                               <?php
                               $salaqty++;
                             }
                             ?>
                       </div>
                       </div>
-                      <div class="d-flex align-items-starts mb-5">
+                      </div>
+                      <div class="d-flex align-items-starts ">
                             <b class="text-success d-flex align-items-center">ราคาศาลา : </b><input id="sala_total" type="number" readonly="true"  class="text-right ml-2 font-weight-bold text-danger border border-0" style="width:70px;" value="0" name="raca_sala"> <b class="text-success ml-2 d-flex align-items-center">บาท</b>
                     </div>
-
+                            <hr>
                        
-                      <div class="d-flex d-inline mb-3">
+                      <div class="d-flex d-inline ">
                           <div class="mr-3">
                                 <label for="inputState"><i class="far fa-calendar text-danger"></i> เลือกวันที่ทำการ</label>
                                 <input class="form-control" type="date" name="date_start">
@@ -96,10 +99,12 @@
                           </div>
                       </div>
 
+                              <hr>
 
                     <div class="row">
                       <div class="form-group col-12">
-                      <b style="font-size:1.5rem;" for="exampleFormControlInput1"><i class="fas fa-menorah text-warning"></i> อุปกรณ์ประกอบพิธีกรรม</b>
+                      <b class="mb-3" style="font-size:1.5rem;" for="exampleFormControlInput1"><i class="fas fa-menorah text-warning"></i> อุปกรณ์ประกอบพิธีกรรม</b>
+                      <div class="mt-2">
                       <?php
                             $chk = $SLOptionP->SOP2();
                             $i=1;
@@ -109,7 +114,7 @@
                         <div class="form-check col">
                         <div class="container">
 
-                          <input class="form-check-input" type="checkbox" name="equip[]" id="chkb<?php echo$i; ?>" value="<?php echo $re['equipment_tiype']." "; ?>">
+                          <input class="form-check-input " type="checkbox" name="equip[]" id="chkb<?php echo$i; ?>" value="<?php echo $re['equipment_tiype']." "; ?>">
                           <input id="price<?php echo$i; ?>" type="number" hidden value="<?php echo $re['price']; ?>"> <!-- ราคา -->
 
                           <label class="form-check-label" for="exampleRadios1">
@@ -122,18 +127,21 @@
                           $i++;
                             } 
                         ?>
-                        
-                            <b class="text-success">ราคาทั้งหมด : </b>
+                        </div>
+                            
+                            
                             <div class="d-flex justify-content-start mt-2">
                             <b class="text-success d-flex align-items-center">ราคาอุปกรณ์ประกอบพิธีกรรม : </b><input id="equip-total" type="number" name="raca_equip" readonly="true" class="border border-0 text-right ml-2 font-weight-bold text-danger" value="0" style="width:70px;"> <b class="text-success ml-2 d-flex align-items-center">บาท</b>
                             </div>
                     </div> 
                     </div>
+
+                    <hr>
                             
                 
               <div><b style="font-size:1.5rem;"><i class="fas fa-check-circle text-primary"></i> อัตราค่าบำรุงฌาปนสถานวัดนครสวรรค์ </b></div>
 
-                <div class="form-check col mt-4">
+                <div class="form-check col mt-2">
                   <div class="container">
                     <input class="form-check-input" type="checkbox" name="cabamlung[]" id="chkbb1" value="ค่าบำรุงเมรุ (วันศพออก)">
                     <input id="pricebamrung1" type="number" hidden value="2000"> <!-- ราคา -->
