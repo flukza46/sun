@@ -51,12 +51,12 @@
                                     <img src="../image/pavilion/<?php echo $num['img']; ?>" class="card-img" title="">
                         </div>
                     </td>
-                    <td><?php echo $num['pavilion_name']; ?></td>
+                    <td><p><b><?php echo $num['pavilion_name']; ?></b></p></td>
                     <td class="text-center">
                                 <?php
                                         if($num['status_sala'] == "empty"){
                                             ?>
-                                                <p> - </p>
+                                                <p><b> - </b></p>
                                         <?php
                                         }else{
                                             $id_MLB = $num['id'];
@@ -82,7 +82,7 @@
                                                     if($num['status_sala'] == "empty"){
                                                         ?>
 
-                                                        <p> - </p>
+                                                        <p><b> - </b></p>
 
                                                         <?php
                                                     }else{
@@ -105,12 +105,12 @@
                                             if($num['status_sala'] == "empty"){
                                                 ?>
 
-                                                <a href="manager.php?p=4" class="btn btn-success text-light w-50"> ว่าง</a>
+                                                <a href="manager.php?p=4" class="btn btn-success w-100 border border-dark"> ว่าง</a>
 
                                                 <?php
                                             }else{
                                                 ?>
-                                                <button class="btn btn-danger text-light w-50"> ไม่ว่าง</button>
+                                                <button class="btn btn-danger w-100 border border-dark"> ไม่ว่าง</button>
                                         <?php
                                             } 
                                             ?>

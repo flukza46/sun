@@ -112,7 +112,7 @@
                                                 <?php
                                                                 if($reS['status_bill_success'] == "yet"){
                                                                     ?>
-                                                                    <button class="btn btn-primary w-500">ออกใบเสร็จ</button>
+                                                                    <button class="btn btn-primary w-100">ออกใบเสร็จ</button>
                                                                 <?php
                                                                 }
                                                 
@@ -120,10 +120,10 @@
                                                 ?>
                                             </td>
                                             <td class="text-center">
-                                                <button class="btn btn-warning w-50">ดู</button>
+                                                <button class="btn btn-warning w-100">ดู</button>
                                             </td>
                                             <td class="text-center">
-                                                <a href="manager.php?p=5&cancel_booking=ok&id_cancel=<?php echo $reS['id_list_booking']?>&salaQty=<?php echo $reS['id_sala']?>" class="btn btn-danger w-50">ยกเลิกจอง</a>
+                                                <a href="manager.php?p=5&cancel_booking=ok&id_cancel=<?php echo $reS['id_list_booking']?>&salaQty=<?php echo $reS['id_sala']?>" class="btn btn-danger w-100">ยกเลิกจอง</a>
                                             </td>
                                     </tr>
 
