@@ -60,12 +60,19 @@
                                         <?php
                                         }else{
                                             $id_MLB = $num['id'];
-                                            $slMLB = $slN->Slect_booking_statusBooking($id_MLB);
-                                            $fetch = mysqli_fetch_array($slMLB);
-                                            ?>
-                                            <p><b>คุณ : <?php echo $fetch['first_name']." ".$fetch['last_name'];?></b></p>
+                                            $SQL_SMLB = $slN->Slect_booking2($id_MLB);
+                                            if($SQL_SMLB){
+                                                    if($fet_MLB = mysqli_fetch_array($SQL_SMLB)){
+                                                        ?>
+                                                        <p><b>คุณ : <?php echo $fet_MLB['first_name']." ".$fet_MLB['last_name'];?></b></p>
 
-                                         <?php   
+                                                    <?php   
+                                                        }else{
+                                                            echo "Can't fetch Data";
+                                                        }
+                                            }else{
+                                                echo "Can't SQL";
+                                            }
                                         }    
                                 ?>
 

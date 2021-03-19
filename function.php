@@ -81,13 +81,11 @@
                 $re = mysqli_query($this->dbcon, "SELECT * FROM make_list_booking ORDER BY id_list_booking DESC");
                 return $re;
             }
-
-            //TODO ดึงข้อมูล การจอง Statusbooking
-            public function Slect_booking_statusBooking($id_MLB){
-                $re = mysqli_query($this->dbcon, "SELECT * FROM make_list_booking WHERE id_list_booking='$id_MLB' ");
+            //TODO ดึงข้อมูล status_booking p=6
+            public function Slect_booking2($id_MLB){
+                $re = mysqli_query($this->dbcon, "SELECT * FROM make_list_booking WHERE id_sala=$id_MLB " );
                 return $re;
             }
-
             //? ฟังก์ชั่น Logout
             public function logout_form(){
                 session_start();
