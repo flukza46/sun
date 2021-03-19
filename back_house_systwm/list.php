@@ -119,9 +119,13 @@
                                                 
                                                 ?>
                                             </td>
+
+                                            
                                             <td class="text-center">
-                                                <button class="btn btn-warning w-100">ดู</button>
+                                                <a href="manager.php?p=8"class="btn btn-warning w-100">ดู</a> 
                                             </td>
+
+
                                             <td class="text-center">
                                                 <a href="manager.php?p=5&cancel_booking=ok&id_cancel=<?php echo $reS['id_list_booking']?>&salaQty=<?php echo $reS['id_sala']?>" class="btn btn-danger w-100">ยกเลิกจอง</a>
                                             </td>
