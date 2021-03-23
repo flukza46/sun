@@ -40,6 +40,7 @@
 
                 return $thai_date_return;   
             }
+            
             // Todo: ทำเวลาเป็นภาษาไทย2
             function thai_date_and_time2($time2){
                 $dayTH = ['อาทิตย์','จันทร์','อังคาร','พุธ','พฤหัสบดี','ศุกร์','เสาร์'];
@@ -57,6 +58,11 @@
             //? ฟังก์ชั่น SOP
             public function SOP(){
                 $re = mysqli_query($this->dbcon, "SELECT * FROM pavilion ORDER BY id ASC");
+                return $re;
+            }
+            //TODO  : Select for page View_Receipt
+            public function SL4View_Receipt($id_MLB){
+                $re = mysqli_query($this->dbcon, "SELECT * FROM make_list_booking WHERE id_list_booking='$id_MLB' ");
                 return $re;
             }
             //? ฟังก์ชั่น SOP2

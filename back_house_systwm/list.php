@@ -122,7 +122,7 @@
 
                                             
                                             <td class="text-center">
-                                                <a href="manager.php?p=8"class="btn btn-warning w-100">ดู</a> 
+                                                <a href="manager.php?p=8&view_receipt=<?php echo $reS['id_list_booking']; ?>"class="btn btn-warning w-100">ดู</a> 
                                             </td>
 
 
