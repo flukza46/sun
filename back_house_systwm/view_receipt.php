@@ -13,6 +13,8 @@
     </div>
     <div class="card-body">
         <!-- เนื้อหา -->
+        
+        
         <?php
                     $id_MLB =  $_GET['view_receipt'];
 
@@ -22,7 +24,7 @@
                         
                         if($result = mysqli_fetch_array($sql)){
                         ?>
-
+                            
                             <div class="row">
                                 <div class="form-group col-4 mt-4">
                                     <label for="exampleFormControlInput1"><i class="fas fa-user-edit text-primary"></i> ชื่อจริง</label>
@@ -63,8 +65,9 @@
                                     <textarea class="form-control w-50" id="exampleFormControlTextarea1" rows="5" name="t_address"
                                         readOnly><?php echo $result['select_equipment']; ?></textarea>
                                     <label class="font-weight-bold d-flex d-inline">
+<?//! ราคา  ?>
                                     <p class="text-success">ราคาอุปกรณ์ประกอบพิธีกรรม : </p>
-                                    <p class="ml-2 text-danger"><?php echo $result['raca_equip']; ?></p>
+                                    <p class="ml-2 text-danger"><?php echo number_format($result['raca_equip']); ?></p>
                                     <p class="ml-2 text-success">บาท</p>
                                     </label>
                                 </div>
@@ -78,8 +81,9 @@
                                     <textarea class="form-control w-50" id="exampleFormControlTextarea1" rows="5" name="t_address"
                                         readOnly><?php echo $result['select_cabamlung']; ?></textarea>
                                     <label class="font-weight-bold d-flex d-inline">
+<?//! ราคา  ?>
                                     <p class="text-success">ราคาอุปกรณ์ประกอบพิธีกรรม : </p>
-                                    <p class="ml-2 text-danger"><?php echo $result['raca_cabamlung']; ?></p>
+                                    <p class="ml-2 text-danger"><?php echo number_format($result['raca_cabamlung']); ?></p>
                                     <p class="ml-2 text-success">บาท</p>
                                     </label>
                                 </div>
@@ -90,8 +94,9 @@
                                     <div>
                                             
                                         <span class="d-flex d-inline align-items-center">
+<?//! ราคา  ?>
                                                 <h3 class="m-0 p-3 text-success font-weight-bold">ราคาค่าใช้จ่ายทั้งหมด : </h3>
-                                                <h3 class="m-0 text-danger font-weight-bold"><?php echo $result['raca_total']; ?></h3>
+                                                <h3 class="m-0 text-danger font-weight-bold"><?php echo number_format($result['raca_total']); ?></h3>
                                                 <h3 class="m-0 ml-2 text-success font-weight-bold">บาท</h3>
                                         </span>
                                             
@@ -112,7 +117,6 @@
                     
                     
                     ?>
-
 
 
 
