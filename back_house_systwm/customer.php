@@ -36,11 +36,7 @@
                     <div class="form-group col-4">
                         <label for="exampleFormControlInput1"><i class="fas fa-phone-volume text-info"></i>
                             เบอร์โทรศัพท์</label>
-<<<<<<< HEAD
                         <input style="width:200px;" maxlength="10" type="text" class="form-control"
-=======
-                        <input style="width:200px;" maxlength="10" type="number" class="form-control"
->>>>>>> 857251167ef41a18def959968455d1ec4e7e38a4
                             id="exampleFormControlInput1" name="p_number" required>
                     </div>
                 </div>
@@ -58,21 +54,7 @@
         </div>
     </div>
 </div>
-<<<<<<< HEAD
 
-=======
->>>>>>> 857251167ef41a18def959968455d1ec4e7e38a4
-
-<!--อัตราค่าบำรุงฌาปนสถานวัดนครสวรรค์-->
-<div class="container-fluid">
-    <div class="card">
-
-<<<<<<< HEAD
-        <div class="card-header text-center">
-            <h3><b style="font-size:2rem;">ปนสถานวัดนครสวรรค์และอุปกรณ์ประกอบพิธีกรรม</b></h3>
-        </div>
-
-=======
 <!--อัตราค่าบำรุงฌาปนสถานวัดนครสวรรค์-->
 <div class="container-fluid">
     <div class="card">
@@ -81,7 +63,6 @@
             <h3><b style="font-size:2rem;">ปนสถานวัดนครสวรรค์และอุปกรณ์ประกอบพิธีกรรม</b></h3>
         </div>
 
->>>>>>> 857251167ef41a18def959968455d1ec4e7e38a4
         <div class="card-body">
             <div class="row">
                 <div class="form-group col-4 mb-2">
@@ -419,8 +400,4 @@ $(document).ready(function() {
 });
 </script>
 
-        // ----------------------------------
-
-    })
-});
 </script>
