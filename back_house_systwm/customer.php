@@ -36,7 +36,11 @@
                     <div class="form-group col-4">
                         <label for="exampleFormControlInput1"><i class="fas fa-phone-volume text-info"></i>
                             เบอร์โทรศัพท์</label>
+<<<<<<< HEAD
                         <input style="width:200px;" maxlength="10" type="text" class="form-control"
+=======
+                        <input style="width:200px;" maxlength="10" type="number" class="form-control"
+>>>>>>> 857251167ef41a18def959968455d1ec4e7e38a4
                             id="exampleFormControlInput1" name="p_number" required>
                     </div>
                 </div>
@@ -54,8 +58,21 @@
         </div>
     </div>
 </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 857251167ef41a18def959968455d1ec4e7e38a4
 
+<!--อัตราค่าบำรุงฌาปนสถานวัดนครสวรรค์-->
+<div class="container-fluid">
+    <div class="card">
+
+<<<<<<< HEAD
+        <div class="card-header text-center">
+            <h3><b style="font-size:2rem;">ปนสถานวัดนครสวรรค์และอุปกรณ์ประกอบพิธีกรรม</b></h3>
+        </div>
+
+=======
 <!--อัตราค่าบำรุงฌาปนสถานวัดนครสวรรค์-->
 <div class="container-fluid">
     <div class="card">
@@ -64,6 +81,7 @@
             <h3><b style="font-size:2rem;">ปนสถานวัดนครสวรรค์และอุปกรณ์ประกอบพิธีกรรม</b></h3>
         </div>
 
+>>>>>>> 857251167ef41a18def959968455d1ec4e7e38a4
         <div class="card-body">
             <div class="row">
                 <div class="form-group col-4 mb-2">
@@ -277,17 +295,23 @@
                                 class="fas fa-save"></i> บันทึกข้อมูล</button>
                     </div>
                 </div>
+<<<<<<< HEAD
             </div>
             <hr>
             <div class="alert alert-success" role="alert">
                 <h4 class="alert-heading font-weight-bold">คำชี้แจง !</h4>
                 <p class="mb-0">การบันทึกข้อมูลในหน้านี้ ยังไม่สามารถออกใบเสร็จให้กับลูกค้าได้ เนื่องจากยังมีค่าใช้จ่ายที่ต้องคิดเพิ่มหลังจัดงานเสร็จ อันได้แก่ ค่าไฟ (คิดเป็นหน่วยล่ะ 7 บาท) และ ค่าบริการของเจ้าหน้าที่วันประชุมเพลิง 9 คน (ตามสมควร)</p>
             </div>
+=======
+            </div>
+            <hr>
+>>>>>>> 857251167ef41a18def959968455d1ec4e7e38a4
 
         </div>
     </div>
 </div>
 </div>
+<<<<<<< HEAD
 
 </form>
 
@@ -296,6 +320,16 @@
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
+=======
+
+</form>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+>>>>>>> 857251167ef41a18def959968455d1ec4e7e38a4
 <script>
 //รวมราคา
 $(document).ready(function() {
@@ -325,9 +359,15 @@ $(document).ready(function() {
     });
 
     // ---------------------------------------------------------
+<<<<<<< HEAD
 
     $("#billtest").click(function() {
 
+=======
+
+    $("#billtest").click(function() {
+
+>>>>>>> 857251167ef41a18def959968455d1ec4e7e38a4
         $("#billtest2").attr('hidden', false)
 
         <?php
@@ -382,20 +422,43 @@ $(document).ready(function() {
                                                         ?>
         console.log(sum);
         $("#equip-total").val(sum);
+<<<<<<< HEAD
+=======
 
 
         $("#sala_total").val(price_sala); // แสดงผลรวมค่าศาลา
         $("#equip-total").val(sum); // แสดงผลรวมค่าอุปกรณ์
         $("#bamrung-total").val(sum2); // แสดงผลรวม ค่าบำรุง
+>>>>>>> 857251167ef41a18def959968455d1ec4e7e38a4
 
         // ----------------------------------
         //  total - all
         var total_all = price_sala + sum + sum2;
         $("#total-all").val(total_all);
 
+        $("#sala_total").val(price_sala); // แสดงผลรวมค่าศาลา
+        $("#equip-total").val(sum); // แสดงผลรวมค่าอุปกรณ์
+        $("#bamrung-total").val(sum2); // แสดงผลรวม ค่าบำรุง
 
         // ----------------------------------
+<<<<<<< HEAD
+        //  total - all
+        var total_all = price_sala + sum + sum2;
+        $("#total-all").val(total_all);
+=======
+>>>>>>> 857251167ef41a18def959968455d1ec4e7e38a4
 
     })
 });
 </script>
+
+        // ----------------------------------
+
+<<<<<<< HEAD
+    })
+});
+</script>
+=======
+<!-- //hihiihihihi ok 9าฟลุ๊ค  55-->
+<!--  บิล->
+>>>>>>> 857251167ef41a18def959968455d1ec4e7e38a4

@@ -4,6 +4,7 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+<<<<<<< HEAD
         
         {
             "type": "pwa-chrome",
@@ -12,5 +13,16 @@
             "url": "http://localhost/sun/index.php?p=home",
             "webRoot": "${workspaceFolder}"
         }
+=======
+        {
+            "name": "Launch Chrome",
+            "request": "launch",
+            "type": "pwa-chrome",
+            "url": "http://localhost/sun/index.php?p=home",
+            "webRoot": "${workspaceFolder}"
+        }
+        
+       
+>>>>>>> 857251167ef41a18def959968455d1ec4e7e38a4
     ]
 }
