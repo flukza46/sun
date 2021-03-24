@@ -112,7 +112,7 @@
                                                 <?php
                                                                 if($reS['status_bill_success'] == "yet"){
                                                                     ?>
-                                                                    <button class="btn btn-primary w-100">ออกใบเสร็จ</button>
+                                                                    <a href="manager.php?p=7&issue_receipt=<?php echo $reS['id_list_booking']; ?>" class="btn btn-primary w-100">ออกใบเสร็จ</a>
                                                                 <?php
                                                                 }
                                                 
