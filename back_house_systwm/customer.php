@@ -295,23 +295,17 @@
                                 class="fas fa-save"></i> บันทึกข้อมูล</button>
                     </div>
                 </div>
-<<<<<<< HEAD
             </div>
             <hr>
             <div class="alert alert-success" role="alert">
                 <h4 class="alert-heading font-weight-bold">คำชี้แจง !</h4>
                 <p class="mb-0">การบันทึกข้อมูลในหน้านี้ ยังไม่สามารถออกใบเสร็จให้กับลูกค้าได้ เนื่องจากยังมีค่าใช้จ่ายที่ต้องคิดเพิ่มหลังจัดงานเสร็จ อันได้แก่ ค่าไฟ (คิดเป็นหน่วยล่ะ 7 บาท) และ ค่าบริการของเจ้าหน้าที่วันประชุมเพลิง 9 คน (ตามสมควร)</p>
             </div>
-=======
-            </div>
-            <hr>
->>>>>>> 857251167ef41a18def959968455d1ec4e7e38a4
 
         </div>
     </div>
 </div>
 </div>
-<<<<<<< HEAD
 
 </form>
 
@@ -320,16 +314,6 @@
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
-=======
-
-</form>
-
-
-
-
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-
->>>>>>> 857251167ef41a18def959968455d1ec4e7e38a4
 <script>
 //รวมราคา
 $(document).ready(function() {
@@ -359,15 +343,9 @@ $(document).ready(function() {
     });
 
     // ---------------------------------------------------------
-<<<<<<< HEAD
 
     $("#billtest").click(function() {
 
-=======
-
-    $("#billtest").click(function() {
-
->>>>>>> 857251167ef41a18def959968455d1ec4e7e38a4
         $("#billtest2").attr('hidden', false)
 
         <?php
@@ -422,14 +400,6 @@ $(document).ready(function() {
                                                         ?>
         console.log(sum);
         $("#equip-total").val(sum);
-<<<<<<< HEAD
-=======
-
-
-        $("#sala_total").val(price_sala); // แสดงผลรวมค่าศาลา
-        $("#equip-total").val(sum); // แสดงผลรวมค่าอุปกรณ์
-        $("#bamrung-total").val(sum2); // แสดงผลรวม ค่าบำรุง
->>>>>>> 857251167ef41a18def959968455d1ec4e7e38a4
 
         // ----------------------------------
         //  total - all
@@ -441,12 +411,9 @@ $(document).ready(function() {
         $("#bamrung-total").val(sum2); // แสดงผลรวม ค่าบำรุง
 
         // ----------------------------------
-<<<<<<< HEAD
         //  total - all
         var total_all = price_sala + sum + sum2;
         $("#total-all").val(total_all);
-=======
->>>>>>> 857251167ef41a18def959968455d1ec4e7e38a4
 
     })
 });
@@ -454,11 +421,6 @@ $(document).ready(function() {
 
         // ----------------------------------
 
-<<<<<<< HEAD
     })
 });
 </script>
-=======
-<!-- //hihiihihihi ok 9าฟลุ๊ค  55-->
-<!--  บิล->
->>>>>>> 857251167ef41a18def959968455d1ec4e7e38a4
