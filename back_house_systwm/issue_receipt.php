@@ -108,11 +108,11 @@
                 <div class="alert alert-secondary font-weight-bold" role="alert">
                     <div class="mb-3">
                         <label for="">ค่าไฟ (คิดเป็นหน่วยล่ะ 7 บาท)</label>
-                        <input class="form-control w-50" type="number" required>
+                        <input id="cafri" class="form-control w-50" type="number" required>
                         <?php //! ราคา ค่าไฟ  ?>
                         <span class="d-flex d-inline align-items-center text-success">
                             <p>ราคาค่าไฟ : </p>
-                            <p class="ml-2 text-danger"></p>
+                            <p id="span_cafri" class="ml-2 text-danger"></p>
                             <p class="ml-2">บาท</p>
                         </span>
 
@@ -120,26 +120,27 @@
 
                     <div class="mb-3">
                         <label for="">ค่าบริการของเจ้าหน้าที่วันประชุมเพลิง 9 คน (ตามสมควร)</label>
-                        <input class="form-control w-50" type="number" required>
+                        <input id="m9" class="form-control w-50" type="number" required>
                         <?php //! ราคา เจ้าหน้าที่ 9 คน ?>
                         <span class="d-flex d-inline align-items-center text-success">
                             <p>ราคาค่าบริการเจ้าหน้าที่ 9 คน : </p>
-                            <p class="ml-2 text-danger"></p>
+                            <p id="span_m9" class="ml-2 text-danger">0</p>
                             <p class="ml-2">บาท</p>
                         </span>
                     </div>
 
                     <div class="text-right">
-                        <button class="btn btn-primary" type="button">คำนวนราคา</button>
+                        <button id="compute_cafri_m9" class="btn btn-primary" type="button">คำนวนราคา</button>
                     </div>
 
-
-
                 </div>
+                    <div class="text-right">
+                        <button id="save_receipt" class="btn btn-success w-100" type="button" hidden>บันทึกใบเสร็จ</button>
+                    </div>
 
-            </div>
+            </div><!-- ปิด col2 -->
 
-        </div>
+        </div><!-- ปิด Row เล็ก-->
 
 
     </div><!-- ปิด Row ใหญ่-->
@@ -151,10 +152,11 @@
             <span class="d-flex d-inline align-items-center">
                 <?//! ราคา  ?>
                 <h3 class="m-0 p-3 text-success font-weight-bold">ราคาค่าใช้จ่ายทั้งหมด : </h3>
-                <h3 class="m-0 text-danger font-weight-bold">
+                <h3 id="" class="m-0 text-danger font-weight-bold">
                     <?php echo number_format($result['raca_total']); ?>
                 </h3>
                 <h3 class="m-0 ml-2 text-success font-weight-bold">บาท</h3>
+                <input id="total_success" type="text"  value="<?php echo $result['raca_total']; ?>">
             </span>
 
         </div>
@@ -184,3 +186,60 @@
 
 </div><!-- ปิด body -->
 </div>
+
+
+<!-- jquery -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+$(document).ready(function() {
+    $("#compute_cafri_m9").click(function() {
+
+        //! รับค่าตัวแปล
+        // ──────────────────────────────────────── II ──────────
+        var cafri = ~~$("#cafri").val();
+        var m9 = ~~$("#m9").val();
+        var total_success = ~~$("#total_success").text();
+        alert(total_success);
+        // ──────────────────────────────────────────────────
+        //
+
+        //! คำนวณค่าไฟ  * 7 บาท / หน่วย
+        // ──────────────────────────────────────── I ──────────
+        var sum_cafri = cafri * 7;
+        $("#span_cafri").text(sum_cafri);
+        // ──────────────────────────────────────────────────
+        //
+
+        //! คำนวนค่าบริการ 9 คน
+        // ──────────────────────────────────────── I ──────────
+        $("#span_m9").text(m9);
+        // ──────────────────────────────────────────────────
+        //
+
+        //! sum 
+        // ──────────────────────────────────────── I ──────────
+        var sum_total  = sum_cafri + m9;
+        
+        // ──────────────────────────────────────────────────
+        //
+
+        
+        
+        //! ปุ่มบันทึก
+        // ──────────────────────────────────────── I ──────────
+        if(sum_total <= 0){
+            $("#save_receipt").prop('hidden', true);
+        }else{
+            $("#save_receipt").prop('hidden', false);
+        }
+        // ──────────────────────────────────────────────────
+        //
+
+
+
+
+
+
+    })
+});
+</script>
