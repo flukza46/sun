@@ -112,7 +112,7 @@
                         <?php //! ราคา ค่าไฟ  ?>
                         <span class="d-flex d-inline align-items-center text-success">
                             <p>ราคาค่าไฟ : </p>
-                            <p id="span_cafri" class="ml-2 text-danger"></p>
+                            <p id="span_cafri" class="ml-2 text-danger">0</p>
                             <p class="ml-2">บาท</p>
                         </span>
 
@@ -129,14 +129,26 @@
                         </span>
                     </div>
 
+                    <div class="mb-3">
+
+                        <div
+                            class="alert alert-dark d-flex d-inline align-items-center text-success justify-content-end">
+                            <h4 class="m-0 font-weight-bold ">รวม : </h4>
+                            <h4 id="span_cafri_m9" class="font-weight-bold  m-0 ml-2 text-danger">0</hclass=3>
+                                <h4 class="font-weight-bold  m-0 ml-2">บาท</h4>
+                        </div>
+                    </div>
+
                     <div class="text-right">
                         <button id="compute_cafri_m9" class="btn btn-primary" type="button">คำนวนราคา</button>
+                        <button id="reset_cafri_m9" class="btn btn-warning" type="button"
+                            hidden>รีเซ็ตข้อมูลใหม่</button>
                     </div>
 
                 </div>
-                    <div class="text-right">
-                        <button id="save_receipt" class="btn btn-success w-100" type="button" hidden>บันทึกใบเสร็จ</button>
-                    </div>
+                <div class="text-right">
+                    <button id="save_receipt" class="btn btn-success w-100" type="button" hidden>บันทึกใบเสร็จ</button>
+                </div>
 
             </div><!-- ปิด col2 -->
 
@@ -146,17 +158,18 @@
     </div><!-- ปิด Row ใหญ่-->
 
     <div class="row"></div>
-    <div class="col bg-dark d-flex justify-content-end text-light">
+    <div class="p-2 col bg-dark d-flex justify-content-end text-light">
         <div>
 
             <span class="d-flex d-inline align-items-center">
                 <?//! ราคา  ?>
-                <h3 class="m-0 p-3 text-success font-weight-bold">ราคาค่าใช้จ่ายทั้งหมด : </h3>
-                <h3 id="" class="m-0 text-danger font-weight-bold">
-                    <?php echo number_format($result['raca_total']); ?>
-                </h3>
-                <h3 class="m-0 ml-2 text-success font-weight-bold">บาท</h3>
-                <input id="total_success" type="text"  value="<?php echo $result['raca_total']; ?>">
+
+                <h3 class="m-0 text-success d-flex align-items-center">ยอดรวมทั้งหมด : </h3>
+                <h3 class="m-0"><input style="width:100px;" id="total_success" type="number" name="raca_total"
+                        readonly="true" class="text-right ml-2 font-weight-bold text-danger bg-dark border border-0"
+                        value="<?php echo $result['raca_total']; ?>"></h3>
+                <h3 class="m-0 text-success ml-2 d-flex align-items-center">บาท</h3>
+
             </span>
 
         </div>
@@ -192,14 +205,31 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script>
 $(document).ready(function() {
+
+
     $("#compute_cafri_m9").click(function() {
+
+
+        //! Reset
+        /* -------------------------------------------------------------------------- */
+        $("#reset_cafri_m9").prop('hidden', false);
+        $("#reset_cafri_m9").click(function() {
+
+            location.reload();
+        })
+        $(this).prop('hidden', true);
+
+        /* -------------------------------------------------------------------------- */
+
 
         //! รับค่าตัวแปล
         // ──────────────────────────────────────── II ──────────
         var cafri = ~~$("#cafri").val();
         var m9 = ~~$("#m9").val();
-        var total_success = ~~$("#total_success").text();
-        alert(total_success);
+        var total_success = ~~$("#total_success").val();
+
+
+
         // ──────────────────────────────────────────────────
         //
 
@@ -207,6 +237,7 @@ $(document).ready(function() {
         // ──────────────────────────────────────── I ──────────
         var sum_cafri = cafri * 7;
         $("#span_cafri").text(sum_cafri);
+        $("#cafri").val(sum_cafri);
         // ──────────────────────────────────────────────────
         //
 
@@ -218,23 +249,32 @@ $(document).ready(function() {
 
         //! sum 
         // ──────────────────────────────────────── I ──────────
-        var sum_total  = sum_cafri + m9;
-        
+        var sum_total = sum_cafri + m9;
+        $("#span_cafri_m9").text(sum_total);
+
         // ──────────────────────────────────────────────────
         //
 
-        
-        
+        //! เปลี่ยนค่าของราคา
+        /* -------------------------------------------------------------------------- */
+        var change_total_success = sum_total + total_success;
+        $("#total_success").val(change_total_success);
+
+
+        $("#cafri").prop('hidden', true);
+        $("#m9").prop('hidden', true);
+        /* -------------------------------------------------------------------------- */
+
+
         //! ปุ่มบันทึก
         // ──────────────────────────────────────── I ──────────
-        if(sum_total <= 0){
+        if (sum_total <= 0) {
             $("#save_receipt").prop('hidden', true);
-        }else{
+        } else {
             $("#save_receipt").prop('hidden', false);
         }
         // ──────────────────────────────────────────────────
         //
-
 
 
 

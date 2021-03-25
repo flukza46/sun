@@ -102,13 +102,13 @@
 
             <div class="d-flex d-inline ">
                 <div class="mr-3">
-                    <label for="inputState"><i class="far fa-calendar text-danger"></i> เลือกวันที่ทำการ</label>
-                    <input class="form-control" type="date" name="date_start" required>
+                    <label for="inputState"><i class="far fa-calendar text-danger"></i> เลือกวันที่ทำการจอง</label>
+                    <input class="form-control" type="datetime-local" name="date_start" required>
                 </div>
 
                 <div class=" ">
                     <label for="inputState"><i class="far fa-calendar text-danger"></i> เลือกวันที่วันครบกำหนด</label>
-                    <input class="form-control" type="date" name="date_stop" required>
+                    <input class="form-control" type="datetime-local" name="date_stop" required>
                 </div>
             </div>
 
