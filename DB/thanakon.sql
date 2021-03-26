@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 19, 2021 at 05:20 PM
+-- Generation Time: Mar 26, 2021 at 06:45 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -70,11 +70,11 @@ CREATE TABLE `make_list_booking` (
   `select_sala` varchar(50) NOT NULL COMMENT 'ศาลาที่เลือก',
   `id_sala` int(50) NOT NULL COMMENT 'ไอดีของศาลา',
   `raca_sala` int(50) NOT NULL COMMENT 'ราคาศาลาที่เลือก',
-  `datestart` date NOT NULL COMMENT 'วันที่เริ่มจอง',
-  `datestop` date NOT NULL COMMENT 'วันที่สิ้นสุดการจอง',
-  `select_equipment` varchar(300) NOT NULL COMMENT 'อุปกรณ์ที่เลือก',
+  `datestart` datetime NOT NULL COMMENT 'วันที่เริ่มจอง',
+  `datestop` datetime NOT NULL COMMENT 'วันที่สิ้นสุดการจอง',
+  `select_equipment` text NOT NULL COMMENT 'อุปกรณ์ที่เลือก',
   `raca_equip` int(50) NOT NULL COMMENT 'ราคาอุปกรณ์ที่เลือกทั้งหมด',
-  `select_cabamlung` varchar(300) NOT NULL COMMENT 'ค่าบำรุงที่เลือก',
+  `select_cabamlung` text NOT NULL COMMENT 'ค่าบำรุงที่เลือก',
   `raca_cabamlung` int(50) NOT NULL COMMENT 'ราคาค่าบำรุงที่เลือกทั้งหมด',
   `raca_total` int(50) NOT NULL COMMENT 'ราคารวมทั้งหมด',
   `raca_cafri` varchar(50) NOT NULL COMMENT 'ราคาค่าไฟหน่วยล่ะ7บาท',
@@ -87,7 +87,9 @@ CREATE TABLE `make_list_booking` (
 --
 
 INSERT INTO `make_list_booking` (`id_list_booking`, `first_name`, `last_name`, `phone_number`, `address`, `select_sala`, `id_sala`, `raca_sala`, `datestart`, `datestop`, `select_equipment`, `raca_equip`, `select_cabamlung`, `raca_cabamlung`, `raca_total`, `raca_cafri`, `raca_manternance9`, `status_bill_success`) VALUES
-(10, 'ทักษิณ', 'จันโอชา', '0123456789', '12369874', 'ศาลาที่ 1', 4, 1500, '2021-03-19', '2021-03-20', 'ผ้าไตรเต็มชุด , กันณฑ์เทศน์/ผ้าป่า , ผ้าบังสกุลสำหรับพระสวดมาติกา ', 450, 'ค่าบำรุงเมรุ (วันศพออก), ค่าบุรุงโลงเย็น, ค่าบำรุงพัดลมหน้าเมรุ, ค่าทำความสะอาดวันศพออก, ค่าพนักงานเฝ้าศพกลางคืน, ค่าบำรุงเรื่องเสียง, ค่าทำความสอาดโลงเย็น, ค่าบำรุงสุสาน (เฉพาะศพเก็บ)', 4850, 6800, 'wait', 'wait', 'yet');
+(10, 'ทักษิณ', 'จันโอชา', '0123456789', '12369874', 'ศาลาที่ 1', 4, 1500, '2021-03-19 00:00:00', '2021-03-20 00:00:00', 'ผ้าไตรเต็มชุด , กันณฑ์เทศน์/ผ้าป่า , ผ้าบังสกุลสำหรับพระสวดมาติกา ', 450, 'ค่าบำรุงเมรุ (วันศพออก), ค่าบุรุงโลงเย็น, ค่าบำรุงพัดลมหน้าเมรุ, ค่าทำความสะอาดวันศพออก, ค่าพนักงานเฝ้าศพกลางคืน, ค่าบำรุงเรื่องเสียง, ค่าทำความสอาดโลงเย็น, ค่าบำรุงสุสาน (เฉพาะศพเก็บ)', 4850, 6800, 'wait', 'wait', 'yet'),
+(13, 'ประยวย', 'ชินวัตร', '1987555524', '1515/52 ม.3', 'ศาลาที่ 2', 5, 2000, '2021-03-23 00:00:00', '2021-03-25 00:00:00', 'ผ้าไตรเต็มชุด , กันณฑ์เทศน์/ผ้าป่า , ผ้าบังสกุลสำหรับพระสวดมาติกา ', 450, 'ค่าบำรุงเมรุ (วันศพออก), ค่าบุรุงโลงเย็น, ค่าบำรุงพัดลมหน้าเมรุ, ค่าทำความสะอาดวันศพออก, ค่าพนักงานเฝ้าศพกลางคืน, ค่าบำรุงเรื่องเสียง, ค่าทำความสอาดโลงเย็น, ค่าบำรุงสุสาน (เฉพาะศพเก็บ)', 4850, 7300, 'wait', 'wait', 'yet'),
+(15, 'ชื่อจริง', 'นามสกุล', '8888888888', '12', 'ศาลาที่ 3', 6, 2500, '2021-03-26 10:04:00', '2021-03-28 10:04:00', 'ผ้าไตรเต็มชุด , กันณฑ์เทศน์/ผ้าป่า , ผ้าบังสกุลสำหรับพระสวดมาติกา ', 450, 'ค่าบำรุงสุสาน (เฉพาะศพเก็บ)', 1500, 4450, 'wait', 'wait', 'yet');
 
 -- --------------------------------------------------------
 
@@ -134,8 +136,8 @@ CREATE TABLE `pavilion` (
   `pavilion_name` varchar(50) NOT NULL,
   `price` varchar(10) NOT NULL,
   `status_sala` varchar(20) NOT NULL,
-  `booking_d_strat` date NOT NULL,
-  `booking_d_stop` date NOT NULL
+  `booking_d_strat` datetime NOT NULL,
+  `booking_d_stop` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -143,12 +145,12 @@ CREATE TABLE `pavilion` (
 --
 
 INSERT INTO `pavilion` (`id`, `img`, `pavilion_name`, `price`, `status_sala`, `booking_d_strat`, `booking_d_stop`) VALUES
-(4, '161011950939286.jpg', 'ศาลาที่ 1', '1500', 'full', '2021-03-19', '2021-03-20'),
-(5, '161011952053353.jpg', 'ศาลาที่ 2', '2000', 'empty', '2021-03-18', '2021-03-28'),
-(6, '161011954633769.jpg', 'ศาลาที่ 3', '2500', 'empty', '2021-03-19', '2021-03-21'),
-(7, '16101195647154.jpg', 'ศาลาที่ 4', '3000', 'empty', '0000-00-00', '0000-00-00'),
-(8, '161010244328521.jpg', 'ศาลาที่ 5', '3500', 'empty', '0000-00-00', '0000-00-00'),
-(9, '161011942267882.jpg', 'ศาลาที่ 6', '4000', 'empty', '2021-03-19', '2021-03-28');
+(4, '161011950939286.jpg', 'ศาลาที่ 1', '1500', 'full', '2021-03-19 00:00:00', '2021-03-20 00:00:00'),
+(5, '161011952053353.jpg', 'ศาลาที่ 2', '2000', 'full', '2021-03-23 00:00:00', '2021-03-25 00:00:00'),
+(6, '161011954633769.jpg', 'ศาลาที่ 3', '2500', 'full', '2021-03-26 10:04:00', '2021-03-28 10:04:00'),
+(7, '16101195647154.jpg', 'ศาลาที่ 4', '3000', 'empty', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(8, '161010244328521.jpg', 'ศาลาที่ 5', '3500', 'empty', '2021-03-24 00:00:00', '2021-03-25 00:00:00'),
+(9, '161011942267882.jpg', 'ศาลาที่ 6', '4000', 'empty', '2021-03-19 00:00:00', '2021-03-28 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -640,7 +642,7 @@ ALTER TABLE `maintenance_rate`
 -- AUTO_INCREMENT for table `make_list_booking`
 --
 ALTER TABLE `make_list_booking`
-  MODIFY `id_list_booking` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_list_booking` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `news`

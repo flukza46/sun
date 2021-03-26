@@ -36,7 +36,7 @@
                     $thai_date_return = date("j",$time1);   
                     $thai_date_return.=" ".$monthThai[date("n",$time1)];   
                     $thai_date_return.= " ".(date("Y",$time1)+543);   
-                    
+                    $thai_date_return.= " เวลา ".date("H:i:s",$time1);
 
                 return $thai_date_return;   
             }
@@ -49,7 +49,8 @@
                     global $dayTH,$monthTH;   
                     $thai_date_return = date("j",$time2);   
                     $thai_date_return.=" ".$monthThai[date("n",$time2)];   
-                    $thai_date_return.= " ".(date("Y",$time2)+543);   
+                    $thai_date_return.= " ".(date("Y",$time2)+543);
+                    $thai_date_return.= " เวลา ".date("H:i:s",$time2);   
                     
 
                 return $thai_date_return;   
@@ -224,6 +225,18 @@
                 booking_d_strat='$date_start', 
                 booking_d_stop='$date_stop'
                 WHERE id='$id_sala'");
+                
+                return $re;
+            }
+            //todo ออกใบเสร็จ
+            public function issueReceipt($f_name, $l_name, $p_number, $t_address, $cafri, $m9, $span_cafri_m9, $raca_total, $id){
+                $re = mysqli_query($this->dbcon, "UPDATE make_list_booking SET 
+                first_name='$f_name',
+                last_name='$l_name', 
+                phone_number='$p_number',
+                address='$t_address',
+                raca_cafri='$cafri',
+                WHERE id='$'");
                 
                 return $re;
             }
