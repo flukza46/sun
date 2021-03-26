@@ -1,5 +1,5 @@
 <?php
-include_once('../func_ajax.php');
+include_once('../../func_ajax.php');
 $SL4view_receipt = new DB_conn();
 $id_MLB =  $_POST['view_receipt'];
 
