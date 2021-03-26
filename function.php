@@ -229,14 +229,17 @@
                 return $re;
             }
             //todo ออกใบเสร็จ
-            public function issueReceipt($f_name, $l_name, $p_number, $t_address, $cafri, $m9, $span_cafri_m9, $raca_total, $id){
+            public function issueReceipt($f_name, $l_name, $p_number, $t_address, $cafri, $m9, $raca_total, $id){
                 $re = mysqli_query($this->dbcon, "UPDATE make_list_booking SET 
                 first_name='$f_name',
                 last_name='$l_name', 
                 phone_number='$p_number',
                 address='$t_address',
+                raca_total='$raca_total',
                 raca_cafri='$cafri',
-                WHERE id='$'");
+                raca_manternance9='$m9',
+                status_bill_success='success'
+                WHERE id_list_booking='$id'");
                 
                 return $re;
             }

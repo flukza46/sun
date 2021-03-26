@@ -14,26 +14,27 @@
                 $id_cancel = $_GET['id_cancel'];
                 $id_sala = $_GET['salaQty'];
                 ?>
-                <script>
-                Swal.fire({
-                    title: 'ต้องการยกเลิกการจอง?',
-                    text: "คุณกำลังจะยกเลิกการจองใช่หรือไม่!",
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'ใช่ ต้องการยกเลิก!',
-                    cancelButtonText: 'ไม่ต้องการ'
-                  }).then((result) => {
-                    if (result.isConfirmed) {
-                        window.location.href='manager.php?p=5&confirm_cancel_id=<?php echo $id_cancel;?>&salaQty=<?php echo $id_sala;?>';
-                    }else{
-                        window.location.href='manager.php?p=5';
-                    }
-                  });
-                </script>
+<script>
+Swal.fire({
+    title: 'ต้องการยกเลิกการจอง?',
+    text: "คุณกำลังจะยกเลิกการจองใช่หรือไม่!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'ใช่ ต้องการยกเลิก!',
+    cancelButtonText: 'ไม่ต้องการ'
+}).then((result) => {
+    if (result.isConfirmed) {
+        window.location.href =
+            'manager.php?p=5&confirm_cancel_id=<?php echo $id_cancel;?>&salaQty=<?php echo $id_sala;?>';
+    } else {
+        window.location.href = 'manager.php?p=5';
+    }
+});
+</script>
 
-            <?php  
+<?php  
             }
             if(isset($_GET['confirm_cancel_id'])){
                 $id = $_GET['confirm_cancel_id'];
@@ -43,125 +44,132 @@
                 $sql2 = $cancel_booking_func->updateStatusSalaEmpty($id_sala);
                 if($sql && $sql2){
                     ?>
-                                <script>
-                                                    Swal.fire({
-                                                
-                                                        icon: 'success',
-                                                        title: 'ยกเลิกจองเรียบร้อยแล้ว',
-                                                        showConfirmButton: false,
-                                                        timer: 2500
+<script>
+Swal.fire({
 
-                                                        }).then(function(){
-                                                            window.location.href='manager.php?p=5';
-                                                        })
-                                
-                                
-                                
-                                </script>
+    icon: 'success',
+    title: 'ยกเลิกจองเรียบร้อยแล้ว',
+    showConfirmButton: false,
+    timer: 2500
 
-                <?php
+}).then(function() {
+    window.location.href = 'manager.php?p=5';
+})
+</script>
+
+<?php
                 }
 
             }
 ?>
 
 
-<div class= "container-fluid mb-2">
+<div class="container-fluid mb-2">
 
- <div class="card">
-    <div class="card-header bg-dark mb-2">
-        <h3 class="text-center text-light"><b><i class="fas fa-table"></i> ตารางรายการเช่าทั้งหมด</b></h3>
-    </div>
-    <div class="card-body">
-                <table class="table table-striped w-100" id="myTable">
+    <div class="card">
+        <div class="card-header bg-dark mb-2">
+            <h3 class="text-center text-light"><b><i class="fas fa-table"></i> ตารางรายการเช่าทั้งหมด</b></h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped w-100" id="myTable">
                 <thead class="bg-success">
                     <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">ผู้จอง</th>
-                    <th scope="col">ศาลาที่จอง</th>
-                    <th scope="col">ราคาค่าใช้จ่ายทั้งหมด</th>
-                    <th scope="col">สถานะใบเสร็จ</th>
-                    <th scope="col">ดูข้อมูลทั้งหมด</th>
-                    <th scope="col">จัดการข้อมูล</th>
-                    
+                        <th scope="col">#</th>
+                        <th scope="col">ผู้จอง</th>
+                        <th scope="col">ศาลาที่จอง</th>
+                        <th scope="col">ราคาค่าใช้จ่ายทั้งหมด</th>
+                        <th scope="col">สถานะใบเสร็จ</th>
+                        <th scope="col">ดูข้อมูลทั้งหมด</th>
+                        <th scope="col">จัดการข้อมูล</th>
+
                     </tr>
                 </thead>
 
                 <tbody>
-                <?php
+                    <?php
                             $SLBooking = new DB_conn();
 
                             $sql = $SLBooking->Slect_booking();
                             $i = 1;
                             while($reS = mysqli_fetch_array($sql)){
                             ?>
-                                    <tr>
-                                            <td>
-                                                <?php echo $i ; ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $reS['first_name']." ".$reS['last_name']; ?>
-                                            </td>
-                                            <td>
-                                                <?php echo $reS['select_sala']; ?>
-                                            </td>
-                                            <td>
-                                                <?php echo number_format($reS['raca_total']); ?>
-                                            </td>
-                                            <td class="text-center">
-                                                <?php
+                    <tr>
+                        <td>
+                            <?php echo $i ; ?>
+                        </td>
+                        <td>
+                            <?php echo $reS['first_name']." ".$reS['last_name']; ?>
+                        </td>
+                        <td>
+                            <?php echo $reS['select_sala']; ?>
+                        </td>
+                        <td>
+                            <?php echo number_format($reS['raca_total']); ?>
+                        </td>
+                        <td class="text-center">
+                            <?php
                                                                 if($reS['status_bill_success'] == "yet"){
                                                                     ?>
-                                                                    <a href="manager.php?p=7&issue_receipt=<?php echo $reS['id_list_booking']; ?>" class="btn btn-primary w-100">ออกใบเสร็จ</a>
-                                                                <?php
-                                                                }
-                                                
-                                                
-                                                ?>
-                                            </td>
 
-                                            
-                                            <td class="text-center">
-                                                <a href="manager.php?p=8&view_receipt=<?php echo $reS['id_list_booking']; ?>"class="btn btn-warning w-100">ดู</a> 
-                                            </td>
+                            <a href="manager.php?p=7&issue_receipt=<?php echo $reS['id_list_booking']; ?>"
+                                class="btn btn-primary w-100">ออกใบเสร็จ</a>
+
+                            <?php
+                                                                }else{
+                                                                    ?>
+                            <a href="manager.php?p=8&view_receipt=<?php echo $reS['id_list_booking']; ?>&print=ok" class="btn btn-success w-100" target="_blank">พิมพ์</a>
+                            <?php
+                            }
 
 
-                                            <td class="text-center">
-                                                <a href="manager.php?p=5&cancel_booking=ok&id_cancel=<?php echo $reS['id_list_booking']?>&salaQty=<?php echo $reS['id_sala']?>" class="btn btn-danger w-100">ยกเลิกจอง</a>
-                                            </td>
-                                    </tr>
+                            ?>
+                        </td>
 
-                                <?php
+
+                        <td class="text-center">
+                            <a href="manager.php?p=8&view_receipt=<?php echo $reS['id_list_booking']; ?>"
+                                class="btn btn-warning w-100">ดู</a>
+                        </td>
+
+
+                        <td class="text-center">
+                            <a href="manager.php?p=5&cancel_booking=ok&id_cancel=<?php echo $reS['id_list_booking']?>&salaQty=<?php echo $reS['id_sala']?>"
+                                class="btn btn-danger w-100">ยกเลิกจอง</a>
+                        </td>
+                    </tr>
+
+                    <?php
                                     $i++;
                                         }
                                 ?>
                 </tbody>
-                </table>
+            </table>
+        </div>
     </div>
-</div>
 
-<script type="text/javascript" charset="utf-8">
-        $(document).ready( function () {
-            $('#myTable').DataTable({
-                "oLanguage": {
-                    "sLengthMenu": "แสดง _MENU_ เร็คคอร์ด ต่อหน้า",
-                    "sZeroRecords": "ไม่เจอข้อมูลที่ค้นหา",
-                    "sInfo": "แสดง _START_ ถึง _END_ ของ _TOTAL_ เร็คคอร์ด",
-                    "sInfoEmpty": "แสดง 0 ถึง 0 ของ 0 เร็คคอร์ด",
-                    "sInfoFiltered": "(จากเร็คคอร์ดทั้งหมด _MAX_ เร็คคอร์ด)",
-                    "sSearch": "ค้นหา :",
-                    "aaSorting" :[[0,'desc']],
-                    "oPaginate": {
-                    "sFirst":    "หน้าแรก",
+    <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+        $('#myTable').DataTable({
+            "oLanguage": {
+                "sLengthMenu": "แสดง _MENU_ เร็คคอร์ด ต่อหน้า",
+                "sZeroRecords": "ไม่เจอข้อมูลที่ค้นหา",
+                "sInfo": "แสดง _START_ ถึง _END_ ของ _TOTAL_ เร็คคอร์ด",
+                "sInfoEmpty": "แสดง 0 ถึง 0 ของ 0 เร็คคอร์ด",
+                "sInfoFiltered": "(จากเร็คคอร์ดทั้งหมด _MAX_ เร็คคอร์ด)",
+                "sSearch": "ค้นหา :",
+                "aaSorting": [
+                    [0, 'desc']
+                ],
+                "oPaginate": {
+                    "sFirst": "หน้าแรก",
                     "sPrevious": "ก่อนหน้า",
-                    "sNext":     "ถัดไป",
-                    "sLast":     "หน้าสุดท้าย"
-                    },
+                    "sNext": "ถัดไป",
+                    "sLast": "หน้าสุดท้าย"
                 },
-                "scrollX": true
+            },
+            "scrollX": true
 
 
-            });
-        } );
-
-</script>
+        });
+    });
+    </script>
