@@ -1,3 +1,5 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <?php
     $SL4view_receipt = new DB_conn();
 
@@ -172,12 +174,6 @@
             </div>
         </div>
 
-        <!-- //! Test -->
-        <!-- /* -------------------------------------------------------------------------- */ -->
-        <hr>
-                    
-                    <button type="">test</button>
-
 
         <?php
                         }else{
@@ -196,8 +192,7 @@
     </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
 
 <script>
 $(document).ready(function() {
@@ -210,6 +205,7 @@ $(document).ready(function() {
     <?php
             }
         ?>
+
 
 
 
