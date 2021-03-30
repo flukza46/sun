@@ -1,5 +1,8 @@
 <?php
     session_start();
+    if(!isset($_SESSION['id'])){
+        header("Location: ../index.php?p=home");
+    }else{
     require_once('../function.php');
     $connect_database = new DB_conn();
 ?>
@@ -23,6 +26,15 @@
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/dataTables.bulma.min.css">
         <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+   <style>
+            @media print{
+                @page{
+                    margin:0px;
+                    padding:0px;
+                }
+            }
+   </style> 
+   
     </head>
     <body class="sb-nav-fixed" style="font-family: 'Itim', cursive;
 font-family: 'Trirong', serif;">
@@ -170,3 +182,6 @@ font-family: 'Trirong', serif;">
         
     </body>
 </html>
+<?php
+}
+?>

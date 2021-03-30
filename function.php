@@ -19,6 +19,7 @@
                 $conn = mysqli_connect(DB_server, DB_user, DB_password, DB_name);
                 $this->dbcon = $conn;
                 mysqli_set_charset($this->dbcon, "utf8"); // ! Set ตัวหนังสือ เป็น UTF8
+                date_default_timezone_set("Asia/Bangkok");
 
                 if (mysqli_connect_errno()) {
                     echo"เชื่อมต่อ Database ไม่สำเร็จ!";

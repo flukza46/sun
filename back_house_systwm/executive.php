@@ -75,9 +75,7 @@ font-family: 'Trirong', serif;">
                 <main>
                     <div class="container-fluid">
                         <br>
-                         <div class="alert alert-info" role="alert">
-                        ตารางจองคิว
-                        </div>
+                       
   <div class="container">
   </div>
 
@@ -90,7 +88,7 @@ font-family: 'Trirong', serif;">
                     } 
 
                         case '2':{
-                            include_once('equipment.php');
+                            include_once('equipmentt.php');
                                 break;
                      }
                         case '3':{
@@ -103,6 +101,10 @@ font-family: 'Trirong', serif;">
                      }
                         case '5':{
                             include_once('Annual_report.php');
+                                break;
+                     }
+                        case 'view_receipt_executive':{
+                            include_once('view_receipt_executive.php');
                                 break;
                      }
 
