@@ -60,7 +60,14 @@
                                              <div class="col-md-8">
                                             <div class="card-body">
                                             <div><h4 class="card-title"><?php echo $num['news_title']; ?></h4></div>
-                                            <div><span class="badge badge-danger text-warning d-inline">ข่าวใหม่ !</span> <p class="d-inline text-secondary font-weight-light">ผู้เขียนข่าวโดย คุณ, <?php echo $num['news_author']; ?> > โพสต์เมื่อ : <?php echo $num['nawe_creat']; ?></p> </div>
+                                            <div>
+                                            <?php
+                                                $time1 = $num['nawe_creat'];
+                                                $time_th1 = $slN_index->thai_date_and_time(strtotime($time1));
+                                            ?>
+                                            <span class="badge badge-danger text-warning d-inline">ข่าวใหม่ !</span> <p class="d-inline text-secondary font-weight-light">ผู้เขียนข่าวโดย คุณ, <?php echo $num['news_author']; ?> > โพสต์เมื่อ : <?php echo $time_th1; ?></p> 
+                                            
+                                            </div>
 
                                             <div class="mt-3"><p><?php echo $num['news_summary']; ?></p></div>
                                             <div class="row">

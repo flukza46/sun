@@ -9,7 +9,8 @@
 <!--  -->
 
 
-<?php   
+<?php
+            $slN = new DB_conn();
             if(isset($_GET['cancel_booking']) == "ok"){
                 $id_cancel = $_GET['id_cancel'];
                 $id_sala = $_GET['salaQty'];
@@ -73,11 +74,12 @@ Swal.fire({
         <div class="card-body">
             <table class="table table-striped w-100" id="myTable">
                 <thead class="bg-success">
-                    <tr>
+                    <tr class="text-center">
                         <th scope="col">#</th>
                         <th scope="col">ผู้จอง</th>
                         <th scope="col">ศาลาที่จอง</th>
                         <th scope="col">ราคาค่าใช้จ่ายทั้งหมด</th>
+                        <th class="text-center">วันเวลาในการจอง</th>
                         <th scope="col">สถานะใบเสร็จ</th>
                         <th scope="col">ดูข้อมูลทั้งหมด</th>
                         <th scope="col">จัดการข้อมูล</th>
@@ -93,7 +95,7 @@ Swal.fire({
                             $i = 1;
                             while($reS = mysqli_fetch_array($sql)){
                             ?>
-                    <tr>
+                    <tr class="text-center">
                         <td>
                             <?php echo $i ; ?>
                         </td>
@@ -106,6 +108,16 @@ Swal.fire({
                         <td>
                             <?php echo number_format($reS['raca_total']); ?>
                         </td>
+                        <td>
+                            <?php
+                                    
+                                    $time1 = $reS['datestart'];
+                                    $time_th1 = $slN->thai_date_and_time(strtotime($time1));
+                                    $time2 = $reS['datestop'];
+                                    $time_th2 = $slN->thai_date_and_time2(strtotime($time2));
+                            ?>
+                            <p class="text-center"><?php echo$time_th1; ?><br> ถึง <br><?php echo$time_th2; ?></p>
+                        </td>
                         <td class="text-center">
                             <?php
                                                                 if($reS['status_bill_success'] == "yet"){
@@ -117,7 +129,8 @@ Swal.fire({
                             <?php
                                                                 }else{
                                                                     ?>
-                            <a href="manager.php?p=8&view_receipt=<?php echo $reS['id_list_booking']; ?>&print=ok" class="btn btn-success w-100" target="_blank">พิมพ์</a>
+                            <a href="manager.php?p=8&view_receipt=<?php echo $reS['id_list_booking']; ?>&print=ok"
+                                class="btn btn-success w-100" target="_blank">พิมพ์</a>
                             <?php
                             }
 

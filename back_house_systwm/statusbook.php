@@ -116,7 +116,7 @@
                             <?php
                                             }else{
                                                 $id_sala = $num['id'];
-                                                echo $nowTime = date("Y-m-d H:i:s");
+                                                $nowTime = date("Y-m-d H:i:s");
                                                 $date_Sto = $num['booking_d_stop'];
                                                 if($nowTime > $date_Sto){
                                                     ?>

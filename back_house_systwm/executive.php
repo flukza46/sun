@@ -52,20 +52,13 @@ font-family: 'Trirong', serif;">
                             </a>
                             <a class="nav-link collapsed" href="executive.php?p=2"  data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon "><i class="far fa-list-alt text-warning"></i></div>
-                                รายงานผลสินค้าทั้งหมด
+                                รายงานอุปกรณ์ประกอบพิธีกรรมทั้งหมด
                             </a>
                             <a class="nav-link collapsed" href="executive.php?p=3"  data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon "><i class="fas fa-list text-info"></i></div>
-                                รายงานผลการจองศาลารายวัน
+                                รายงานศาลาฌาปนกิจศพทั้งหมด
                             </a>
-                            <a class="nav-link collapsed" href="executive.php?p=4"  data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon "><i class="fas fa-list text-info"></i></div>
-                                รายงานผลการจองศาลารายเดือน
-                            </a>
-                            <a class="nav-link collapsed" href="executive.php?p=5"  data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon "><i class="fas fa-list text-info"></i></div>
-                                รายงานผลการจองศาลารายปี
-                            </a>
+                            
                             
                            
                             
@@ -88,11 +81,11 @@ font-family: 'Trirong', serif;">
                     } 
 
                         case '2':{
-                            include_once('equipmentt.php');
+                            include_once('equipmentt_executive.php');
                                 break;
                      }
                         case '3':{
-                            include_once('Daily_report.php');
+                            include_once('pavilion_executive.php');
                                 break;
                      }
                         case '4':{
