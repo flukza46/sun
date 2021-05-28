@@ -4,7 +4,7 @@
 ?>
 <div class="card">
     <div class="card-header">
-        <h3><b>ออกใบเสร็จ และ คิดค่าใช้จ่ายรวม</b></h3>
+        <h3><b>ออกใบเสร็จ และ คิดค่าใช้จ่ายรวม </b></h3>
     </div>
     <div class="card-body">
 
@@ -116,7 +116,7 @@
                     <div class="row">
                         <div class="form-group col-8">
                             <label for="exampleFormControlTextarea1">
-                                <h5><strong>อุปกรณ์ประกอบพิธีกรรม</strong> </h5>
+                                <h5><strong><i class="fas fa-menorah text-warning"></i> อุปกรณ์ประกอบพิธีกรรม</strong> </h5>
                             </label>
                             <textarea class="form-control w-100" id="exampleFormControlTextarea1" rows="5"
                                 name="t_address" disabled><?php echo $result['select_equipment']; ?></textarea>

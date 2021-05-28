@@ -92,18 +92,18 @@
                 </div>
             <!--ส่วน 7-->
                 <div class="row">
-                    <div class="col"></div>
-                    <div class="col-2 text-right">
-                        <p>7. </p>
+                        <div class="col"></div>
+                        <div class="col-2 text-right">
+                            <p>10. </p>
+                        </div>
+                        <div class="col-4 text-left">
+                            <p><i class="fas fa-school text-success"></i> : ค่าบำรุงสุสาน (เฉพาะศพเก็บ)</p>
+                        </div>
+                        <div class="col-5 ">
+                            <p>ศพละ 1500 บาท</p>
+                        </div>
+                        <div class="col"></div>
                     </div>
-                    <div class="col-4 text-left">
-                        <p><i class="fas fa-school text-success"></i> : ค่าบริการของเจ้าหน้าที่วันประชุมเพลิง 9 คน</p>
-                    </div>
-                    <div class="col-5 ">
-                        <p>ครั้งละ 500 บาท</p>
-                    </div>
-                    <div class="col"></div>
-                </div>
             <!--ส่วน 8-->
                 <div class="row">
                     <div class="col"></div>
@@ -136,13 +136,13 @@
                 <div class="row">
                     <div class="col"></div>
                     <div class="col-2 text-right">
-                        <p>10. </p>
+                        <p>7. </p>
                     </div>
                     <div class="col-4 text-left">
-                        <p><i class="fas fa-school text-success"></i> : ค่าบำรุงสุสาน (เฉพาะศพเก็บ)</p>
+                        <p><i class="fas fa-school text-success"></i> : ค่าบริการของเจ้าหน้าที่วันประชุมเพลิง 9 คน</p>
                     </div>
                     <div class="col-5 ">
-                        <p>ศพละ 1500 บาท</p>
+                        <p>ตามสมควร</p>
                     </div>
                     <div class="col"></div>
                 </div>
