@@ -93,10 +93,9 @@
                 </div>
             </div>
             <div class="d-flex align-items-starts ">
-                <b class="text-success d-flex align-items-center">ราคาศาลา : </b><input id="sala_total" type="number"
+               <input id="sala_total" type="number"
                     readonly="true" class="text-right ml-2 font-weight-bold text-danger border border-0"
-                    style="width:70px;" value="0" name="raca_sala"> <b
-                    class="text-success ml-2 d-flex align-items-center">บาท</b>
+                    style="width:70px;" value="0" name="raca_sala" hidden="true"> 
             </div>
             <hr>
 
@@ -147,10 +146,10 @@
 
 
                     <div class="d-flex justify-content-start mt-2">
-                        <b class="text-success d-flex align-items-center">ราคาอุปกรณ์ประกอบพิธีกรรม : </b><input
+                       <input
                             id="equip-total" type="number" name="raca_equip" readonly="true"
                             class="border border-0 text-right ml-2 font-weight-bold text-danger" value="0"
-                            style="width:70px;"> <b class="text-success ml-2 d-flex align-items-center">บาท</b>
+                            style="width:70px;" hidden="true"> 
                     </div>
                 </div>
             </div>
@@ -244,10 +243,9 @@
                 </div>
             </div>
             <div class="d-flex align-items-starts mt-2">
-                <b class="text-success d-flex align-items-center">ราคาค่าบำรุงฌาปนสถาน : </b><input style="width:70px;"
+              <input style="width:70px;"
                     id="bamrung-total" type="number" name="raca_cabamlung" readonly="true"
-                    class="border border-0 text-right ml-2 font-weight-bold text-danger" value="0"> <b
-                    class="text-success ml-2 d-flex align-items-center">บาท</b>
+                    class="border border-0 text-right ml-2 font-weight-bold text-danger" value="0" hidden="true">
             </div>
             <hr>
             <div class="d-flex justify-content-end mt-2 bg-dark p-3">

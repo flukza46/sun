@@ -2,20 +2,30 @@
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <?php
     $SL4view_receipt = new DB_conn();
-
-
-
 ?>
 <div class="card">
-    <div class="card-header d-flex justify-content-center">
-        <!-- หัวเรื่อง -->
-        <h3><b>ใบเสร็จการจองศาลาฌาปนกิจศพ | วัดนครสวรรค์พระอารามหลวง</b> </h3>
+    <div class="card-body">
 
+        <div class="row ">
+            <div class="col d-flex justify-content-center">
+                <img src="../image/logo.png" style="width:10rem;">
+            </div>
+        </div>
 
-    </div>
-    <div class="card-body border border-0 pb-0">
-        <!-- เนื้อหา -->
-        <div class="container">
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+                <h3 class="mt-2 font-weight-bold">ใบเสร็จ</h3>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col d-flex justify-content-center">
+                <h6 class="mb-2 font-weight-bold">การเช่าศาลาฌาปนกิจศพและอุปกรณ์ประกอบพิธีกรรม
+                    วัดนครสวรรค์พระอารามหลวง</h6>
+            </div>
+        </div>
+
+        <div class="container-fluid">
             <?php
                     $id_MLB =  $_GET['view_receipt'];
 
@@ -26,173 +36,139 @@
                         if($result = mysqli_fetch_array($sql)){
                         ?>
 
-            <div class="row">
-                <div class="form-group col-4 mt-4">
-                    <label for="exampleFormControlInput1"><i class="fas fa-user-edit text-primary"></i> ชื่อจริง</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1"
-                        value="<?php echo $result['first_name']; ?>" name="f_name" readOnly>
-                </div>
-
-                <div class="form-group col-4 mt-4">
-                    <label for="exampleFormControlInput1">นามสกุล</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1"
-                        value="<?php echo $result['last_name']; ?>" name="l_name" readOnly>
+            <div class="row mb-3">
+                <div class="col d-flex justify-content-end">
+                    <text class="font-weight-bold">เลขที่ใบเสร็จ : </text><text
+                        class="ml-1"><?=$result['id_list_booking'];?></text>
                 </div>
             </div>
-
-            <div class="row">
-                <div class="form-group col-4">
-                    <label for="exampleFormControlInput1"><i class="fas fa-phone-volume text-info"></i>
-                        เบอร์โทรศัพท์</label>
-                    <input style="width:200px;" maxlength="10" type="text" class="form-control"
-                        id="exampleFormControlInput1" value="<?php echo $result['phone_number']; ?>" name="p_number"
-                        readOnly>
+            <div class="row mb-3">
+                <div class="col-8 border border-1 border-dark p-3">
+                    <text class="font-weight-bold">ชื่อผู้จอง : </text>
+                    <text><?php echo $result['first_name']." ".$result['last_name']; ?></text> <br>
+                    <text class="font-weight-bold">เบอร์โทรศัพท์ : </text> <text><?=$result['phone_number'];?></text>
+                    <br>
+                    <text class="font-weight-bold">ที่อยู่ : </text> <text><?=$result['address'];?></text>
                 </div>
-            </div>
+                <div class="col border border-1 border-dark p-3">
+                    <?php
 
-            <div class="row">
-                <div class="form-group col-8">
-                    <label for="exampleFormControlTextarea1"><i class="fas fa-map-marked-alt text-success"></i>
-                        สถานที่อยู่</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" name="t_address"
-                        readOnly><?php echo $result['address']; ?></textarea>
-                </div>
-            </div>
+                    $time1 = $result['datestart'];
+                    $time_th1 = $SL4view_receipt->thai_date_and_time(strtotime($time1));
+                    $time2 = $result['datestop'];
+                    $time_th2 = $SL4view_receipt->thai_date_and_time2(strtotime($time2));
 
-            <div class="row">
-                <div class="form-group col-md-8">
-                    <label class="alert alert-secondary">
-                        <?php
-
-                        $time1 = $result['datestart'];
-                        $time_th1 = $SL4view_receipt->thai_date_and_time(strtotime($time1));
-                        $time2 = $result['datestop'];
-                        $time_th2 = $SL4view_receipt->thai_date_and_time2(strtotime($time2));
-                    
                     ?>
-                        <strong class="d-flex d-inline align-items-center">กำหนดการจอง : <p
-                                class="text-success m-0 ml-2 mr-2"><?php echo $time_th1; ?></p> ถึง
-                            <p class="text-success m-0 ml-2"><?php echo $time_th2; ?></p>
-                        </strong>
-                    </label>
-
+                    <text class="font-weight-bold">กำหนดการจอง : </text> <br> <text><?=$time_th1;?> <text
+                            class="font-weight-bold">ถึง</text> <?=$time_th2;?></text>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="form-group col-md-8">
-                    <label for="exampleFormControlTextarea1">
-                        อุปกรณ์ประกอบพิธีกรรม
-                    </label>
-                    <textarea class="form-control " id="exampleFormControlTextarea1" rows="5" name="t_address"
-                        readOnly><?php echo $result['select_equipment']; ?></textarea>
-                    <label class="font-weight-bold d-flex d-inline">
-                        <?//! ราคา  ?>
-                        <p class="text-success">ราคาอุปกรณ์ประกอบพิธีกรรม : </p>
-                        <p class="ml-2 text-danger"><?php echo number_format($result['raca_equip']); ?></p>
-                        <p class="ml-2 text-success">บาท</p>
-                    </label>
-                </div>
-            </div>
+            <table class="w-100 table table table-hover">
+                <thead class="bg-success">
+                    <tr>
+                        <th class="text-center">รายการ</th>
+                        <th class="text-center">ยอดรวม</th>
+                    </tr>
 
-            <div class="row">
-                <div class="form-group col-md-8">
-                    <label for="exampleFormControlTextarea1">
-                        อัตราค่าบำรุงฌาปนสถานวัดนครสวรรค์
-                    </label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="t_address"
-                        readOnly><?php echo $result['select_cabamlung']; ?></textarea>
-                    <label class="font-weight-bold d-flex d-inline">
-                        <?//! ราคา  ?>
-                        <p class="text-success">ราคาอุปกรณ์ประกอบพิธีกรรม : </p>
-                        <p class="ml-2 text-danger"><?php echo number_format($result['raca_cabamlung']); ?></p>
-                        <p class="ml-2 text-success">บาท</p>
-                    </label>
-                </div>
-            </div>
+                </thead>
 
+                <tbody class="">
+                    <tr>
+                        <td>
+                            <b>จองศาลา</b>
+                            <p style="text-indent:5rem;"><?php echo $result['select_sala']; ?></p>
+                        </td>
+                        <td class="text-center">
+                            <?php echo number_format($result['raca_sala']); ?>
+                        </td>
+                    </tr>
 
-            <!-- //!โชว์ค่าไฟ -->
-            <!-- /* -------------------------------------------------------------------------- */ -->
-            <?php
+                    <tr>
+                        <td>
+                            <b>อุปกรณ์ประกอบพิธีกรรม</b>
+                            <p style="text-indent:5rem;"><?php echo $result['select_equipment']; ?></p>
+                        </td>
+                        <td class="text-center">
+                            <?php echo number_format($result['raca_equip']); ?>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <b> อัตราค่าบำรุงฌาปนสถานวัดนครสวรรค์</b>
+                            <p style="text-indent:5rem;"><?php echo $result['select_cabamlung']; ?></p>
+                        </td>
+                        <td class="text-center">
+                            <?php echo number_format($result['raca_cabamlung']);  ?>
+                        </td>
+                    </tr>
+
+                    <!-- //!โชว์ค่าไฟ -->
+
+                    <?php
         
-                         if($result['raca_cafri'] && $result['raca_cafri'] =="wait"){
-                            ?>
-            <div class="alert alert-danger">
-                <h4 class="m-0 text-center"><strong>(ยังไม่ได้คิดค่าไฟ และ
-                        ค่าบริการของเจ้าหน้าที่วันประชุมเพลิง)</strong> </h4>
-            </div>
+        if($result['raca_cafri'] && $result['raca_cafri'] =="wait"){
+            ?>
+                    <tr>
+                        <td colspan="2" style="border-bottom: 0.2rem double;">
+                            <div class="alert alert-danger">
+                                <h4 class="m-0 text-center"><strong>(ยังไม่ได้คิดค่าไฟ และ
+                                        ค่าบริการของเจ้าหน้าที่วันประชุมเพลิง)</strong> </h4>
+                            </div>
+                        </td>
+                    </tr>
+                    <?php
+        }else{
+?>
+                    <tr>
+                        <td>
+
+                            <b> ค่าไฟ</b>
+                            <p style="text-indent:5rem;">ค่าไฟฟ้าหน่วยล่ะ 7 บาท</p>
+
+                        </td>
+                        <td class="text-center">
+                            <?php echo number_format($result['raca_cafri']);  ?>
+                        </td>
+
+                    </tr>
+                    <tr style="border-bottom: 0.2rem double;">
+                        <td>
+                            <b> ราคาค่าบริการเจ้าหน้าที่ 9 คน</b>
+                        </td>
+                        <td class="text-center">
+                            <?php echo number_format($result['raca_manternance9']);  ?>
+                        </td>
+
+                    </tr>
+
+
+
+                    <?php
+        }
+       ?>
+
+                    <!-- //!  */ -->
+                    <tr style="border-bottom: 0.2rem double;">
+                        <td class="text-right">
+                            <h4 class="font-weight-bold ">รวมค่าใช้จ่ายทั้งหมด :</h4>
+                        </td>
+                        <td class="text-center">
+                        <h4 class="font-weight-bold "><?php echo number_format($result['raca_total']) ;?></h4>
+                        </td>
+                    </tr>
+
+
+                </tbody>
+            </table>
             <?php
-                         }else{
-        ?>
-            <div class="col-md-4 alert alert-dark">
-                <div class="row mt-3">
-                    <div class="form-group col-md">
-                        <label class="font-weight-bold d-flex d-inline alert alert-secondary m-0">
-                            <?//! ราคา  ?>
-                            <p class="text-success m-0">ราคาค่าไฟ : </p>
-                            <p class="m-0 ml-2 text-danger"><?php echo number_format($result['raca_cafri']); ?></p>
-                            <p class="m-0 ml-2 text-success">บาท</p>
-                        </label>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="form-group col-md">
-                        <label class="font-weight-bold d-flex d-inline alert alert-secondary m-0">
-                            <?//! ราคา  ?>
-                            <p class="text-success m-0">ราคาค่าบริการเจ้าหน้าที่ 9 คน : </p>
-                            <p class="m-0 ml-2 text-danger"><?php echo number_format($result['raca_manternance9']); ?>
-                            </p>
-                            <p class="m-0 ml-2 text-success">บาท</p>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <?php
-                         }
-                        ?>
-
-            <!-- /* -------------------------------------------------------------------------- */ -->
-
-        </div>
-
-
-
-        <div class="row">
-            <div class="col bg-dark">
-                <div class="container d-flex justify-content-end text-light">
-                    <span class="d-flex d-inline align-items-center">
-                        <?//! ราคา  ?>
-                        <h3 class="m-0 p-3 text-success font-weight-bold">ราคาค่าใช้จ่ายทั้งหมด : </h3>
-                        <h3 class="m-0 text-danger font-weight-bold"><?php echo number_format($result['raca_total']); ?>
-                        </h3>
-                        <h3 class="m-0 ml-2 text-success font-weight-bold">บาท</h3>
-                    </span>
-
-                </div>
-            </div>
-        </div>
-
-
-        <?php
-                        }else{
-                            echo "Can't fetch";
                         }
-
-                        //echo "SQL Ok";
-                    }else{
-                        echo "Can't SQL";
                     }
-                    
-                    
-                    ?>
-
-
+                        ?>
+        </div>
     </div>
 </div>
-
-
 
 <script>
 $(document).ready(function() {

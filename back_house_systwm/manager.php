@@ -95,7 +95,7 @@ font-family: 'Trirong', serif;">
             </div>
             <div id="layoutSidenav_content">
                 <main>
-                    <div class="container-fluid min-vh-100" id="bg_dash">
+                    <div class="container-fluid" id="bg_dash">
                         <br>
                          
   <div class="container">
