@@ -27,6 +27,12 @@ class DB_conn{
         $re = mysqli_query($this->dbcon, "SELECT * FROM make_list_booking WHERE id_list_booking='$id_MLB' ");
         return $re;
     }
+    
+    public function runQuery($sql)
+    {
+        $re = mysqli_query($this->dbcon, $sql);
+        return $re;
+    }
 }
 
 ?>

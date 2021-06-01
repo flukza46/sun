@@ -1,6 +1,10 @@
 <?php
     session_start();
     require_once('function.php');
+
+    if(!isset($_GET['p'])){
+        header("Location: index.php?p=home");
+    }
     $connect_database = new DB_conn();
 ?>
 

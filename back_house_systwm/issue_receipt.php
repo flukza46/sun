@@ -1,5 +1,6 @@
 <?php
     $SL4view_receipt = new DB_conn();
+    
 
 ?>
 <div class="card">
@@ -118,8 +119,18 @@
                             <label for="exampleFormControlTextarea1">
                                 <h5><strong><i class="fas fa-menorah text-warning"></i> อุปกรณ์ประกอบพิธีกรรม</strong> </h5>
                             </label>
+                            <?php 
+                                $eq_sl = $SL4view_receipt->runQuery("SELECT * from equipment where id in($result[select_equipment])");
+                                
+                                ?>
                             <textarea class="form-control w-100" id="exampleFormControlTextarea1" rows="5"
-                                name="t_address" disabled><?php echo $result['select_equipment']; ?></textarea>
+                                name="t_address" disabled><?php 
+                                while ($fet_eq = mysqli_fetch_assoc($eq_sl)){
+
+                                    echo $fet_eq['equipment_tiype'].", "; 
+                                }
+                                ?>
+                                </textarea>
                             <label class="font-weight-bold d-flex d-inline">
                                 <?//! ราคา  ?>
                                 <p class="text-success">ราคาอุปกรณ์ประกอบพิธีกรรม : </p>

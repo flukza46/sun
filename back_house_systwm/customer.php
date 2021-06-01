@@ -116,7 +116,7 @@
             <div class="row">
                 <div class="form-group col-12">
                     <b class="mb-3" style="font-size:1.5rem;" for="exampleFormControlInput1"><i
-                            class="fas fa-menorah text-warning"></i> อุปกรณ์ประกอบพิธีกรรม</b>
+                            class="fas fa-menorah text-warning"></i> อุปกรณ์ประกอบพิธีกรรม <small class="text-danger">*  เมื่อติกอุปกรณ์ประกอบพิธีแล้ว โปรดกดปุ่มคำนวณค่าใช้จ่ายเพื่อกรอกจำนวนอุปกรณ์ประกอบพิธีได้ จากนั้น กด คำนวณอีกครั้งนึ่งเพื่อคำนวณค่าใช้จ่ายจริง</small></b>
                     <div class="mt-2">
                         <?php
                             $chk = $SLOptionP->SOP2();
@@ -128,13 +128,15 @@
                             <div class="container">
 
                                 <input class="form-check-input " type="checkbox" name="equip[]"
-                                    id="chkb<?php echo$i; ?>" value="<?php echo $re['equipment_tiype']." "; ?>">
+                                    id="chkb<?php echo$i; ?>" value="<?php echo $re['id']." "; ?>">
                                 <input id="price<?php echo$i; ?>" type="number" hidden
                                     value="<?php echo $re['price']; ?>"> <!-- ราคา -->
 
                                 <label class="form-check-label" for="exampleRadios1">
                                     <?php echo $re['equipment_tiype']; ?> ราคา : <?php echo $re['price']; ?> บาท
                                 </label>
+
+                               <br> <input id="chk_j_eq<?php echo$i; ?>" class="mb-2" type="number" name="" placeholder="จำนวน <?=$re['equipment_tiype'];?>" hidden="true">
 
                             </div>
                         </div>
@@ -176,7 +178,7 @@
                         value="ค่าบุรุงโลงเย็น">
                     <input id="pricebamrung2" type="number" hidden value="300"> <!-- ราคา -->
                     <label class="form-check-label" for="exampleRadios2">
-                        ค่าบุรุงโลงเย็น ราคา 300 บาท<?php echo"  "?></label>
+                        ค่าบำรุงโลงเย็น ราคา 300 บาท<?php echo"  "?></label>
                 </div>
             </div>
 
@@ -357,9 +359,28 @@ $(document).ready(function() {
                                                                       # code....
                                                                       ?>
         if ($("#chkb<?php echo"$i2";?>").is(':checked')) {
+            
+            $("#chk_j_eq<?php echo$i2;?>").attr('hidden', false)
+            var chk_j_eq<?php echo$i2;?> = $("#chk_j_eq<?php echo$i2;?>").val();
+            
             var price<?php echo$i2;?> = $("#price<?php echo$i2;?>").val();
+            var sumJum = chk_j_eq<?php echo$i2;?>
+            
             var sumprice = ~~price<?php echo$i2;?>;
-            var sum = ~~sum + sumprice; // ราคารวม                                              
+            
+            if($("#chk_j_eq<?php echo$i2;?>").prop('hidden') == false){
+                $("#chk_j_eq<?php echo$i2;?>").prop('name', 'jumnul_eq[]')
+                
+                var totalJum = sumprice * sumJum
+                var sum = ~~sum + totalJum; // ราคารวม                            
+                console.log(totalJum)
+                console.log(sum)
+            }
+        }else{
+            $("#chk_j_eq<?php echo$i2;?>").attr('hidden', true)
+            $("#chk_j_eq<?php echo$i2;?>").prop('name', '')
+            
+            $("#chk_j_eq<?php echo$i2;?>").val("");
         }
 
         <?php
@@ -379,7 +400,7 @@ $(document).ready(function() {
                                                                       $i3++;
                                                                     }                    
                                                         ?>
-        console.log(sum);
+        
         $("#equip-total").val(sum);
 
         // ----------------------------------

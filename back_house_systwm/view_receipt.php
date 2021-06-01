@@ -67,8 +67,8 @@
             <table class="w-100 table table table-hover">
                 <thead class="bg-success">
                     <tr>
-                        <th class="text-center">รายการ</th>
-                        <th class="text-center">ยอดรวม</th>
+                        <th class="text-center"><h4 class="font-weight-bold">รายการ</h4></th>
+                        <th class="text-center border-left"><h4 class="font-weight-bold">ยอดรวม</h4></th>
                     </tr>
 
                 </thead>
@@ -79,7 +79,7 @@
                             <b>จองศาลา</b>
                             <p style="text-indent:5rem;"><?php echo $result['select_sala']; ?></p>
                         </td>
-                        <td class="text-center">
+                        <td class="text-center border-left">
                             <?php echo number_format($result['raca_sala']); ?>
                         </td>
                     </tr>
@@ -87,10 +87,27 @@
                     <tr>
                         <td>
                             <b>อุปกรณ์ประกอบพิธีกรรม</b>
-                            <p style="text-indent:5rem;"><?php echo $result['select_equipment']; ?></p>
+
+                            <?php 
+                                $eq_sl = $SL4view_receipt->runQuery("SELECT * from equipment where id in($result[select_equipment])");
+                                $i=0;
+                                while($fet_eq = mysqli_fetch_assoc($eq_sl)){
+                                    $arr_jumnul = explode(",", $result['jumnul_eq']);
+                                    ?>
+                                    <p class="p-0 m-0" style="text-indent:5rem;">
+                                    <?php echo $fet_eq['equipment_tiype']." ราคา ".$fet_eq['price']." x ".$arr_jumnul[$i]."</br>"; ?>
+                                    </p>
+                                    <?php
+                                    $i++;
+                                }
+                            
+                            ?>
+                            
                         </td>
-                        <td class="text-center">
-                            <?php echo number_format($result['raca_equip']); ?>
+                        <td class="text-center border-left">
+                            <?php
+                                echo number_format($result['raca_equip']);
+                            ?>
                         </td>
                     </tr>
 
@@ -99,8 +116,10 @@
                             <b> อัตราค่าบำรุงฌาปนสถานวัดนครสวรรค์</b>
                             <p style="text-indent:5rem;"><?php echo $result['select_cabamlung']; ?></p>
                         </td>
-                        <td class="text-center">
+                        <td class="text-center border-left">
+                                <p>
                             <?php echo number_format($result['raca_cabamlung']);  ?>
+                                </p>
                         </td>
                     </tr>
 
@@ -128,7 +147,7 @@
                             <p style="text-indent:5rem;">ค่าไฟฟ้าหน่วยล่ะ 7 บาท</p>
 
                         </td>
-                        <td class="text-center">
+                        <td class="text-center border-left">
                             <?php echo number_format($result['raca_cafri']);  ?>
                         </td>
 
@@ -137,7 +156,7 @@
                         <td>
                             <b> ราคาค่าบริการเจ้าหน้าที่ 9 คน</b>
                         </td>
-                        <td class="text-center">
+                        <td class="text-center border-left">
                             <?php echo number_format($result['raca_manternance9']);  ?>
                         </td>
 

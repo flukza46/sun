@@ -1,0 +1,194 @@
+<!--จองศาลา-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+<?php
+    $slN = new DB_conn();
+    $del = new DB_conn();
+    $update_empty_sala = new DB_conn();
+
+    if(isset($_GET['del_id'])){
+
+        $id = $_GET['del_id'];
+
+        $del->delnews2($id);
+
+       
+    }
+    //ปีกการับ isset GET det 
+
+?>
+
+<div class="container-fluid mb-2">
+
+    <div class="card">
+        <div class="card-header bg-dark mb-2">
+            <h3 class="text-center text-light"><b><i class="fas fa-table"></i> รายงานศาลาฌาปนกิจศพทั้งหมด</b></h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped" id="myTable">
+                <thead class="">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">รูปศาลา</th>
+                        <th scope="col">ชื่อศาลาฌาปนกิจศพ</th>
+                        <th scope="col" class="text-center">ผู้จอง</th>
+                        <th scope="col" class="text-center">เวลาการจอง</th>
+                        <th scope="col" class="text-center">สถานะ</th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+
+
+                    <?php
+                $n=1;
+                $result = $slN->slN_m1(); 
+                while($num = mysqli_fetch_array($result))
+                {
+                ?>
+                    <tr>
+                        <th scope="row"><?php $num['id']; echo $n;?></th>
+                        <td>
+                            <div style="width:100px;">
+                                <img src="../image/pavilion/<?php echo $num['img']; ?>" class="card-img" title="">
+                            </div>
+                        </td>
+                        <td>
+                            <p><b><?php echo $num['pavilion_name']; ?></b></p>
+                        </td>
+                        <td class="text-center">
+                            <?php
+                                        if($num['status_sala'] == "empty"){
+                                            ?>
+                            <p><b> - </b></p>
+                            <?php
+                                        }else{
+                                            $id_MLB = $num['id'];
+                                            $SQL_SMLB = $slN->Slect_booking2($id_MLB);
+                                            if($SQL_SMLB){
+                                                    if($fet_MLB = mysqli_fetch_array($SQL_SMLB)){
+                                                        ?>
+                            <p><b>คุณ : <?php echo $fet_MLB['first_name']." ".$fet_MLB['last_name'];?></b></p>
+
+                            <?php   
+                                                        }else{
+                                                            echo "Can't fetch Data";
+                                                        }
+                                            }else{
+                                                echo "Can't SQL";
+                                            }
+                                        }    
+                                ?>
+
+                        </td>
+                        <td class="text-center">
+                            <?php  
+                                                    if($num['status_sala'] == "empty"){
+                                                        ?>
+
+                            <p><b> - </b></p>
+
+                            <?php
+                                                    }else{
+                                                                    $time1 = $num['booking_d_strat'];
+                                                                    $time_th1 = $slN->thai_date_and_time(strtotime($time1));
+                                                                    $time2 = $num['booking_d_stop'];
+                                                                    $time_th2 = $slN->thai_date_and_time2(strtotime($time2));
+                                                        ?>
+
+                            <p class="font-weight-bold"><?php echo$time_th1; ?></p>
+                            <p class="font-weight-bold"> ถึง </p>
+                            <p class="font-weight-bold"><?php echo$time_th2; ?></p>
+                            <?php
+                                                    } 
+                                                    ?>
+
+                        </td>
+                        <td class="text-center">
+                            <?php  
+                                            if($num['status_sala'] == "empty"){
+                                                ?>
+
+                            <div class="alert alert-success w-100 border border-dark"> ว่าง</div>
+
+                            <?php
+                                            }else{
+                                                $id_sala = $num['id'];
+                                                $nowTime = date("Y-m-d H:i:s");
+                                                $date_Sto = $num['booking_d_stop'];
+                                                if($nowTime > $date_Sto){
+                                                    ?>
+                            <script>
+                            $(document).ready(function() {
+                                
+                                    <?php
+                                                                $sql_update_empty_sala = $update_empty_sala->updateStatusSalaEmpty($id_sala);
+                                                                if($sql_update_empty_sala){
+                                                                    ?>
+                                    Swal.fire({
+                                        icon: 'success',
+                                        title: '<?php echo $num['pavilion_name']; ?> ว่างแล้ว',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    }).then(function() {
+                                        location.reload();
+                                    })
+                                    <?php  
+                                                                }else{
+                                                                    ?>
+                                    alert("Can't SQL");
+                                    <?php
+                                                                }
+                                    ?>
+                              
+                            });
+                            </script>
+                            <?php
+                                                }
+                                                ?>
+                            <div class="alert alert-danger w-100 border border-dark"> ไม่ว่าง</div>
+                            <?php
+                                            } 
+                                            ?>
+                        </td>
+                    </tr>
+                    <?php
+                $n++;
+                }
+                
+                ?>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+        $('#myTable').DataTable({
+            "oLanguage": {
+                "sLengthMenu": "แสดง _MENU_ เร็คคอร์ด ต่อหน้า",
+                "sZeroRecords": "ไม่เจอข้อมูลที่ค้นหา",
+                "sInfo": "แสดง _START_ ถึง _END_ ของ _TOTAL_ เร็คคอร์ด",
+                "sInfoEmpty": "แสดง 0 ถึง 0 ของ 0 เร็คคอร์ด",
+                "sInfoFiltered": "(จากเร็คคอร์ดทั้งหมด _MAX_ เร็คคอร์ด)",
+                "sSearch": "ค้นหา :",
+                "aaSorting": [
+                    [0, 'desc']
+                ],
+                "oPaginate": {
+                    "sFirst": "หน้าแรก",
+                    "sPrevious": "ก่อนหน้า",
+                    "sNext": "ถัดไป",
+                    "sLast": "หน้าสุดท้าย"
+                },
+            }
+
+
+        });
+    });
+    </script>
+
+    <!-- d -->
