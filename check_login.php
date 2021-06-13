@@ -23,7 +23,25 @@
             $_SESSION['lname'] = $num['last_name']; 
             $_SESSION['user_level'] = $num['user_level']; 
             
-            if($_SESSION['user_level']=="a"){
+            if($_SESSION['user_level']=="super@min"){
+                echo"<script>";
+                echo "setTimeout(function () { 
+                    swal({
+                    title: 'รหัสผ่านถูกต้อง',
+                    text: 'ยินดีต้อนรับคุณ (ผู้ดูแลระบบ)',
+                    type: 'success',
+                    confirmButtonText: 'OK'
+                    },
+                    function(isConfirm){
+                    if (isConfirm) {
+                        window.location.href = 'back_house_systwm/super_admin.php?p=1';
+                    }
+                    }); }, 1000);";
+
+
+                echo"</script>";
+            }
+            if($_SESSION['user_level']=="admin"){
                 echo"<script>";
                 echo "setTimeout(function () { 
                     swal({
@@ -41,7 +59,7 @@
 
                 echo"</script>";
             }
-            if($_SESSION['user_level']=="ma"){
+            if($_SESSION['user_level']=="manager"){
                 echo"<script>";
                 echo "setTimeout(function () { 
                     swal({
@@ -59,7 +77,7 @@
 
                 echo"</script>";
             }
-            if($_SESSION['user_level']=="p"){
+            if($_SESSION['user_level']=="people"){
                 header("Location: index.php?p=home");
             }
             

@@ -12,6 +12,7 @@
         define('title_web', 'การพัฒนาระบบสนับสนุนการเช่าพื้นที่ศาลาฌาปนกิจศพและอุปกรณ์ประกอบพิธีกรรมวัดนครสวรรค์พระอารามหลวง');
         define('title_web_m', 'เจ้าหน้าที่');
         define('title_web_e', 'ผู้บริหาร');
+        define('title_web_s', 'ผู้ดูแลระบบ');
 
         class DB_conn{
             //? ฟังก์ชั่นเชื่อมต่อฐานข้อมูล
@@ -56,6 +57,36 @@
 
                 return $thai_date_return;   
             }
+
+            public function slUserReg($user){
+                $re = mysqli_query($this->dbcon, "SELECT * FROM user WHERE username ='$user'");
+                return $re;
+            }
+            //? ฟังก์ชั่น สมัครสมาชิก
+            public function register_form($username, $password, $title_name, $first_name, $last_name, $email, $phone_number, $user_level){
+
+                $result = mysqli_query($this->dbcon, "INSERT INTO user(
+                    username,
+                    password,
+                    title_name,
+                    first_name,
+                    last_name,
+                    email,
+                    phone_number,
+                    user_level)
+                    VALUE('$username',
+                    '$password',
+                    '$title_name',
+                    '$first_name',
+                    '$last_name',
+                    '$email',
+                    '$phone_number',
+                    '$user_level')
+                    ");
+
+        return $result;
+
+                }
 
             //? ฟังก์ชั่น SOP
             public function SOP(){
@@ -403,8 +434,16 @@
                 return $re;
             }
 
+        
 
         } //ปีกกาของคลาส
+
+        class fff extends DB_conn{
+            public function runQuery($query){
+                $reS = mysqli_query($this->dbcon, $query); 
+                return $reS;
+            }
+        }//ปีกกาของคลาส
 
 ?>
 
