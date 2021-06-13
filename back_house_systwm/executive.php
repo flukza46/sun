@@ -1,6 +1,7 @@
 <?php
     session_start();
     require_once('../function.php');
+    
     $connect_database = new DB_conn();
 ?>
 <!DOCTYPE html>
@@ -18,6 +19,12 @@
         <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
+
         
     </head>
     <body class="sb-nav-fixed" style="font-family: 'Itim', cursive;
@@ -50,15 +57,22 @@ font-family: 'Trirong', serif;">
                                 <div class="sb-nav-link-icon "><i class="fas fa-list-alt text-danger"></i></div>
                                 รายงานผลการจองศาลาและอุปกรณ์ทั้งหมด
                             </a>
-                            <a class="nav-link collapsed" href="executive.php?p=2"  data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon "><i class="far fa-list-alt text-warning"></i></div>
-                                รายงานอุปกรณ์ประกอบพิธีกรรมทั้งหมด
-                            </a>
+
+                            
                             <a class="nav-link collapsed" href="executive.php?p=3"  data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon "><i class="fas fa-list text-info"></i></div>
                                 รายงานศาลาฌาปนกิจศพทั้งหมด
                             </a>
                             
+                            <a class="nav-link collapsed" href="executive.php?p=2"  data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon "><i class="far fa-list-alt text-warning"></i></div>
+                                รายงานอุปกรณ์ประกอบพิธีกรรมทั้งหมด
+                            </a>
+
+                            <a class="nav-link collapsed" href="executive.php?p=6"  data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon "><i class="far fa-list-alt text-warning"></i></div>
+                                รายงานผลสรุปยอดรายรับ
+                            </a>
                             
                            
                             
@@ -85,7 +99,7 @@ font-family: 'Trirong', serif;">
                                 break;
                      }
                         case '3':{
-                            include_once('pavilion_executive.php');
+                            include_once('statusbook_executive.php');
                                 break;
                      }
                         case '4':{
@@ -94,6 +108,10 @@ font-family: 'Trirong', serif;">
                      }
                         case '5':{
                             include_once('Annual_report.php');
+                                break;
+                     }
+                        case '6':{
+                            include_once('income_report.php');
                                 break;
                      }
                         case 'view_receipt_executive':{

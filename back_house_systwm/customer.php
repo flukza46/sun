@@ -93,10 +93,9 @@
                 </div>
             </div>
             <div class="d-flex align-items-starts ">
-                <b class="text-success d-flex align-items-center">ราคาศาลา : </b><input id="sala_total" type="number"
+               <input id="sala_total" type="number"
                     readonly="true" class="text-right ml-2 font-weight-bold text-danger border border-0"
-                    style="width:70px;" value="0" name="raca_sala"> <b
-                    class="text-success ml-2 d-flex align-items-center">บาท</b>
+                    style="width:70px;" value="0" name="raca_sala" hidden="true"> 
             </div>
             <hr>
 
@@ -117,7 +116,7 @@
             <div class="row">
                 <div class="form-group col-12">
                     <b class="mb-3" style="font-size:1.5rem;" for="exampleFormControlInput1"><i
-                            class="fas fa-menorah text-warning"></i> อุปกรณ์ประกอบพิธีกรรม</b>
+                            class="fas fa-menorah text-warning"></i> อุปกรณ์ประกอบพิธีกรรม <small class="text-danger">*  เมื่อติกอุปกรณ์ประกอบพิธีแล้ว โปรดกดปุ่มคำนวณค่าใช้จ่ายเพื่อกรอกจำนวนอุปกรณ์ประกอบพิธีได้ จากนั้น กด คำนวณอีกครั้งนึ่งเพื่อคำนวณค่าใช้จ่ายจริง</small></b>
                     <div class="mt-2">
                         <?php
                             $chk = $SLOptionP->SOP2();
@@ -129,13 +128,15 @@
                             <div class="container">
 
                                 <input class="form-check-input " type="checkbox" name="equip[]"
-                                    id="chkb<?php echo$i; ?>" value="<?php echo $re['equipment_tiype']." "; ?>">
+                                    id="chkb<?php echo$i; ?>" value="<?php echo $re['id']." "; ?>">
                                 <input id="price<?php echo$i; ?>" type="number" hidden
                                     value="<?php echo $re['price']; ?>"> <!-- ราคา -->
 
                                 <label class="form-check-label" for="exampleRadios1">
                                     <?php echo $re['equipment_tiype']; ?> ราคา : <?php echo $re['price']; ?> บาท
                                 </label>
+
+                               <br> <input id="chk_j_eq<?php echo$i; ?>" class="mb-2" type="number" name="" placeholder="จำนวน <?=$re['equipment_tiype'];?>" hidden="true">
 
                             </div>
                         </div>
@@ -147,10 +148,10 @@
 
 
                     <div class="d-flex justify-content-start mt-2">
-                        <b class="text-success d-flex align-items-center">ราคาอุปกรณ์ประกอบพิธีกรรม : </b><input
+                       <input
                             id="equip-total" type="number" name="raca_equip" readonly="true"
                             class="border border-0 text-right ml-2 font-weight-bold text-danger" value="0"
-                            style="width:70px;"> <b class="text-success ml-2 d-flex align-items-center">บาท</b>
+                            style="width:70px;" hidden="true"> 
                     </div>
                 </div>
             </div>
@@ -177,7 +178,7 @@
                         value="ค่าบุรุงโลงเย็น">
                     <input id="pricebamrung2" type="number" hidden value="300"> <!-- ราคา -->
                     <label class="form-check-label" for="exampleRadios2">
-                        ค่าบุรุงโลงเย็น ราคา 300 บาท<?php echo"  "?></label>
+                        ค่าบำรุงโลงเย็น ราคา 300 บาท<?php echo"  "?></label>
                 </div>
             </div>
 
@@ -244,10 +245,9 @@
                 </div>
             </div>
             <div class="d-flex align-items-starts mt-2">
-                <b class="text-success d-flex align-items-center">ราคาค่าบำรุงฌาปนสถาน : </b><input style="width:70px;"
+              <input style="width:70px;"
                     id="bamrung-total" type="number" name="raca_cabamlung" readonly="true"
-                    class="border border-0 text-right ml-2 font-weight-bold text-danger" value="0"> <b
-                    class="text-success ml-2 d-flex align-items-center">บาท</b>
+                    class="border border-0 text-right ml-2 font-weight-bold text-danger" value="0" hidden="true">
             </div>
             <hr>
             <div class="d-flex justify-content-end mt-2 bg-dark p-3">
@@ -359,9 +359,28 @@ $(document).ready(function() {
                                                                       # code....
                                                                       ?>
         if ($("#chkb<?php echo"$i2";?>").is(':checked')) {
+            
+            $("#chk_j_eq<?php echo$i2;?>").attr('hidden', false)
+            var chk_j_eq<?php echo$i2;?> = $("#chk_j_eq<?php echo$i2;?>").val();
+            
             var price<?php echo$i2;?> = $("#price<?php echo$i2;?>").val();
+            var sumJum = chk_j_eq<?php echo$i2;?>
+            
             var sumprice = ~~price<?php echo$i2;?>;
-            var sum = ~~sum + sumprice; // ราคารวม                                              
+            
+            if($("#chk_j_eq<?php echo$i2;?>").prop('hidden') == false){
+                $("#chk_j_eq<?php echo$i2;?>").prop('name', 'jumnul_eq[]')
+                
+                var totalJum = sumprice * sumJum
+                var sum = ~~sum + totalJum; // ราคารวม                            
+                console.log(totalJum)
+                console.log(sum)
+            }
+        }else{
+            $("#chk_j_eq<?php echo$i2;?>").attr('hidden', true)
+            $("#chk_j_eq<?php echo$i2;?>").prop('name', '')
+            
+            $("#chk_j_eq<?php echo$i2;?>").val("");
         }
 
         <?php
@@ -381,7 +400,7 @@ $(document).ready(function() {
                                                                       $i3++;
                                                                     }                    
                                                         ?>
-        console.log(sum);
+        
         $("#equip-total").val(sum);
 
         // ----------------------------------

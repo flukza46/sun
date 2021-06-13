@@ -73,7 +73,7 @@ Swal.fire({
         </div>
         <div class="card-body">
             <table class="table table-striped w-100" id="myTable">
-                <thead class="bg-success">
+                <thead class="bg-info">
                     <tr class="text-center">
                         <th scope="col">#</th>
                         <th scope="col">ผู้จอง</th>
