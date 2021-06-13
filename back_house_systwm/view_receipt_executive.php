@@ -89,9 +89,11 @@
                             <b>อุปกรณ์ประกอบพิธีกรรม</b>
 
                             <?php 
+                            
                                 $eq_sl = $SL4view_receipt->runQuery("SELECT * from equipment where id in($result[select_equipment])");
+                               
                                 $i=0;
-                                while($fet_eq = mysqli_fetch_assoc($eq_sl)){
+                                while($fet_eq = mysqli_fetch_array($eq_sl)){
                                     $arr_jumnul = explode(",", $result['jumnul_eq']);
                                     ?>
                                     <p class="p-0 m-0" style="text-indent:5rem;">

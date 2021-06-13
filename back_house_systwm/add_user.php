@@ -107,7 +107,7 @@
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
 <!--jquery-->
-<script src="../sweetalert/sweetalert2.all.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
 $(document).ready(function() {
@@ -127,7 +127,7 @@ $(document).ready(function() {
             $.ajax({
                 method: 'post',
                 url: 'check_userReg.php',
-                dataType: "json",
+                dataType:"json",
                 data: {
                     chkUser1: user1,
                     statusDATA: "ok"

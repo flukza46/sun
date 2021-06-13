@@ -114,6 +114,10 @@ font-family: 'Trirong', serif;">
                             include_once('income_report.php');
                                 break;
                      }
+                        case '8':{
+                            include_once('view_receipt_executive.php');
+                                break;
+                     }
                         case 'view_receipt_executive':{
                             include_once('view_receipt_executive.php');
                                 break;

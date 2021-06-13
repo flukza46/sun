@@ -27,15 +27,12 @@ class DB_conn{
         $re = mysqli_query($this->dbcon, "SELECT * FROM make_list_booking WHERE id_list_booking='$id_MLB' ");
         return $re;
     }
-<<<<<<< HEAD
     public function slUserReg($user){
         $re = mysqli_query($this->dbcon, "SELECT * FROM user WHERE username ='$user'");
-=======
-    
+    }
     public function runQuery($sql)
     {
         $re = mysqli_query($this->dbcon, $sql);
->>>>>>> 9854882a52b110f95e3cfb399d4e2a3ded03814d
         return $re;
     }
 }
