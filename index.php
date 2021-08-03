@@ -50,7 +50,7 @@
                                             <form action="check_login.php" method="post">
                                                 <div class="row form-inline">
                                                 <div class="form-group mr-2">
-                                                    <input type="text" class="form-control" name="username" placeholder="Username">
+                                                    <input type="text" class="form-control" name="username" placeholder="Username" autocomplete="off">
                                                 </div>
                                                 <div class="form-group mr-2">
                                                     <input type="password" class="form-control" name="password" placeholder="Password">
