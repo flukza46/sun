@@ -62,6 +62,8 @@
 
                 return $thai_date_return;   
             }
+            // Todo: ทำเวลาเป็นภาษาไทย2
+            
 
             public function slUserReg($user){
                 $re = mysqli_query($this->dbcon, "SELECT * FROM user WHERE username ='$user'");

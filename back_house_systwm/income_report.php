@@ -1,3 +1,4 @@
+
 <div class="alert alert-info">
     <div class="d-flex align-items-center">
         <h3>ค้นหา ปี/เดือน/วัน ที่ต้องการแสดงยอดรายรับ</h3><text class="ml-3 text-danger font-weight-bold">*</text><text
@@ -14,15 +15,16 @@
         </div>
     </div>
 </div>
+
 <?php
 $select_income = new DB_conn();
 $sql = $select_income->runQuery("SELECT sum(raca_total) from make_list_booking where datestart");
 $fetch_total = mysqli_fetch_assoc($sql);
 
-
-
-
 ?>
+
+
+
 <!-- <div class="alert bg-info p-5" id="div_res" hidden="true">
     <h1 class="text-center font-weight-bold text-light">ผลลัพธ์การค้นหาข้อมูลรายได้</h1>
     <h2 class="text-center font-weight-bold text-warning" id="result_search"></h2>
@@ -234,9 +236,150 @@ if(isset($_POST['submit'])){
     
 }
 ?>
-    
 
-    <script type="text/javascript" charset="utf-8">
+
+
+<?php
+ if(isset($_POST['date_2'])){
+     $d1 = date("Y-m-d H:i:s", strtotime($_POST['date_sta']));
+     $d2 = date("Y-m-d H:i:s", strtotime($_POST['date_sto']));
+     ?>
+        <div class="alert alert-warning">
+        <h3>ผลลัพธ์ยอดการจองศาลาฌาปนกิจศพแต่ละศาลาแบบเจาะจง <h5 class="">ของวันที่ <?php echo $d1 ;?> ถึง <?php echo $d2 ;?></h5></h3>
+        <table class="table table-striped w-100" id="myTable">
+        <thead>
+        <th>ศาลา</th>
+        <th>ถูกจองไปแล้วทั้งหมด / ครั้ง</th>
+        <th>รายได้ทั้งหมด / บาท</th>
+        </thead>
+
+        <?php
+
+        $sum_sara = $select_income->runQuery("SELECT * from pavilion where id");
+        ?>
+        <tbody>
+        <?php
+        while($fetch_sum_sara = mysqli_fetch_assoc($sum_sara)){
+        ?>
+            <tr>          
+<td><?php echo $fetch_sum_sara['pavilion_name']; ?></td>
+
+<td>
+    <?php
+    $sum_booking = $select_income->runQuery("SELECT count(id_sala) from make_list_booking where datestart between '$d1' and '$d2' AND id_sala = $fetch_sum_sara[id]  ");
+    $fetch_c2 = mysqli_fetch_assoc($sum_booking);
+    ?>
+    <button class="btn btn-primary w-50"><?php echo $fetch_c2['count(id_sala)'];?></button>
+</td>
+
+<td>
+<?php
+    $sum_raca_booking = $select_income->runQuery("SELECT sum(raca_total) from make_list_booking where datestart between '$d1' and '$d2' AND id_sala = $fetch_sum_sara[id]");
+    $fetch_c3 = mysqli_fetch_assoc($sum_raca_booking);
+    ?>
+    <b>
+
+        <?php
+    echo number_format($fetch_c3['sum(raca_total)']);
+    ?>
+    </b>
+    
+</td>
+
+</tr>
+<?php
+        }
+        ?>
+        </tbody>
+        <tbody>
+        <?php
+    $sum_raca_booking2 = $select_income->runQuery("SELECT sum(raca_total) from make_list_booking where datestart between '$d1' and '$d2'");
+    $fetch_c4 = mysqli_fetch_assoc($sum_raca_booking2);
+    ?>
+            <td colspan="2" class="text-center"><h4>ยอดรวม</h4></td>
+            <td colspan="2" ><h4 class="text-success"><?php echo number_format($fetch_c4['sum(raca_total)']) ; ?></h4></td>
+        </tbody>
+    </table>
+        </div>
+     <?php
+ }else{
+
+ }
+?>
+
+
+   
+
+
+<div class="alert alert-primary">
+    <h3>รายงานยอดการจองศาลาฌาปนกิจศพแต่ละศาลา</h3>
+    <table class="table table-striped w-100" id="myTable">
+        <thead>
+        <th>ศาลา</th>
+        <th>ถูกจองไปแล้วทั้งหมด / ครั้ง</th>
+        <th>รายได้ทั้งหมด / บาท</th>
+        </thead>
+
+        <?php
+
+        $sum_sara = $select_income->runQuery("SELECT * from pavilion where id");
+        ?>
+        <tbody>
+        <?php
+        while($fetch_sum_sara = mysqli_fetch_assoc($sum_sara)){
+        ?>
+            <tr>          
+<td><?php echo $fetch_sum_sara['pavilion_name']; ?></td>
+
+<td>
+    <?php
+    $sum_booking = $select_income->runQuery("SELECT count(id_sala) from make_list_booking where id_sala = $fetch_sum_sara[id]");
+    $fetch_c2 = mysqli_fetch_assoc($sum_booking);
+    ?>
+    <button class="btn btn-primary w-50"><?php echo $fetch_c2['count(id_sala)'];?></button>
+</td>
+
+<td>
+<?php
+    $sum_raca_booking = $select_income->runQuery("SELECT sum(raca_total) from make_list_booking where id_sala = $fetch_sum_sara[id]");
+    $fetch_c3 = mysqli_fetch_assoc($sum_raca_booking);
+    ?>
+    <b>
+
+        <?php
+    echo number_format($fetch_c3['sum(raca_total)']);
+    ?>
+    </b>
+    
+</td>
+
+</tr>
+<?php
+        }
+        ?>
+        </tbody>
+        <tbody>
+        <?php
+    $sum_raca_booking2 = $select_income->runQuery("SELECT sum(raca_total) from make_list_booking");
+    $fetch_c4 = mysqli_fetch_assoc($sum_raca_booking2);
+    ?>
+            <td colspan="2" class="text-center"><h4>ยอดรวม</h4></td>
+            <td colspan="2" ><h4 class="text-success"><?php echo number_format($fetch_c4['sum(raca_total)']) ; ?></h4></td>
+        </tbody>
+    </table>
+</div> 
+
+
+<div class="alert alert-warning">
+<h3>ค้นหายอดการจองศาลาฌาปนกิจศพแต่ละศาลาแบบเจาะจง</h3>
+<form action="executive.php?p=6" method="post">
+
+    <input type="datetime-local" name="date_sta" required> ถึง <input type="datetime-local" name="date_sto" required> <button type="submit" name="date_2" class="btn btn-success">ค้นหา</button>
+
+</form>
+</div>
+
+<script type="text/javascript" charset="utf-8">
     $(document).ready(function() {
         $('#myTable').DataTable({
             "oLanguage": {

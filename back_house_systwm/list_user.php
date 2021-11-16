@@ -111,7 +111,6 @@ $func4page = new fff();
                 <th>สิทธิ์การใช้งานล่าสุด</th>
                 <th>ชื่อ-นามสกุล</th>
                 <th>username</th>
-                <th>password</th>
                 <th>email</th>
                 <th>เบอร์โทรศัพท์</th>
                 <th>จัดการสิทธิ์การใช้งาน</th>
@@ -154,7 +153,7 @@ $func4page = new fff();
                     </td>
                     <td><?=$fet_use['title_name']." ".$fet_use['first_name']." ".$fet_use['last_name']?></td>
                     <td><?=$fet_use['username']?></td>
-                    <td><?=md5($fet_use['password'])?></td>
+
                     <td><?=$fet_use['email']?></td>
                     <td><?=$fet_use['phone_number']?></td>
                     <td>

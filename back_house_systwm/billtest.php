@@ -13,9 +13,16 @@
             $t_address = $_POST['t_address'];
             $sala = $_POST['sala'];
             $id_sala = $_POST['id_sala'];
-            $raca_sala = $_POST['raca_sala'];
+
+
+            
             $date_start = $_POST['date_start'];
             $date_stop = $_POST['date_stop'];
+
+            $sumdatesara = round(abs(strtotime($date_stop) - strtotime($date_start))/60/60/24); //คิดจำนวนวัน
+
+            $raca_sala = $sumdatesara * $_POST['raca_sala'];
+
             $equip = $_POST['equip'];
             $all_equip = implode(", ", $_POST['equip']); // แปลง $equip
             $raca_equip = $_POST['raca_equip'];
