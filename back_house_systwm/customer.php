@@ -161,7 +161,7 @@
 
             <div><b style="font-size:1.5rem;"><i class="fas fa-check-circle text-primary"></i>
                     อัตราค่าบำรุงฌาปนสถานวัดนครสวรรค์ </b></div>
-
+            
             <div class="form-check col mt-2">
                 <div class="container">
                     <input class="form-check-input" type="checkbox" name="cabamlung[]" id="chkbb1"
@@ -169,6 +169,7 @@
                     <input id="pricebamrung1" type="number" hidden value="2000"> <!-- ราคา -->
                     <label class="form-check-label" for="exampleRadios1">
                         ค่าบำรุงเมรุ (วันศพออก) ราคา 2000 บาท<?php echo"  "?></label>
+                        <br> <input id="chk_j_bamrung1" class="mb-2" type="number" name="" placeholder="จำนวนวัน" hidden="true">
                 </div>
             </div>
 
@@ -179,6 +180,7 @@
                     <input id="pricebamrung2" type="number" hidden value="300"> <!-- ราคา -->
                     <label class="form-check-label" for="exampleRadios2">
                         ค่าบำรุงโลงเย็น ราคา 300 บาท<?php echo"  "?></label>
+                        <br> <input id="chk_j_bamrung2" class="mb-2" type="number" name="" placeholder="จำนวนวัน" hidden="true">
                 </div>
             </div>
 
@@ -189,6 +191,7 @@
                     <input id="pricebamrung3" type="number" hidden value="100"> <!-- ราคา -->
                     <label class="form-check-label" for="exampleRadios1">
                         ค่าบำรุงพัดลมหน้าเมรุ ราคา 100 บาท<?php echo"  "?></label>
+                        <br> <input id="chk_j_bamrung3" class="mb-2" type="number" name="" placeholder="จำนวนวัน" hidden="true">
                 </div>
             </div>
 
@@ -199,6 +202,7 @@
                     <input id="pricebamrung4" type="number" hidden value="200"> <!-- ราคา -->
                     <label class="form-check-label" for="exampleRadios1">
                         ค่าทำความสะอาดวันศพออก ราคา 200 บาท<?php echo"  "?></label>
+                        <br> <input id="chk_j_bamrung4" class="mb-2" type="number" name="" placeholder="จำนวนวัน" hidden="true">
                 </div>
             </div>
 
@@ -209,6 +213,7 @@
                     <input id="pricebamrung5" type="number" hidden value="200"> <!-- ราคา -->
                     <label class="form-check-label" for="exampleRadios1">
                         ค่าพนักงานเฝ้าศพกลางคืน ราคา 200 บาท<?php echo"  "?></label>
+                        <br> <input id="chk_j_bamrung5" class="mb-2" type="number" name="" placeholder="จำนวนวัน" hidden="true">
                 </div>
             </div>
 
@@ -220,6 +225,7 @@
                     <input id="pricebamrung6" type="number" hidden value="500"> <!-- ราคา -->
                     <label class="form-check-label" for="exampleRadios1">
                         ค่าบำรุงเรื่องเสียง ราคา 500 บาท<?php echo"  "?></label>
+                        <br> <input id="chk_j_bamrung6" class="mb-2" type="number" name="" placeholder="จำนวนวัน" hidden="true">
                 </div>
             </div>
 
@@ -230,6 +236,7 @@
                     <input id="pricebamrung7" type="number" hidden value="50"> <!-- ราคา -->
                     <label class="form-check-label" for="exampleRadios1">
                         ค่าทำความสะอาดโลงเย็น ราคา 50 บาท<?php echo"  "?></label>
+                        <br> <input id="chk_j_bamrung7" class="mb-2" type="number" name="" placeholder="จำนวนวัน" hidden="true">
                 </div>
             </div>
 
@@ -240,6 +247,7 @@
                     <input id="pricebamrung8" type="number" hidden value="1500"> <!-- ราคา -->
                     <label class="form-check-label" for="exampleRadios1">
                         ค่าบำรุงสุสาน (เฉพาะศพเก็บ) ราคา 1500 บาท<?php echo"  "?></label>
+                        <br> <input id="chk_j_bamrung8" class="mb-2" type="number" name="" placeholder="จำนวนวัน" hidden="true">
 
 
                 </div>
@@ -249,6 +257,10 @@
                     id="bamrung-total" type="number" name="raca_cabamlung" readonly="true"
                     class="border border-0 text-right ml-2 font-weight-bold text-danger" value="0" hidden="true">
             </div>
+                
+             
+
+
             <hr>
             <div class="d-flex justify-content-end mt-2 bg-dark p-3">
                 <b style="font-size:2rem;" class="text-success d-flex align-items-center">ราคาค่าใช้จ่ายรวม : </b><input
@@ -329,6 +341,8 @@ $(document).ready(function() {
 
     $("#billtest").click(function() {
 
+        
+
         $("#billtest2").attr('hidden', false)
 
         <?php
@@ -388,6 +402,8 @@ $(document).ready(function() {
                                                                     }
 
 
+
+
                                                                     $i3=1; 
                                                                     while($i3 <=10){
                                                                       ?>
@@ -400,6 +416,11 @@ $(document).ready(function() {
                                                                       $i3++;
                                                                     }                    
                                                         ?>
+
+        
+
+
+        
         
         $("#equip-total").val(sum);
 

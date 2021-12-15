@@ -29,8 +29,11 @@
             $all_jumnul_eq = implode(", ", $_POST['jumnul_eq']);
 
             $cabamlung = $_POST['cabamlung'];
-            $all_cabamlung = implode(", ", $_POST['cabamlung']); // แปลง $cabamlung
-            $raca_cabamlung = $_POST['raca_cabamlung'];
+            $raca_cabamlung = $_POST['raca_cabamlung'] * $sumdatesara;
+            $all_cabamlung = implode("x$sumdatesara วัน, ", $_POST['cabamlung']); // แปลง $cabamlung
+
+
+
             $raca_total = $_POST['raca_total'];
             //    echo $f_name." ".$l_name." ".$p_number." ".$t_address." ".$sala." ".$raca_sala." ".$date_start." ".$date_stop." ".$all_equip." ".$raca_equip." ".$all_cabamlung." ".$raca_cabamlung." ".$raca_total;
 
